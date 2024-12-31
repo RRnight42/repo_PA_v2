@@ -105,6 +105,9 @@ void GameScene::Update(const float& timeUpdate) {
 
 	Scene::Update(timeUpdate);
 
+	powerUpCollisions();
+	barrelCollisions();
+
 	if (shieldEffect || speedEffect) {
 		auto elapsed = chrono::steady_clock::now() - timePowerUp;
 		int duration = 10; 
@@ -122,6 +125,8 @@ void GameScene::Update(const float& timeUpdate) {
 	}
 
 }
+
+
 
 void GameScene::usePowerUpPlayer() {
 	if (player->hasPowerUp()) {
@@ -179,6 +184,11 @@ void GameScene::powerUpCollisions() {
 			}
 		}
 	}
+}
+
+void GameScene::barrelCollisions() {
+
+
 }
 
 void GameScene::activateRay() {

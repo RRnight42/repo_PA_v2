@@ -7,17 +7,16 @@ class Shield : public PowerUp
 
 
 
-public : 
+public:
 
 
-	Shield() : PowerUp() {
+    Shield(Model model) : PowerUp(model) {
 
-		this->SetType(PowerUp::Shield);
-		this->PaintColor(Color(0.5, 0.5, 0.7, 1));
+        this->SetType(PowerUp::Shield);
+        model.PaintColor(Color(0.5, 0.5, 0.7, 1));
 
 
-	}
+    }
 
 
 };
-

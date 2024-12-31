@@ -1,30 +1,37 @@
 #pragma once
 #include "Model.h"
 #include "ModelLoader.h"
-#include <cstdlib> // Para rand() y srand()
-#include <ctime>   // Para time()
 
-class PowerUp : public Model {
+class PowerUp : public Solid {
 
 
-public: 
+public:
 
-    enum PowerUpType { Heart , Ray , Shield , SpeedReduce};
+    enum PowerUpType { Heart, Ray, Shield, SpeedReduce };
 
-    
+
 private:
 
 
-    PowerUpType type;           
-   
+    PowerUpType type;
+    Model itemModel;
 
 public:
-    
-    PowerUp(){}
+
+    PowerUp(Model model) {
+
+        this->itemModel = model;
+
+    }
 
     inline PowerUpType GetType() const { return this->type; }
     inline void SetType(const PowerUpType& puSet) { this->type = puSet; }
-   
+
+    inline Model GetItemModel() const { return this->itemModel; }
+    inline void SetItemModel(const Model& model) { this->itemModel = model; }
+
+    void Render();
+    Solid* Clone();
 };
 
 

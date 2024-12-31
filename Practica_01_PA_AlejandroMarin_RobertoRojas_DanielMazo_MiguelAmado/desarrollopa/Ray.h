@@ -5,20 +5,17 @@ class Ray : public PowerUp
 
 
 
-public : 
+public:
 
 
 
-	Ray() : PowerUp() {
-	
-	
-		this->SetType(PowerUp::Ray);
-		this->PaintColor(Color(1, 1, 0, 1));
-	
-	
-	
-	}
+    Ray(Model model) : PowerUp(model) {
+
+
+        this->SetType(PowerUp::Ray);
+        model.PaintColor(Color(1, 1, 0, 1));
+
+    }
 
 
 };
-

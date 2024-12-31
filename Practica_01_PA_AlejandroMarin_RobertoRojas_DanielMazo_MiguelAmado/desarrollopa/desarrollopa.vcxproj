@@ -134,6 +134,7 @@
     <ClCompile Include="Cube.cpp" />
     <ClCompile Include="Cuboid.cpp" />
     <ClCompile Include="Cylinder.cpp" />
+    <ClCompile Include="DDBarrel.cpp" />
     <ClCompile Include="desarrollopa.cpp" />
     <ClCompile Include="Display.cpp" />
     <ClCompile Include="Emitter.cpp" />
@@ -149,20 +150,24 @@
     <ClCompile Include="MenuScene.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="ModelLoader.cpp" />
+    <ClCompile Include="NormalBarrel.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PowerUp.cpp" />
     <ClCompile Include="Ray.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Shield.cpp" />
     <ClCompile Include="Solid.cpp" />
+    <ClCompile Include="SpeedBarrel.cpp" />
     <ClCompile Include="SpeedReduce.cpp" />
     <ClCompile Include="Sphere.cpp" />
+    <ClCompile Include="SwitchBarrel.cpp" />
     <ClCompile Include="Teapot.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="Torus.cpp" />
     <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="UICanva.cpp" />
     <ClCompile Include="Vector3D.cpp" />
+    <ClCompile Include="WideBarrel.cpp" />
     <ClCompile Include="WinScene.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +177,7 @@
     <ClInclude Include="Cube.h" />
     <ClInclude Include="Cuboid.h" />
     <ClInclude Include="Cylinder.h" />
+    <ClInclude Include="DDBarrel.h" />
     <ClInclude Include="Display.h" />
     <ClInclude Include="Emitter.h" />
     <ClInclude Include="EmitterConfiguration.h" />
@@ -186,14 +192,17 @@
     <ClInclude Include="MenuScene.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="ModelLoader.h" />
+    <ClInclude Include="NormalBarrel.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PowerUp.h" />
     <ClInclude Include="Ray.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Shield.h" />
     <ClInclude Include="Solid.h" />
+    <ClInclude Include="SpeedBarrel.h" />
     <ClInclude Include="SpeedReduce.h" />
     <ClInclude Include="Sphere.h" />
+    <ClInclude Include="SwitchBarrel.h" />
     <ClInclude Include="Teapot.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="Torus.h" />
@@ -201,6 +210,7 @@
     <ClInclude Include="UICanva.h" />
     <ClInclude Include="Util.h" />
     <ClInclude Include="Vector3D.h" />
+    <ClInclude Include="WideBarrel.h" />
     <ClInclude Include="WinScene.h" />
   </ItemGroup>
   <ItemGroup>

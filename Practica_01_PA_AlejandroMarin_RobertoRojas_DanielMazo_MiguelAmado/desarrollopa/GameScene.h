@@ -92,7 +92,7 @@ public:
 	void powerUpCollisions();
 
 	
-	//void barrelCollisions();  //proximamente
+	void barrelCollisions();
 
 
 	//powerups
