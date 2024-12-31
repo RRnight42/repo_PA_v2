@@ -33,33 +33,51 @@ void UICanva::InitUI() {
  
 
     //posiciones en el canva
-    coinsText->SetPosition(this->GetPosition() + Vector3D(13,9.5,0));
+    coinsText->SetPosition(this->GetPosition() + Vector3D(5,9.5,0));
   
 
     // aqui CONFIGURAMOS TODO EL CANVA
 
 
 
-    loader.LoadModel("Corazon.obj");
-    loader.SetScale(2);
-    *heart1 = loader.GetModel();
-    *heart2 = loader.GetModel();
-    *heart3 = loader.GetModel();
+    loaderHeart.LoadModel("Corazon.obj");
+    loaderRay.LoadModel("Rayo.obj");
+    loaderShield.LoadModel("Escudo.obj");
+    loaderSpeed.LoadModel("Speedfactor.obj");
+    loaderCoin.LoadModel("Coin.obj");
+
+    loaderHeart.SetScale(2);
+
+    *heart1 = loaderHeart.GetModel();
+    *heart2 = loaderHeart.GetModel();
+    *heart3 = loaderHeart.GetModel();
+    *rayPowerUpUI = loaderRay.GetModel();
+    *shieldPowerUpUI = loaderShield.GetModel();
+    *speedPowerUpUI = loaderSpeed.GetModel();
+    *coinUI = loaderCoin.GetModel();
 
     heart1->PaintColor(Color(1, 0, 0, 1));
     heart2->PaintColor(Color(1, 0, 0, 1));
     heart3->PaintColor(Color(1, 0, 0, 1));
-
+    coinUI->PaintColor(Color(1, 0.88, 0, 1));
+    rayPowerUpUI->PaintColor(Color(0.094, 0.678, 1, 1));
 
     heart1->SetPosition(this->GetPosition() + Vector3D(-13, 9, -0.5));
     heart2->SetPosition(this->GetPosition() + Vector3D(-9.5, 9, -0.5));
-    heart3->SetPosition(this->GetPosition() + Vector3D(-6,9, -0.5));
+    heart3->SetPosition(this->GetPosition() + Vector3D(-6, 9, -0.5));
 
-    heart1->SetOrientationSpeed(Vector3D(0,3, 0));
-    heart2->SetOrientationSpeed(Vector3D(0,3, 0));
-    heart3->SetOrientationSpeed(Vector3D(0,3, 0));
+    coinUI->SetPosition(this->GetPosition() + Vector3D(4, 10, 0));
+    rayPowerUpUI->SetPosition(this->GetPosition() + Vector3D(7, 10, 0));
+    speedPowerUpUI->SetPosition(this->GetPosition() + Vector3D(8, 10, 0));
+    shieldPowerUpUI->SetPosition(this->GetPosition() + Vector3D(9, 10, 0));
 
-    coinUI->SetPosition(this->GetPosition() + Vector3D(2, 2, 0));
+    coinUI->SetOrientation(Vector3D(0, 90, 0));
+
+    heart1->SetOrientationSpeed(Vector3D(0, 3, 0));
+    heart2->SetOrientationSpeed(Vector3D(0, 3, 0));
+    heart3->SetOrientationSpeed(Vector3D(0, 3, 0));
+
+
     
 
 

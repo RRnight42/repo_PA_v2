@@ -6,10 +6,10 @@ class SpeedReduce : public PowerUp
 
 public:
 
-	SpeedReduce() : PowerUp() {
+	SpeedReduce(Model model) : PowerUp(model) {
 	
 		this->SetType(PowerUp::SpeedReduce);
-		this->PaintColor(Color(0, 0, 1, 1));
+		model.PaintColor(Color(0, 0, 1, 1));
 	
 	}
 	

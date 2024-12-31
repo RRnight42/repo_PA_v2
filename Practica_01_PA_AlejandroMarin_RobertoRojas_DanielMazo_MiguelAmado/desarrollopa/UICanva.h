@@ -14,7 +14,11 @@ class UICanva : public Solid
 
 private:
 
-    ModelLoader loader;
+    ModelLoader loaderHeart;
+    ModelLoader loaderRay;
+    ModelLoader loaderShield;
+    ModelLoader loaderSpeed;
+    ModelLoader loaderCoin;
 
     Text* coinsText;
 

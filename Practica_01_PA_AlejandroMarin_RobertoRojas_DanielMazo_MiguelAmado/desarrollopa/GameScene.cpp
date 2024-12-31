@@ -23,6 +23,7 @@ void GameScene::Init() {
 	shield->SetOrientationSpeed(Vector3D(0, 5, 0));
 	shield->SetPosition(player->GetPosition());
 	
+	player->SetOrientationSpeed(Vector3D(0, 3, 0));
 
 	canva->InitUI();
 	canva->SetPosition(Vector3D(0, 0, 19));
@@ -78,7 +79,7 @@ void GameScene::Init() {
 	}
 	
 	AddGameObject(player);
-	AddGameObject(shield);
+	//AddGameObject(shield);
 
 	AddGameObject(canva);
 	AddGameObject(carretera);
@@ -107,6 +108,7 @@ void GameScene::Update(const float& timeUpdate) {
 
 	powerUpCollisions();
 	barrelCollisions();
+	
 
 	if (shieldEffect || speedEffect) {
 		auto elapsed = chrono::steady_clock::now() - timePowerUp;
