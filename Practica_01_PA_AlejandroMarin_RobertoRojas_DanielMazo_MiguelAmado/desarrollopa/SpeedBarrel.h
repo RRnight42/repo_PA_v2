@@ -2,11 +2,13 @@
 #include "Barrel.h"
 class SpeedBarrel : public Barrel
 {
-	SpeedBarrel(Model model) : Barrel(model)
+
+public:
+	SpeedBarrel() : Barrel()
 	{
 		this->SetSpeed(Vector3D(0, 0, 0.7));
-		this->SetType(Barrel::SpeedBarrel);
-		model.PaintColor(Color(0, 1, 0, 1));
+		this->setTypeBarrel(Barrel::SpeedBarrel);
+		this->PaintColor(Color(0, 1, 0, 1));
 	}
 
 };

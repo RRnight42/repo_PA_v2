@@ -12,25 +12,34 @@ public:
 
 private:
 
-
+    
     BarrelType type;
-    Model modelBarrel;
+    Model model;
 
 
 public:
 
-    Barrel(Model model) { 
-        this->modelBarrel = model;
-    }
+    Barrel() {}
 
     inline BarrelType GetType() const { return this->type; }
-    inline void SetType(const BarrelType& BarrelSet) { this->type = BarrelSet; }
+    inline void setTypeBarrel(const BarrelType& bt) { this->type = bt; }
 
-    inline Model GetModelBarrel() const { return this->modelBarrel; }
-    inline void SetModelBarrel(const Model& model) { this->modelBarrel = model; }
+    inline void SetModel(const Model& mdl) { this->model = mdl; }
+    inline void PaintColor(const Color& c) { this->model.PaintColor(c); }
 
-    void Render();
-    Solid* Clone();
+    void Render() {
 
+       
+    
+        this->model.Render();
+    
+    
+    }
+   
+    Solid* Clone() {
+    
+        return new Barrel(*this);
+    
+    }
 };
 

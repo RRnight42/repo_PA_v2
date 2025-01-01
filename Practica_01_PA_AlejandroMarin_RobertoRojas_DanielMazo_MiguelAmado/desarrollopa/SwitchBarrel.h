@@ -9,7 +9,7 @@ private:
 	float initialPosition;
 
 public:
-	SwitchBarrel(Model model, float interval = 3.0f) : Barrel(model), elapsedTime(0), switchInterval(interval)
+	SwitchBarrel(float interval = 3.0f) : Barrel(), elapsedTime(0), switchInterval(interval)
 	{
 		lanes = {
 			Vector3D(-0.45f, -0.3f, 0.0f), //Carril izquierdo
@@ -18,8 +18,8 @@ public:
 		};
 
 		this->SetSpeed(Vector3D(0, 0, 0.3));
-		this->SetType(Barrel::SwitchBarrel);
-		model.PaintColor(Color(1, 1, 1, 1));
+		this->setTypeBarrel(Barrel::SwitchBarrel);
+		this->PaintColor(Color(1, 1, 1, 1));
 	}
 
     void Update(float deltaTime) {

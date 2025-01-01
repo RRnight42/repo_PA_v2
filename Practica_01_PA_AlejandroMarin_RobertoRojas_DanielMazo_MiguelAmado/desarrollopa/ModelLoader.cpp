@@ -139,7 +139,8 @@ Triangle ModelLoader::parseObjTriangle(const string& line) {
 }
 
 void ModelLoader::Clear() {
-
+	
+	this->model.Clear();
 	this->vertexCollection.clear();
 	this->normalCollection.clear();
 	maxX = 0;

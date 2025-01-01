@@ -37,6 +37,12 @@
     <Filter Include="Archivos de origen\Materiales">
       <UniqueIdentifier>{9f6886aa-c5e9-4ba1-884b-f45ee4d71141}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Barrels">
+      <UniqueIdentifier>{8f4b772b-047f-4410-853b-2254f240cb04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\PowerUps">
+      <UniqueIdentifier>{7bc6e508-dec4-4e35-96c5-8e5dec900eb9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="desarrollopa.cpp">
@@ -162,6 +168,9 @@
     <ClCompile Include="SwitchBarrel.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="DebugScene.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -242,50 +251,53 @@
     <ClInclude Include="MenuScene.h">
       <Filter>Archivos de encabezado\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="Text.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="WinScene.h">
       <Filter>Archivos de encabezado\Scenes</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Barrel.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="UICanva.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="PowerUp.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="DebugScene.h">
+      <Filter>Archivos de encabezado\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="Ray.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Shield.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Heart.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="SpeedReduce.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="WideBarrel.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="Barrel.h">
+      <Filter>Archivos de encabezado\Barrels</Filter>
     </ClInclude>
     <ClInclude Include="NormalBarrel.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="DDBarrel.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Barrels</Filter>
     </ClInclude>
     <ClInclude Include="SpeedBarrel.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Barrels</Filter>
     </ClInclude>
     <ClInclude Include="SwitchBarrel.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Barrels</Filter>
+    </ClInclude>
+    <ClInclude Include="DDBarrel.h">
+      <Filter>Archivos de encabezado\Barrels</Filter>
+    </ClInclude>
+    <ClInclude Include="WideBarrel.h">
+      <Filter>Archivos de encabezado\Barrels</Filter>
+    </ClInclude>
+    <ClInclude Include="PowerUp.h">
+      <Filter>Archivos de encabezado\PowerUps</Filter>
+    </ClInclude>
+    <ClInclude Include="Heart.h">
+      <Filter>Archivos de encabezado\PowerUps</Filter>
+    </ClInclude>
+    <ClInclude Include="Ray.h">
+      <Filter>Archivos de encabezado\PowerUps</Filter>
+    </ClInclude>
+    <ClInclude Include="Shield.h">
+      <Filter>Archivos de encabezado\PowerUps</Filter>
+    </ClInclude>
+    <ClInclude Include="SpeedReduce.h">
+      <Filter>Archivos de encabezado\PowerUps</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Archivos de encabezado\Primitivas</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,6 @@
 #include "Game.h"
 #include <iostream>
+#include "DebugScene.h"
 
 void Game::Init()
 {
@@ -7,13 +8,17 @@ void Game::Init()
 
     menu = new	MenuScene();
     lvl1 = new GameScene(GameScene::Level1);
-	this->activeScene = menu;
+	DebugScene* debug = new DebugScene();
+	
 
 	// solo para debug
-	this->activeScene = lvl1;
+	//this->activeScene = lvl1;
+     this->activeScene = debug;
+
 
 	scenes.push_back(menu);
 	scenes.push_back(lvl1);
+	scenes.push_back(debug);
 
 	for (int i = 0; i < scenes.size(); i++)
 		scenes[i]->Init();

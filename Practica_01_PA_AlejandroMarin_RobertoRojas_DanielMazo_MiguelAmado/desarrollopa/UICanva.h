@@ -14,11 +14,8 @@ class UICanva : public Solid
 
 private:
 
-    ModelLoader loaderHeart;
-    ModelLoader loaderRay;
-    ModelLoader loaderShield;
-    ModelLoader loaderSpeed;
-    ModelLoader loaderCoin;
+    ModelLoader loader;
+    
 
     Text* coinsText;
 
@@ -31,6 +28,10 @@ private:
     Model* speedPowerUpUI = new Model();
 
     Model* activePowerUp = nullptr;
+
+    Model* activeHeart1 = heart1;
+    Model* activeHeart2 = heart2;
+    Model* activeHeart3 = heart3;
 
     Model* coinUI = new Model();
 

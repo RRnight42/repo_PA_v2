@@ -135,6 +135,7 @@
     <ClCompile Include="Cuboid.cpp" />
     <ClCompile Include="Cylinder.cpp" />
     <ClCompile Include="DDBarrel.cpp" />
+    <ClCompile Include="DebugScene.cpp" />
     <ClCompile Include="desarrollopa.cpp" />
     <ClCompile Include="Display.cpp" />
     <ClCompile Include="Emitter.cpp" />
@@ -178,6 +179,7 @@
     <ClInclude Include="Cuboid.h" />
     <ClInclude Include="Cylinder.h" />
     <ClInclude Include="DDBarrel.h" />
+    <ClInclude Include="DebugScene.h" />
     <ClInclude Include="Display.h" />
     <ClInclude Include="Emitter.h" />
     <ClInclude Include="EmitterConfiguration.h" />
