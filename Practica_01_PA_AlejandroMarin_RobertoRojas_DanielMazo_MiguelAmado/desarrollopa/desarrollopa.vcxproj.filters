@@ -43,6 +43,12 @@
     <Filter Include="Archivos de encabezado\PowerUps">
       <UniqueIdentifier>{7bc6e508-dec4-4e35-96c5-8e5dec900eb9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de origen\PowerUps">
+      <UniqueIdentifier>{416cf0ea-fa69-4032-8fbb-0a22c4b250bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Barrels">
+      <UniqueIdentifier>{413d4c92-eaac-4c2e-b36f-dcc2a3bb4746}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="desarrollopa.cpp">
@@ -123,53 +129,53 @@
     <ClCompile Include="MenuScene.cpp">
       <Filter>Archivos de origen\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="Text.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="WinScene.cpp">
       <Filter>Archivos de origen\Scenes</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Barrel.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="UICanva.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="PowerUp.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="Heart.cpp">
+      <Filter>Archivos de origen\PowerUps</Filter>
     </ClCompile>
     <ClCompile Include="Ray.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\PowerUps</Filter>
     </ClCompile>
     <ClCompile Include="Shield.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\PowerUps</Filter>
     </ClCompile>
-    <ClCompile Include="Heart.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="PowerUp.cpp">
+      <Filter>Archivos de origen\PowerUps</Filter>
     </ClCompile>
     <ClCompile Include="SpeedReduce.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="WideBarrel.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="NormalBarrel.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\PowerUps</Filter>
     </ClCompile>
     <ClCompile Include="DDBarrel.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Barrels</Filter>
+    </ClCompile>
+    <ClCompile Include="NormalBarrel.cpp">
+      <Filter>Archivos de origen\Barrels</Filter>
     </ClCompile>
     <ClCompile Include="SpeedBarrel.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Barrels</Filter>
     </ClCompile>
     <ClCompile Include="SwitchBarrel.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Barrels</Filter>
+    </ClCompile>
+    <ClCompile Include="WideBarrel.cpp">
+      <Filter>Archivos de origen\Barrels</Filter>
+    </ClCompile>
+    <ClCompile Include="Barrel.cpp">
+      <Filter>Archivos de origen\Barrels</Filter>
     </ClCompile>
     <ClCompile Include="DebugScene.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Archivos de origen\Primitivas</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

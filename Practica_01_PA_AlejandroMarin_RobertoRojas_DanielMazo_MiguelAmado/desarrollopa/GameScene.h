@@ -25,8 +25,6 @@ class GameScene : public Scene
 {
 private:
 
-	
-
 	Player* player = new Player();
 
 
@@ -68,6 +66,7 @@ private:
 	const float reduce = 0.5;
 	chrono::steady_clock::time_point timePowerUp;
 
+	bool condVictoria = false;
 
 public:
 	
@@ -109,5 +108,7 @@ public:
 
 	void Update(const float& timeUpdate);
 	
+	inline bool GetVictoryCondition() const { return this->condVictoria; }
+	inline void SetVictoryCondition(const bool& cond) { this->condVictoria = cond; }
 };
 

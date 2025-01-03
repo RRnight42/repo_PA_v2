@@ -89,8 +89,9 @@ void UICanva::InitUI() {
 
 
 
-   loader.SetScale(1.7);
-   loader.LoadModel("Coin.obj"); 
+   loader.SetScale(1);
+   loader.LoadModel("Coin.obj");
+   loader.SetScale(0.25);
    *coinUI = loader.GetModel();
    coinUI->PaintColor(Color(1, 0.88, 0, 1));
    coinUI->SetPosition(this->GetPosition() + Vector3D(4, 10, 0));

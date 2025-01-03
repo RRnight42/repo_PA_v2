@@ -8,16 +8,21 @@ void Game::Init()
 
     menu = new	MenuScene();
     lvl1 = new GameScene(GameScene::Level1);
+	win = new WinScene();
+	lose = new LoseScene();
+
 	DebugScene* debug = new DebugScene();
 	
 
 	// solo para debug
 	//this->activeScene = lvl1;
-     this->activeScene = debug;
+     this->activeScene = menu;
 
 
 	scenes.push_back(menu);
 	scenes.push_back(lvl1);
+	scenes.push_back(win);
+	scenes.push_back(lose);
 	scenes.push_back(debug);
 
 	for (int i = 0; i < scenes.size(); i++)
@@ -62,26 +67,39 @@ void Game::Update()
 	milliseconds currentTime = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
 
 	if ((currentTime.count() - this->initialMilliseconds.count() - this->lasUpdatedTime > UPDATE_PERIOD)) {
-	this->activeScene->Update(TIME_INCREMENT);
-	this->lasUpdatedTime = currentTime.count() - this->initialMilliseconds.count();
-	
+		this->activeScene->Update(TIME_INCREMENT);
+		this->lasUpdatedTime = currentTime.count() - this->initialMilliseconds.count();
 	}
 
-	if (this->activeScene == this->menu) {
-	
-		if (this->menu->hasEndedScene()) {
-		
-			this->activeScene = lvl1;		
+	if (this->activeScene->hasEndedScene()) {
+		if (this->activeScene == this->menu) {
+			this->activeScene = lvl1;
 		}
-	
+		else if (this->activeScene == this->win || this->activeScene == this->lose) {
+			this->lvl1->endScene(false);
+			this->activeScene = lvl1;
+		}
+		else if (this->activeScene == this->lvl1) {
+			if (this->lvl1->GetVictoryCondition()) {
+				this->win->endScene(false);
+				this->activeScene = win;
+			}
+			else {
+				this->lose->endScene(false);
+				this->activeScene = lose;
+			}
+		}
 	}
-
-	
 }
 
 void Game::ProcessKeyPressed(unsigned char key, int px, int py)
 {
 	this->activeScene->ProcessKeyPressed(key, px, py);
+}
+
+void Game::ProcessSpecialKeyPressed(int key, int px, int py) 
+{
+	this->activeScene->ProcessSpecialKeyPressed(key, px, py);
 }
 
 void Game::ProcessMouseClicked(int button, int state, int x, int y)

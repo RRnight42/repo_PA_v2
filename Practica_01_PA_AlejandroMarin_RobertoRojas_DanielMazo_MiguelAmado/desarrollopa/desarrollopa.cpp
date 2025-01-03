@@ -104,6 +104,26 @@ void specialKey(int key, int x, int y)
             glutPositionWindow(WINDOW_POSITION_X, WINDOW_POSITION_Y);
         }
         break;
+    
+    case GLUT_KEY_UP:
+        game.ProcessSpecialKeyPressed(GLUT_KEY_UP, x, y);
+        glutPostRedisplay();
+        break;
+
+    case GLUT_KEY_DOWN:
+        game.ProcessSpecialKeyPressed(GLUT_KEY_DOWN, x, y);
+        glutPostRedisplay();
+        break;
+
+    case GLUT_KEY_LEFT:
+        game.ProcessSpecialKeyPressed(GLUT_KEY_LEFT, x, y);
+        glutPostRedisplay();
+        break;
+
+    case GLUT_KEY_RIGHT:
+        game.ProcessSpecialKeyPressed(GLUT_KEY_RIGHT, x, y);
+        glutPostRedisplay();
+        break;
     }
 }
 

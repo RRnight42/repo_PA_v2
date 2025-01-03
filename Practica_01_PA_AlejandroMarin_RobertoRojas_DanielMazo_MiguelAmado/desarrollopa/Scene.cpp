@@ -29,9 +29,12 @@ void Scene::Update(const float& timeUpdate)
 
     }
 }
+//void Scene::Reset() {}
 
 
 void Scene::ProcessKeyPressed(unsigned char key, int px, int py) {}
+
+void Scene::ProcessSpecialKeyPressed(int key, int px, int py) {}
 
 void Scene::ProcessMouseMovement(int x, int y) {}
 

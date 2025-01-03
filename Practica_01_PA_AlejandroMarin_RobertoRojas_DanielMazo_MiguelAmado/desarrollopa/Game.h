@@ -30,6 +30,8 @@ private:
 
 	MenuScene* menu;
 	GameScene* lvl1;
+	WinScene* win;
+	LoseScene* lose;
 
 public:
 
@@ -39,6 +41,7 @@ public:
 	void Render();
 	void Update();
 	void ProcessKeyPressed(unsigned char key, int px, int py);
+	void ProcessSpecialKeyPressed(int key, int px, int py);
 	void ProcessMouseMovement(int x, int y);
 	void ProcessMouseClicked(int button, int state, int x, int y);
 };
