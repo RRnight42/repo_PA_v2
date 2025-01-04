@@ -2,7 +2,7 @@
 
 void MenuScene::Init() {
 
-	title = new Text("TITULO", Text::TimesNewRoman24 ,Color());
+	title = new Text("Barrel Escape X", Text::TimesNewRoman24 ,Color());
 	inputText1 = new Text("Comenzar" , Text::Helvetica18 ,Color(1, 0.5, 0, 1));
 	inputText2 = new Text("Salir", Text::Helvetica12, Color(0, 0, 0, 1));
 

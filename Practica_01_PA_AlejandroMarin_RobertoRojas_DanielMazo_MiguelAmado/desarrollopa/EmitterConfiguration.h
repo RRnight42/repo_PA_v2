@@ -42,13 +42,6 @@ private:
 
     bool useModels;
 
-    string filePath1;
-    string filePath2;
-    string filePath3;
-    string filePath4;
-    string filePath5;
-    string filePath6;
-
 public:
 
 
@@ -73,13 +66,7 @@ public:
         particle4(nullptr),
         particle5(nullptr),
         particle6(nullptr),
-        useModels(false),
-        filePath1(""),
-        filePath2(""),
-        filePath3(""),
-        filePath4(""),
-        filePath5(""),
-        filePath6("")
+        useModels(false)
     {}
 
 
@@ -87,20 +74,14 @@ public:
 
     // Constructor para usar modelos (.obj)
     EmitterConfiguration(
-        const vector<string>& filePaths,
+        const vector<Solid*>& models ,
         int dpt = 1,
         int maxParticles = 10,
         int minBurst = 1,
         int maxBurst = 5,
         int minInt = 500,
         int maxInt = 1500,
-        long particleLT = 5000,
-        bool loop = false,
-        bool random = false,
-        Vector3D speed = Vector3D(0, 1, 0),
-        Vector3D orientation = Vector3D(),
-        Vector3D orientationSpeed = Vector3D(0, 1, 0),
-        Color color = Color(1, 1, 1, 1)
+        long particleLT = 5000
     )
         : DifferentParticleType(dpt),
         maxParticles(maxParticles),
@@ -109,12 +90,6 @@ public:
         minInterval(minInt),
         maxInterval(maxInt),
         lifetimePerParticle(particleLT),
-        loopEmitter(loop),
-        randomSpeedColor(random),
-        speedParticle(speed),
-        orientationParticle(orientation),
-        orientationSpeedParticle(orientationSpeed),
-        colorParticle(color),
         particle1(nullptr), particle2(nullptr),
         particle3(nullptr), particle4(nullptr),
         particle5(nullptr), particle6(nullptr),
@@ -124,17 +99,18 @@ public:
             throw invalid_argument("DifferentParticleType debe estar entre 1 y 6.");
         }
 
-        // Asignar rutas de archivos
-        if (filePaths.size() < static_cast<size_t>(dpt)) {
-            throw invalid_argument("Se requieren suficientes rutas de archivo para el número de tipos de partículas especificado.");
+        // Asignar modelos
+        if (models.size() < dpt) {
+            throw invalid_argument("Se requieren suficientes primitivas para el número de tipos de partículas especificado.");
         }
 
-        filePath1 = filePaths.size() > 0 ? filePaths[0] : "";
-        filePath2 = filePaths.size() > 1 ? filePaths[1] : "";
-        filePath3 = filePaths.size() > 2 ? filePaths[2] : "";
-        filePath4 = filePaths.size() > 3 ? filePaths[3] : "";
-        filePath5 = filePaths.size() > 4 ? filePaths[4] : "";
-        filePath6 = filePaths.size() > 5 ? filePaths[5] : "";
+        particle1 = models.size() > 0 ? models[0] : nullptr;
+        particle2 = models.size() > 1 ? models[1] : nullptr;
+        particle3 = models.size() > 2 ? models[2] : nullptr;
+        particle4 = models.size() > 3 ? models[3] : nullptr;
+        particle5 = models.size() > 4 ? models[4] : nullptr;
+        particle6 = models.size() > 5 ? models[5] : nullptr;
+
     }
 
     // Constructor para usar primitivas geométricas
@@ -177,7 +153,7 @@ public:
         }
 
         // Asignar primitivas
-        if (primitives.size() < static_cast<size_t>(dpt)) {
+        if (primitives.size() < dpt) {
             throw invalid_argument("Se requieren suficientes primitivas para el número de tipos de partículas especificado.");
         }
 
@@ -209,18 +185,6 @@ public:
 
     inline int getLifetimeParticle() const { return this->lifetimePerParticle; }
 
-
-    inline string GetFilePath(int index) const {
-        switch (index) {
-        case 1: return filePath1;
-        case 2: return filePath2;
-        case 3: return filePath3;
-        case 4: return filePath4;
-        case 5: return filePath5;
-        case 6: return filePath6;
-        default: throw out_of_range("Índice fuera de rango.");
-        }
-    }
     inline Solid* GetParticle(int index) const {
         switch (index) {
         case 1: return particle1;

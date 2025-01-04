@@ -4,7 +4,10 @@ void DebugScene::Init() {
 
 
 
-	WideBarrel* bar1 = new WideBarrel();
+	b1->SetPosition(Vector3D(0,  -2.5, -15));
+	b2->SetPosition(Vector3D(-2, -2.5,-15));
+	b3->SetPosition(Vector3D(-3, -2.5,-15));
+	b4->SetPosition(Vector3D(-4, -2.5,-15));
 	
 
 	carretera->SetPosition(Vector3D(0, -4, -60));
@@ -22,15 +25,21 @@ void DebugScene::Init() {
 	sep4->SetColor(Color(1, 1, 1, 1));
 	
 
-	bar1->SetPosition(Vector3D(0,0,15));
+	
 
-	vector<string> filepathspw = { "Rayo.obj" , "Escudo.obj" , "SpeedFactor.obj"  ,"Corazon.obj"};
+	
 
-	EmitterConfiguration conf(filepathspw, 4,20,1,1, 500,500,1000,false,false,Vector3D(0,1,0));
+	//EmitterConfiguration conf(filepathspw, 4,20,1,1, 500,500,1000,false,false,Vector3D(0,1,0));
 
 	emDebug->setConfiguration(conf);
 
-	AddGameObject(bar1);
+
+
+	
+	AddGameObject(b1);
+	AddGameObject(b2);
+	AddGameObject(b3);
+	AddGameObject(b4);
 	//AddGameObject(emDebug);
 	AddGameObject(carretera);
 	AddGameObject(sep1);

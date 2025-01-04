@@ -1,15 +1,32 @@
 #pragma once
 #include "Barrel.h"
-class DDBarrel : public Barrel
+class DDBarrel :
+    public Barrel
 {
+private:
 
-public:
-	DDBarrel() : Barrel()
-	{
-		this->SetSpeed(Vector3D(0, 0, 0.3));
-		this->setTypeBarrel(Barrel::DoubleDamage);
-		this->PaintColor(Color(0.3, 0.3, 0.3, 1));
-	}
+    ModelLoader loader;
 
+public : 
+
+    DDBarrel() : Barrel() {
+
+        this->loader.SetScale(1);
+        this->loader.LoadModel("barrel_k2.obj");
+        this->SetModel(loader.GetModel());
+        this->setTypeBarrel(BarrelType::DoubleDamage);
+        this->PaintBarrel(Color(0.2, 0.2, 0.2, 1));
+        this->SetSpeed(Vector3D(0, 0, 0.35));
+        this->SetOrientation(Vector3D(0, 0, 90));
+        this->SetOrientationSpeed(Vector3D(3, 0, 0));
+    
+    }
+
+
+    Solid* Clone() {
+    
+        return new DDBarrel(*this);
+    
+    }
 };
 

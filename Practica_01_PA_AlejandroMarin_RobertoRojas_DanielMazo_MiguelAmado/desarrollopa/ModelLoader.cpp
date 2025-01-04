@@ -87,7 +87,7 @@ Triangle ModelLoader::center(Triangle triangle) {
 		this->minY + this->GetHeight() / 2.0,
 		this->minZ + this->GetLength() / 2.0);
 
-	Triangle centeredTriangle = Triangle(triangle.GetV0() - modelCenter,
+	Triangle centeredTriangle(triangle.GetV0() - modelCenter,
 		triangle.GetV1() - modelCenter,
 		triangle.GetV2() - modelCenter,
 		triangle.GetN0(),

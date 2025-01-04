@@ -35,7 +35,7 @@ public:
 	//virtual void Reset();
 
 	virtual void cambioEscena(){}
-	virtual void Reset() = 0;
+	//virtual void Reset() = 0;
 		
 	virtual void ProcessKeyPressed(unsigned char key, int px, int py);
 	virtual void ProcessSpecialKeyPressed(int key, int px, int py);

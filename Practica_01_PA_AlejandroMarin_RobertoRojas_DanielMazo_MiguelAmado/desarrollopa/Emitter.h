@@ -23,9 +23,6 @@ private:
     long nextInterval;
 
     int currentBurstSize;
-    
-    ModelLoader loader;
-
 
     int generateRandom(int min, int max);
 

@@ -72,23 +72,14 @@ void Emitter::Update(const float& timeUpdate)
 		
 				Solid* newParticle;
 
-			
-		
 			srand((time(0)));
 			int generatedparticle = (rand() % conf.getDPT() + 1);
 
-			if (conf.IsUsingModels()) {
-
-				loader.LoadModel(conf.GetFilePath(generatedparticle));
-				newParticle = conf.GetParticle(generatedparticle)->Clone();
-				*newParticle = loader.GetModel();
-				
-
-			} else {
-
-				newParticle = conf.GetParticle(generatedparticle)->Clone();
 			
-		    }
+				
+		    newParticle = conf.GetParticle(generatedparticle)->Clone();
+			
+		    
 
 			// Generar un desplazamiento solo en el eje Z
 			Vector3D basePosition = this->GetPosition();
@@ -113,15 +104,7 @@ void Emitter::Update(const float& timeUpdate)
 
 
 			}
-			else {
 			
-				// los modelos se precolorean 
-				newParticle->SetSpeed(conf.getSpeedConf());
-				newParticle->SetOrientation(conf.getOrientationConf());
-				newParticle->SetOrientationSpeed(conf.getOrientationSpeedConf());
-			
-			
-			}
 
 
 

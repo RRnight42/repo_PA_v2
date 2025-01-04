@@ -130,6 +130,7 @@
   <ItemGroup>
     <ClCompile Include="Barrel.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Coin.cpp" />
     <ClCompile Include="Color.cpp" />
     <ClCompile Include="Cube.cpp" />
     <ClCompile Include="Cuboid.cpp" />
@@ -161,7 +162,6 @@
     <ClCompile Include="SpeedBarrel.cpp" />
     <ClCompile Include="SpeedReduce.cpp" />
     <ClCompile Include="Sphere.cpp" />
-    <ClCompile Include="SwitchBarrel.cpp" />
     <ClCompile Include="Teapot.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="Torus.cpp" />
@@ -174,6 +174,7 @@
   <ItemGroup>
     <ClInclude Include="Barrel.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Coin.h" />
     <ClInclude Include="Color.h" />
     <ClInclude Include="Cube.h" />
     <ClInclude Include="Cuboid.h" />
@@ -204,7 +205,6 @@
     <ClInclude Include="SpeedBarrel.h" />
     <ClInclude Include="SpeedReduce.h" />
     <ClInclude Include="Sphere.h" />
-    <ClInclude Include="SwitchBarrel.h" />
     <ClInclude Include="Teapot.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="Torus.h" />
