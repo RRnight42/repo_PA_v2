@@ -17,7 +17,7 @@ public:
 	WinScene() : Scene() {}
 
 	void Init();
-	//void Reset();
+	
 
 	void ProcessKeyPressed(unsigned char key, int px, int py);
 	void ProcessSpecialKeyPressed(int key, int px, int py);

@@ -77,10 +77,13 @@ void Game::Update()
 		}
 		else if (this->activeScene == this->win || this->activeScene == this->lose) {
 			this->lvl1->endScene(false);
+			//this->lvl2->endScene(false);
+			//this->lvl3->endScene(false);
+			
 			this->activeScene = lvl1;
 		}
 		else if (this->activeScene == this->lvl1) {
-			if (this->lvl1->GetVictoryCondition()) {
+			if (this->lvl1->hasEndedScene()) {
 				this->win->endScene(false);
 				this->activeScene = win;
 			}

@@ -7,14 +7,18 @@ using namespace std;
 
 class Text : public Solid
 {
-private:
-    string texto;
+
 
 public:
     enum textType { TimesNewRoman10, TimesNewRoman24, Helvetica10, Helvetica12, Helvetica18 };
 
+
+private:
+
+    string texto;
     textType tipo;
 
+public : 
     // Constructor base
     Text(string text = "NewText", textType type = TimesNewRoman10, Color color = Color())
         : Solid(), texto(text), tipo(type) {

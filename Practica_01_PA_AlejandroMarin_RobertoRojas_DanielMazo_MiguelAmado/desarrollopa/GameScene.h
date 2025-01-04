@@ -23,6 +23,12 @@ using namespace std;
 
 class GameScene : public Scene
 {
+
+public:
+	
+	enum Level {Level1 , Level2 , Level3 , Level4, Level5};
+
+
 private:
 
 	Player* player = new Player();
@@ -37,10 +43,6 @@ private:
 	Cuboid* sep3 = new Cuboid(0.5, 2, 160);
 	Cuboid* sep4 = new Cuboid(0.5, 2, 160);
 
-	vector <string> archivosModelos1 = {"","","" ,"" ,""}; 
-	vector <string> archivosModelos2 = { "","","" ,"" ,"" };
-	vector <Solid*> vectorParticulasPowerUps = {};
-	
 	Emitter* emitterBarrelC1 = new Emitter();
 	Emitter* emitterBarrelC2 = new Emitter();
 	Emitter* emitterBarrelC3 = new Emitter();
@@ -66,13 +68,12 @@ private:
 	const float reduce = 0.5;
 	chrono::steady_clock::time_point timePowerUp;
 
-	bool condVictoria = false;
-
-public:
 	
-	enum Level {Level1 , Level2 , Level3 , Level4, Level5};
 
 	Level level;
+
+
+public : 
 	
 	inline Level getLevel() const { return this->level;}
 
@@ -108,7 +109,5 @@ public:
 
 	void Update(const float& timeUpdate);
 	
-	inline bool GetVictoryCondition() const { return this->condVictoria; }
-	inline void SetVictoryCondition(const bool& cond) { this->condVictoria = cond; }
 };
 

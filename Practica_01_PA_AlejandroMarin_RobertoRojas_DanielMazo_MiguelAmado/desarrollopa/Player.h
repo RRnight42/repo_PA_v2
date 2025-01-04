@@ -9,6 +9,11 @@
 class Player : public Solid
 {
 
+public : 
+
+    enum PowerUp { None, Ray, Shield, SpeedReduce };
+
+
 private:
 
     MaterialModel model;
@@ -26,7 +31,7 @@ private:
 public:
 
     UICanva* uiCanva = nullptr;
-    enum PowerUp { None, Ray, Shield, SpeedReduce };
+  
 
     PowerUp powerUp;
     

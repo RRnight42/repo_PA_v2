@@ -24,6 +24,8 @@ public:
 	inline Camera GetCamera() const { return this->camera; }
 
 	inline bool hasEndedScene() const { return this->sceneHasEnded; }
+
+
 	inline void endScene(const bool& End) { this->sceneHasEnded = End; }
 
 
@@ -31,6 +33,9 @@ public:
 	virtual void Render();
 	virtual void Update(const float& timeUpdate);
 	//virtual void Reset();
+
+	virtual void cambioEscena(){}
+	virtual void Reset() = 0;
 		
 	virtual void ProcessKeyPressed(unsigned char key, int px, int py);
 	virtual void ProcessSpecialKeyPressed(int key, int px, int py);
