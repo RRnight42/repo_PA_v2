@@ -18,20 +18,27 @@ private:
 
 public:
 
-    PowerUp(Model model) {
+    PowerUp() {}
 
-        this->itemModel = model;
+    inline PowerUpType GetType() const { return this->type; }
+    inline void setTypePowerUp(const PowerUpType& pwt) { this->type = pwt; }
+
+    inline void SetModel(const Model& mdl) { this->itemModel = mdl; }
+
+    inline void PaintPowerUp(const Color& c) { this->itemModel.PaintColor(c); }
+
+
+    void Render() {
+
+        this->itemModel.SetPosition(this->GetPosition());
+        this->itemModel.SetOrientation(this->GetOrientation());
+        this->itemModel.SetSpeed(this->GetSpeed());
+        this->itemModel.SetOrientationSpeed(this->GetOrientationSpeed());
+        this->itemModel.Render();
 
     }
 
-    inline PowerUpType GetType() const { return this->type; }
-    inline void SetType(const PowerUpType& puSet) { this->type = puSet; }
-
-    inline Model GetItemModel() const { return this->itemModel; }
-    inline void SetItemModel(const Model& model) { this->itemModel = model; }
-
-    void Render();
-    Solid* Clone();
+    virtual  Solid* Clone() = 0;
 };
 
 

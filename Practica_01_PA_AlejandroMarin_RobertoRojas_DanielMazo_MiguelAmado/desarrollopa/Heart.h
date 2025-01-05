@@ -13,39 +13,53 @@ public:
 private:
 
     TypeHeart typeheart;
+    ModelLoader loader;
 
 public:
 
 
-    Heart(Model model) : PowerUp(model) {
+    Heart() : PowerUp() {
 
 
-        this->SetType(PowerUp::Heart);
+       
         srand(static_cast<unsigned>(time(0)));
         this->typeheart = static_cast<TypeHeart>(rand() % 3);
 
+        loader.SetScale(0.5);
+        loader.LoadModel("Corazon.obj");
+        this->setTypePowerUp(PowerUp::Heart);
+        this->SetModel(loader.GetModel());
+        this->SetSpeed(Vector3D(0, 0, 0.6));
+        this->SetOrientationSpeed(Vector3D(0, 3, 0));
 
         switch (this->typeheart) {
 
 
         case NormalHeart:
-            model.PaintColor(Color(1, 0, 0, 1));
+            this->PaintPowerUp((Color(1, 0, 0, 1)));
             break;
 
         case SuperHeart:
-            model.PaintColor(Color(1, 1, 0, 1));
+            this->PaintPowerUp((Color(1, 1, 0, 1)));
             break;
 
         case PoisonHeart:
-            model.PaintColor(Color(0.31, 0.11, 0.36, 1));
+            this->PaintPowerUp((Color(0.31, 0.11, 0.36, 1)));
             break;
 
 
         }
 
-
+        
 
     }
 
     inline TypeHeart getHeartType() const { return this->typeheart; }
+
+    Solid* Clone() {
+    
+        return new Heart(*this);
+    
+    
+    }
 };

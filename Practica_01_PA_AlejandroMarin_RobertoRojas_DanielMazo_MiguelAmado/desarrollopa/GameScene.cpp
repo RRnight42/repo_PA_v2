@@ -79,7 +79,7 @@ void GameScene::Init() {
 	}
 	
 	AddGameObject(player);
-	AddGameObject(shield);
+	//AddGameObject(shield);
 
 	AddGameObject(canva);
 	AddGameObject(carretera);

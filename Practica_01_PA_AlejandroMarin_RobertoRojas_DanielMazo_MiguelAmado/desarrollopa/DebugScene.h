@@ -39,7 +39,10 @@ private:
     DDBarrel* b3 = new DDBarrel();
     SpeedBarrel* b4 = new SpeedBarrel();
     
-
+    Ray* p1 = new Ray();
+    Shield* p2 = new Shield();
+    Heart* p3 = new Heart();
+    SpeedReduce* p4 = new SpeedReduce();
 
 public: 
     
