@@ -16,8 +16,7 @@
 #include <vector>
 #include <string>
 
-class DebugScene :
-    public Scene
+class DebugScene : public Scene
 {
 private:
 
@@ -51,5 +50,6 @@ public:
 
 
     void Init();
+    //void Reset();
 };
 

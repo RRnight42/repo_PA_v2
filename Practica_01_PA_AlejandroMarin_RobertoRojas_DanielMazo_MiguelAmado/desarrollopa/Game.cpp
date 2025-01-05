@@ -15,8 +15,8 @@ void Game::Init()
 	
 
 	// solo para debug
-	//this->activeScene = lvl1;
-     this->activeScene = debug;
+	this->activeScene = menu;
+    //this->activeScene = debug;
 
 
 	scenes.push_back(menu);
@@ -79,7 +79,9 @@ void Game::Update()
 			this->lvl1->endScene(false);
 			//this->lvl2->endScene(false);
 			//this->lvl3->endScene(false);
-			
+
+			this->lvl1->Reset();
+
 			this->activeScene = lvl1;
 		}
 		else if (this->activeScene == this->lvl1) {

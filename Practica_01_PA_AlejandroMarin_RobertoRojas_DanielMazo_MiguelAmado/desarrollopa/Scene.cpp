@@ -5,9 +5,7 @@ void Scene::AddGameObject(Solid* gameObjectToAdd)
 	this->gameObjects.push_back(gameObjectToAdd);
 }
 
-void Scene::Init() 
-{
-}
+void Scene::Init() {}
 
 void Scene::Render() 
 {
@@ -29,8 +27,9 @@ void Scene::Update(const float& timeUpdate)
 
     }
 }
-//void Scene::Reset() {}
-
+void Scene::ClearGameObject() {
+	this->gameObjects.clear();
+}
 
 void Scene::ProcessKeyPressed(unsigned char key, int px, int py) {}
 

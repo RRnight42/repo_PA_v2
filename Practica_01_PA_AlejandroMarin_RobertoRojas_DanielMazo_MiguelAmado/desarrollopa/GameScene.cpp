@@ -108,7 +108,6 @@ void GameScene::Update(const float& timeUpdate) {
 
 	powerUpCollisions();
 	barrelCollisions();
-	
 
 	if (shieldEffect || speedEffect) {
 		auto elapsed = chrono::steady_clock::now() - timePowerUp;
@@ -128,6 +127,135 @@ void GameScene::Update(const float& timeUpdate) {
 
 }
 
+void GameScene::Reset() {
+
+	this->ClearGameObject();
+	delete player;
+	player = nullptr;
+	player = new Player();
+	delete shield;
+	shield = nullptr;
+
+	delete carretera;
+	carretera = nullptr;
+	delete sep1;
+	sep1 = nullptr;
+	delete sep2;
+	sep2 = nullptr;
+	delete sep3;
+	sep3 = nullptr;
+	delete sep4;
+	sep4 = nullptr;
+
+	delete emitterBarrelC1;
+	emitterBarrelC1 = nullptr;
+	delete emitterBarrelC2;
+	emitterBarrelC2 = nullptr;
+	delete emitterBarrelC3;
+	emitterBarrelC3 = nullptr;
+	delete emitterWideBarrel1;
+	emitterWideBarrel1 = nullptr;
+	delete emitterWideBarrel2;
+	emitterWideBarrel2 = nullptr;
+	delete emitterPowerUp1;
+	emitterPowerUp1 = nullptr;
+	delete emitterPowerUp2;
+	emitterPowerUp2 = nullptr;
+	delete emitterPowerUp3;
+	emitterPowerUp3 = nullptr;
+
+	barrelEmitters.clear();
+	powerUpEmitters.clear();
+
+	delete canva;
+	canva = nullptr;
+
+	shieldEffect = false;
+	speedEffect = false;
+
+	shield = new Sphere(0.18, 15, 10);
+
+	carretera = new Cuboid(10, 2, 150);
+	sep1 = new Cuboid(0.5, 2, 160);
+	sep2 = new Cuboid(0.5, 2, 160);
+	sep3 = new Cuboid(0.5, 2, 160);
+	sep4 = new Cuboid(0.5, 2, 160);
+
+	emitterBarrelC1 = new Emitter();
+	emitterBarrelC2 = new Emitter();
+	emitterBarrelC3 = new Emitter();
+
+	emitterWideBarrel1 = new Emitter();
+	emitterWideBarrel2 = new Emitter();
+
+	emitterPowerUp1 = new Emitter();
+	emitterPowerUp2 = new Emitter();
+	emitterPowerUp3 = new Emitter();
+
+	canva = new UICanva();
+
+	ModelLoader loader;
+	MaterialModelLoader* loaderMaterial = new MaterialModelLoader(0.12);
+
+	loaderMaterial->LoadModel("Player.obj");
+
+	player->SetPosition(Vector3D(0, -0.3, 18.7));
+	player->setModelPlayer(loaderMaterial->GetMaterialModel());
+
+	player->setCarril(2);
+
+	player->setUICanva(canva);
+
+
+	shield->SetOrientationSpeed(Vector3D(0, 5, 0));
+	shield->SetPosition(player->GetPosition());
+
+	player->SetOrientationSpeed(Vector3D(0, 3, 0));
+
+	canva->InitUI();
+	canva->SetPosition(Vector3D(0, 0, 19));
+	carretera->SetPosition(Vector3D(0, -4, -60));
+	sep1->SetPosition(Vector3D(-1.7, -3.95, -60));
+	sep2->SetPosition(Vector3D(-5, -3.95, -60));
+	sep3->SetPosition(Vector3D(1.7, -3.95, -60));
+	sep4->SetPosition(Vector3D(5, -3.95, -60));
+
+
+	carretera->SetColor(Color(0, 0, 0, 1));
+
+	sep1->SetColor(Color(1, 1, 1, 1));
+	sep2->SetColor(Color(1, 1, 1, 1));
+	sep3->SetColor(Color(1, 1, 1, 1));
+	sep4->SetColor(Color(1, 1, 1, 1));
+	shield->SetColor(Color(0, 1, 1, 0.35));
+
+	emitterBarrelC1->SetPosition(Vector3D(-3.45, -2, -40));
+	emitterBarrelC2->SetPosition(Vector3D(0, -2, -40));
+	emitterBarrelC3->SetPosition(Vector3D(3.45, -2, -40));
+
+	emitterPowerUp1->SetPosition(Vector3D(-3.45, -2, -40));
+	emitterPowerUp2->SetPosition(Vector3D(0, -2, -40));
+	emitterPowerUp3->SetPosition(Vector3D(3.45, -2, -40));
+
+
+	barrelEmitters.push_back(emitterBarrelC1);
+	barrelEmitters.push_back(emitterBarrelC2);
+	barrelEmitters.push_back(emitterBarrelC3);
+
+	powerUpEmitters.push_back(emitterPowerUp1);
+	powerUpEmitters.push_back(emitterPowerUp2);
+	powerUpEmitters.push_back(emitterPowerUp3);
+
+	AddGameObject(player);
+	//AddGameObject(shield);
+
+	AddGameObject(canva);
+	AddGameObject(carretera);
+	AddGameObject(sep1);
+	AddGameObject(sep2);
+	AddGameObject(sep3);
+	AddGameObject(sep4);
+}
 
 
 void GameScene::usePowerUpPlayer() {
@@ -302,4 +430,31 @@ void GameScene::ProcessKeyPressed(unsigned char key, int px, int py) {
 
      }
 
+}
+
+void GameScene::ProcessSpecialKeyPressed(int key, int px, int py) {
+
+	switch (key) {
+
+	case GLUT_KEY_LEFT:
+		if (player->getCarril() == 1) {}
+		else {
+			player->setCarril(player->getCarril() - 1);
+			player->SetPosition(player->GetPosition() - Vector3D(0.45, 0, 0));
+			shield->SetPosition(player->GetPosition());
+		}
+		break;
+
+	case GLUT_KEY_RIGHT:
+		if (player->getCarril() == 3) {}
+		else {
+			player->setCarril(player->getCarril() + 1);
+			player->SetPosition(player->GetPosition() + Vector3D(0.45, 0, 0));
+			shield->SetPosition(player->GetPosition());
+		}
+		break;
+
+	default:
+		break;
+	}
 }

@@ -21,6 +21,7 @@ public:
 
 	LoseScene() : Scene() {}
 
+	
 	void Init();
 	//void Reset();
 

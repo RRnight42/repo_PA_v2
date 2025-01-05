@@ -35,8 +35,10 @@ public:
 	//virtual void Reset();
 
 	virtual void cambioEscena(){}
-	//virtual void Reset() = 0;
-		
+	//virtual void Reset();
+	
+	void ClearGameObject();
+	
 	virtual void ProcessKeyPressed(unsigned char key, int px, int py);
 	virtual void ProcessSpecialKeyPressed(int key, int px, int py);
  	virtual void ProcessMouseMovement(int x, int y) ;

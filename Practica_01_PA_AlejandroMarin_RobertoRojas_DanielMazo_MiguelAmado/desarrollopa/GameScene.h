@@ -33,7 +33,6 @@ private:
 
 	Player* player = new Player();
 
-
 	Sphere* shield = new Sphere(0.18, 15, 10);
 	
 
@@ -55,7 +54,6 @@ private:
 	Emitter* emitterPowerUp3 = new Emitter();
 
 	UICanva* canva = new UICanva();
-
 
 	// powerups 
 
@@ -87,6 +85,8 @@ public :
 
 	void Init();
 
+	void Reset();
+
 	// player 
 	
 	void powerUpCollisions();
@@ -105,7 +105,7 @@ public :
 	//inputs
 
 	void ProcessKeyPressed(unsigned char key, int px, int py);
-
+	void ProcessSpecialKeyPressed(int key, int px, int py);
 
 	void Update(const float& timeUpdate);
 	
