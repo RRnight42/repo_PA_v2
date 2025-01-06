@@ -52,9 +52,9 @@ public:
     inline void setModelPlayer(const MaterialModel& mS) { this->model = mS; }
 
     int usePowerUp();
-    void AddLive();
-    void LoseLive();
-    void addCoins();
+    void AddLive(const int& amount);
+    void LoseLive(const int& amount);
+    void addCoin();
     void setUICanva(UICanva* ui);
     void notifyUICanva();
 

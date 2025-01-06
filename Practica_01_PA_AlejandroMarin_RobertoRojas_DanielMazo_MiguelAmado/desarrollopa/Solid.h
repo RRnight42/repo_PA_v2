@@ -5,6 +5,10 @@
 
 class Solid
 {
+
+
+
+
 private:
 	Vector3D position;
 	Vector3D orientation;
@@ -43,7 +47,6 @@ public:
 
 	virtual void Render() = 0;
 	virtual void Update(const float& timeUpdate);
-
 
 
 	virtual Solid* Clone() = 0;

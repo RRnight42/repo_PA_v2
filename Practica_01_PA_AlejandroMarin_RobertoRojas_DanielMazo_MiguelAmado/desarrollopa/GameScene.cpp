@@ -1,5 +1,7 @@
 #include "GameScene.h"
 #include "Player.h"
+#include "Barrel.h"
+#include "PowerUp.h"
 #include<random>
 
 void GameScene::Init() {
@@ -301,13 +303,11 @@ void GameScene::recogerPowerUp(const int& nuevoPowerUp) {
 void GameScene::powerUpCollisions() {
 	// Iterar sobre los emisores de power-ups
 	for (Emitter* emisor : powerUpEmitters) {
-		for (Solid* particle : emisor->getParticles()) {
-
-			PowerUp* powerUp = static_cast<PowerUp*>(particle);
+		for (Solid* powerUp : emisor->getParticles()) {
 
 			if (player->GetPosition().Distance(powerUp->GetPosition()) < player->getDistanceColission()) {
 				// Colisión detectada: recoger el power-up
-				recogerPowerUp(static_cast<Player::PowerUp>(powerUp->GetType()));
+				recogerPowerUp(powerUp->GetType());
 
 				emisor->removeParticle(powerUp);
 				break; 
@@ -318,8 +318,34 @@ void GameScene::powerUpCollisions() {
 
 void GameScene::barrelCollisions() {
 
+	for (Emitter* emisor : barrelEmitters) {
+		for (Solid* barrel : emisor->getParticles()) {
 
+		if(barrel.getTypeBarrel() = Barrel::BarrelType::WideBarrel){
+
+			if (player->GetPosition().Distance(barrel->GetPosition()) < player->getDistanceColissionWide()) {
+				
+				player->LoseLive(1);
+
+				emisor->removeParticle(barrel);
+				break;
+			}
+
+		} else {
+
+			if (player->GetPosition().Distance(barrel->GetPosition()) < player->getDistanceColission()) {
+				
+				player->LoseLive(1);
+
+				emisor->removeParticle(barrel);
+				break;
+			}
+		}
+		
+		}
+	}
 }
+
 
 void GameScene::activateRay() {
 

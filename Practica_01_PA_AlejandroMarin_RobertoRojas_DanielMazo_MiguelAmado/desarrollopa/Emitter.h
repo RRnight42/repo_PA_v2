@@ -50,5 +50,7 @@ public:
     
     Vector3D randomPositionOffsetZ(int particleId);
 
+    Solid* generateSolidByProbability(const vector<pair<Solid*, float>>& solidsWithProbabilities);
+
     Solid* Clone();
 };

@@ -18,6 +18,7 @@
 #include "Shield.h"
 #include "Heart.h"
 #include "SpeedReduce.h"
+#include"Barrel.h"
 
 using namespace std;
 

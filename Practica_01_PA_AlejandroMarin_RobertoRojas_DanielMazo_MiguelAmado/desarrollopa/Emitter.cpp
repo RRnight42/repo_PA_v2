@@ -15,6 +15,35 @@ void Emitter::Render()
 	}
 }
 
+// funcion de probabilidades///
+
+Solid* Emitter::generateSolidByProbability(const vector<pair<Solid*, float>>& solidsWithProbabilities) {
+	// Calcular la suma de las probabilidades (por si no suman exactamente 1.0)
+	float totalProbability = 0.0f;
+	for (const auto& entry : solidsWithProbabilities) {
+		totalProbability += entry.second;
+	}
+
+	// Generar un número aleatorio entre 0.0 y el total de probabilidades
+	random_device rd;
+	mt19937 gen(rd());
+	uniform_real_distribution<float> dis(0.0f, totalProbability);
+
+	float randomValue = dis(gen);
+	float cumulative = 0.0f;
+
+	// Evaluar qué probabilidad corresponde al valor generado
+	for (const auto& entry : solidsWithProbabilities) {
+		cumulative += entry.second;
+		if (randomValue <= cumulative) {
+			return entry.first->Clone();
+		}
+	}
+
+	return nullptr; // No debería llegar aquí
+}
+
+
 
 
 void Emitter::Update(const float& timeUpdate)
@@ -70,16 +99,7 @@ void Emitter::Update(const float& timeUpdate)
 			int particleID = particlesVector.size();
 
 		
-				Solid* newParticle;
-
-			srand((time(0)));
-			int generatedparticle = (rand() % conf.getDPT() + 1);
-
-			
-				
-		    newParticle = conf.GetParticle(generatedparticle)->Clone();
-			
-		    
+			Solid* newParticle = generateSolidByProbability(conf.getVectorAndProbabilites());
 
 			// Generar un desplazamiento solo en el eje Z
 			Vector3D basePosition = this->GetPosition();

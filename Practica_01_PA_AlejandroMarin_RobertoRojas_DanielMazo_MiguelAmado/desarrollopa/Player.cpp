@@ -9,25 +9,30 @@ void Player::Render() {
 }
 
 
-void Player::AddLive() {
+void Player::AddLive(const int& amount) {
 
 
     if (lives == 3){
     
     }else{
-    this->lives += 1;
+    this->lives += amount;
    
+    }
+
+    if (lives > 3) {
+    
+        lives = 3;
     }
 }
 
 
-void Player::LoseLive() {
+void Player::LoseLive(const int& amount) {
 
-    this->lives -= 1;
+    this->lives -= amount;
     
 }
 
-void Player::addCoins() {
+void Player::addCoin() {
     this->coinsValue += 1;
 
 }
