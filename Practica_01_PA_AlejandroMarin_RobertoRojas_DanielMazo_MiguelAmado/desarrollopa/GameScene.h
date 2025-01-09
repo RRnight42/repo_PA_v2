@@ -47,12 +47,16 @@ private:
 	Emitter* emitterBarrelC2 = new Emitter();
 	Emitter* emitterBarrelC3 = new Emitter();
 
-	Emitter* emitterWideBarrel1 = new Emitter();
-	Emitter* emitterWideBarrel2 = new Emitter();
+	Emitter* emitterWideBarrelC1 = new Emitter();
+	Emitter* emitterWideBarrelC2 = new Emitter();
 
-	Emitter* emitterPowerUp1 = new Emitter();
-	Emitter* emitterPowerUp2 = new Emitter();
-	Emitter* emitterPowerUp3 = new Emitter();
+	Emitter* emitterPowerUpC1 = new Emitter();
+	Emitter* emitterPowerUpC2 = new Emitter();
+	Emitter* emitterPowerUpC3 = new Emitter();
+
+	Emitter* emitterCoinsC1 = new Emitter();
+	Emitter* emitterCoinsC2 = new Emitter();
+	Emitter* emitterCoinsC3 = new Emitter();
 
 	UICanva* canva = new UICanva();
 

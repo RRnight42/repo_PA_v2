@@ -200,7 +200,7 @@ Vector3D Emitter::randomSpeed(int particleId) {
 	return spdReturn * 0.05f;
 }
 
-void Emitter::removeParticle(Solid* particle) {
+void Emitter::removeParticle(Item* particle) {
 	for (int i = 0; i < particlesVector.size(); i++) {
 		
 		if (particlesVector[i] == particle) {
@@ -215,7 +215,7 @@ void Emitter::removeParticle(Solid* particle) {
 }
 
 void Emitter::clearParticles() {
-	for (Solid* particle : particlesVector) {
+	for (Item* particle : particlesVector) {
 		delete particle; 
 	}
 	particlesVector.clear(); 

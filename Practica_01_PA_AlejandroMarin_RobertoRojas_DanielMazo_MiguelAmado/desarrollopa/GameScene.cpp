@@ -48,24 +48,30 @@ void GameScene::Init() {
 	emitterBarrelC2->SetPosition(Vector3D(0, -2, -40));
 	emitterBarrelC3->SetPosition(Vector3D(3.45, -2, -40));
 
-	emitterPowerUp1->SetPosition(Vector3D(-3.45, -2, -40));
-	emitterPowerUp2->SetPosition(Vector3D(0, -2, -40));
-	emitterPowerUp3->SetPosition(Vector3D(3.45, -2, -40));
+	emitterPowerUpC1->SetPosition(Vector3D(-3.45, -2, -40));
+	emitterPowerUpC2->SetPosition(Vector3D(0, -2, -40));
+	emitterPowerUpC3->SetPosition(Vector3D(3.45, -2, -40));
+	
+	emitterCoinsC1->SetPosition(Vector3D(-3.45, -2, -40));
+	emitterCoinsC2->SetPosition(Vector3D(0, -2, -40));
+	emitterCoinsC3->SetPosition(Vector3D(3.45, -2, -40));
+
+	emitterWideBarrelC1->SetPosition(Vector3D(-1.7, -2, -40));
+	emitterWideBarrelC2->SetPosition(Vector3D(1.7, -2, -40));
+
+	
 
 
 	barrelEmitters.push_back(emitterBarrelC1);
 	barrelEmitters.push_back(emitterBarrelC2);
 	barrelEmitters.push_back(emitterBarrelC3);
+	barrelEmitters.push_back(emitterWideBarrelC1);
+	barrelEmitters.push_back(emitterWideBarrelC2);
 
 
 	if (this->getLevel() == this->Level1) {
 
-		//EmitterConfiguration confBarrelLevel1(1, 4, 1, 2, 3000, 7000, 7000, true, false, Vector3D(0, 0, 0.5), Vector3D(0, 90, 0), Vector3D(0, 0, 1), Color(1, 0, 0, 1), new Ray());		
-		//EmitterConfiguration confPowerUpLevel1(new PowerUp(this->loader), 3, 1, 1, 8000, 15000, 7000,true , false, Vector3D(0, 0, 0.5), Vector3D(0, 0, 0) , Vector3D(0,1,0));
-		
-	//	emitterBarrelC1->setConfiguration(confBarrelLevel1);
-	//	emitterBarrelC2->setConfiguration(confBarrelLevel1);
-	//	emitterBarrelC3->setConfiguration(confBarrelLevel1);
+	
 		
 	}else if (this->getLevel() == this->Level2) {
 
@@ -125,12 +131,12 @@ void GameScene::Update(const float& timeUpdate) {
 	this->emitterBarrelC2->checkCollisionsPlayer(*player);
 	this->emitterBarrelC3->checkCollisionsPlayer(*player);
 
-	this->emitterWideBarrel1->checkCollisionsPlayer(*player);
-	this->emitterWideBarrel2->checkCollisionsPlayer(*player);
+	this->emitterWideBarrelC1->checkCollisionsPlayer(*player);
+	this->emitterWideBarrelC2->checkCollisionsPlayer(*player);
 
-	this->emitterPowerUp1->checkCollisionsPlayer(*player);
-	this->emitterPowerUp2->checkCollisionsPlayer(*player);
-	this->emitterPowerUp3->checkCollisionsPlayer(*player);
+	this->emitterPowerUpC1->checkCollisionsPlayer(*player);
+	this->emitterPowerUpC2->checkCollisionsPlayer(*player);
+	this->emitterPowerUpC3->checkCollisionsPlayer(*player);
 
 	if (shieldEffect || speedEffect) {
 		auto elapsed = chrono::steady_clock::now() - timePowerUp;
@@ -176,16 +182,16 @@ void GameScene::Reset() {
 	emitterBarrelC2 = nullptr;
 	delete emitterBarrelC3;
 	emitterBarrelC3 = nullptr;
-	delete emitterWideBarrel1;
-	emitterWideBarrel1 = nullptr;
-	delete emitterWideBarrel2;
-	emitterWideBarrel2 = nullptr;
-	delete emitterPowerUp1;
-	emitterPowerUp1 = nullptr;
-	delete emitterPowerUp2;
-	emitterPowerUp2 = nullptr;
-	delete emitterPowerUp3;
-	emitterPowerUp3 = nullptr;
+	delete emitterWideBarrelC1;
+	emitterWideBarrelC1 = nullptr;
+	delete emitterWideBarrelC2;
+	emitterWideBarrelC2 = nullptr;
+	delete emitterPowerUpC1;
+	emitterPowerUpC1 = nullptr;
+	delete emitterPowerUpC2;
+	emitterPowerUpC2 = nullptr;
+	delete emitterPowerUpC3;
+	emitterPowerUpC3 = nullptr;
 
 	barrelEmitters.clear();
 	
@@ -208,12 +214,12 @@ void GameScene::Reset() {
 	emitterBarrelC2 = new Emitter();
 	emitterBarrelC3 = new Emitter();
 
-	emitterWideBarrel1 = new Emitter();
-	emitterWideBarrel2 = new Emitter();
+	emitterWideBarrelC1 = new Emitter();
+	emitterWideBarrelC2 = new Emitter();
 
-	emitterPowerUp1 = new Emitter();
-	emitterPowerUp2 = new Emitter();
-	emitterPowerUp3 = new Emitter();
+	emitterPowerUpC1 = new Emitter();
+	emitterPowerUpC2 = new Emitter();
+	emitterPowerUpC3 = new Emitter();
 
 	canva = new UICanva();
 
@@ -256,14 +262,23 @@ void GameScene::Reset() {
 	emitterBarrelC2->SetPosition(Vector3D(0, -2, -40));
 	emitterBarrelC3->SetPosition(Vector3D(3.45, -2, -40));
 
-	emitterPowerUp1->SetPosition(Vector3D(-3.45, -2, -40));
-	emitterPowerUp2->SetPosition(Vector3D(0, -2, -40));
-	emitterPowerUp3->SetPosition(Vector3D(3.45, -2, -40));
+	emitterPowerUpC1->SetPosition(Vector3D(-3.45, -2, -40));
+	emitterPowerUpC2->SetPosition(Vector3D(0, -2, -40));
+	emitterPowerUpC3->SetPosition(Vector3D(3.45, -2, -40));
+
+	emitterCoinsC1->SetPosition(Vector3D(-3.45, -2, -40));
+	emitterCoinsC2->SetPosition(Vector3D(0, -2, -40));
+	emitterCoinsC3->SetPosition(Vector3D(3.45, -2, -40));
+
+	emitterWideBarrelC1->SetPosition(Vector3D(-1.7, -2, -40));
+	emitterWideBarrelC2->SetPosition(Vector3D(1.7, -2, -40));
 
 
 	barrelEmitters.push_back(emitterBarrelC1);
 	barrelEmitters.push_back(emitterBarrelC2);
 	barrelEmitters.push_back(emitterBarrelC3);
+	barrelEmitters.push_back(emitterWideBarrelC1);
+	barrelEmitters.push_back(emitterWideBarrelC2);
 
 	AddGameObject(player);
 	AddGameObject(canva);

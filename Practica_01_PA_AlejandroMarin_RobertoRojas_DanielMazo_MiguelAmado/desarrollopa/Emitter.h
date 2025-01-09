@@ -47,7 +47,7 @@ public:
 
     inline void setConfiguration(const EmitterConfiguration& configuration) { this->conf = configuration; }
 
-    void removeParticle(Solid* particle);
+    void removeParticle(Item* particle);
     void clearParticles();
     
     Vector3D randomPositionOffsetZ(int particleId);
@@ -62,8 +62,10 @@ public:
 
                 player.applyCollisionEffect(particle->getCollisionEffect());
 
-
+                this->removeParticle(particle);
             }
+
+            
          }
     }
 

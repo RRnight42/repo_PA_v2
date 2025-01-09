@@ -36,10 +36,10 @@ void DebugScene::Init() {
 
 
 	
-	AddGameObject(p1);
-	AddGameObject(p2);
-	AddGameObject(p3);
-	AddGameObject(p4);
+	//AddGameObject(p1);
+	//AddGameObject(p2);
+	//AddGameObject(p3);
+	//AddGameObject(p4);
 	//AddGameObject(emDebug);
 	AddGameObject(carretera);
 	AddGameObject(sep1);
