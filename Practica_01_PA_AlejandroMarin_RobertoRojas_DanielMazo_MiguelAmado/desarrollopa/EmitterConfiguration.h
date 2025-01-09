@@ -17,6 +17,8 @@
 #include <ctime>
 #include <numeric>
 
+#include "item.h"
+
 using namespace std;
 
 class EmitterConfiguration

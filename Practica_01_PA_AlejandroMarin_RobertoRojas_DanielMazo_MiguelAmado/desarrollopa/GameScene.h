@@ -32,33 +32,32 @@ public:
 
 private:
 
-	Player* player = new Player();
+	Player* player;
 
-	Sphere* shield = new Sphere(0.18, 15, 10);
+	Sphere* shield;
 	
+	Cuboid* carretera;
+	Cuboid* sep1;
+	Cuboid* sep2;
+	Cuboid* sep3;
+	Cuboid* sep4;
 
-	Cuboid* carretera = new Cuboid(10, 2, 150);
-	Cuboid* sep1 = new Cuboid(0.5, 2, 160);
-	Cuboid* sep2 = new Cuboid(0.5, 2, 160);
-	Cuboid* sep3 = new Cuboid(0.5, 2, 160);
-	Cuboid* sep4 = new Cuboid(0.5, 2, 160);
+	Emitter* emitterBarrelC1;
+	Emitter* emitterBarrelC2;
+	Emitter* emitterBarrelC3;
 
-	Emitter* emitterBarrelC1 = new Emitter();
-	Emitter* emitterBarrelC2 = new Emitter();
-	Emitter* emitterBarrelC3 = new Emitter();
+	Emitter* emitterWideBarrelC1;
+	Emitter* emitterWideBarrelC2;
 
-	Emitter* emitterWideBarrelC1 = new Emitter();
-	Emitter* emitterWideBarrelC2 = new Emitter();
+	Emitter* emitterPowerUpC1;
+	Emitter* emitterPowerUpC2;
+	Emitter* emitterPowerUpC3;
 
-	Emitter* emitterPowerUpC1 = new Emitter();
-	Emitter* emitterPowerUpC2 = new Emitter();
-	Emitter* emitterPowerUpC3 = new Emitter();
+	Emitter* emitterCoinsC1;
+	Emitter* emitterCoinsC2;
+	Emitter* emitterCoinsC3;
 
-	Emitter* emitterCoinsC1 = new Emitter();
-	Emitter* emitterCoinsC2 = new Emitter();
-	Emitter* emitterCoinsC3 = new Emitter();
-
-	UICanva* canva = new UICanva();
+	UICanva* canva;
 
 	// powerups 
 
@@ -69,7 +68,8 @@ private:
 	const float reduce = 0.5;
 	chrono::steady_clock::time_point timePowerUp;
 
-	
+	ModelLoader loader;
+	MaterialModelLoader* loaderMaterial;
 
 	Level level;
 
