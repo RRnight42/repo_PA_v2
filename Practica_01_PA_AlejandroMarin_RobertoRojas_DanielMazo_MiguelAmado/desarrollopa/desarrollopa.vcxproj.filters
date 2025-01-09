@@ -177,6 +177,12 @@
     <ClCompile Include="WideBarrel.cpp">
       <Filter>Archivos de origen\Barrels</Filter>
     </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionEffect.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -304,6 +310,12 @@
     </ClInclude>
     <ClInclude Include="SpeedBarrel.h">
       <Filter>Archivos de encabezado\Barrels</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionEffect.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -20,11 +20,22 @@ public:
 		this->SetOrientationSpeed(Vector3D(0, 3, 0));
 	}
 	
-	Solid* Clone() {
-
-		return new SpeedReduce(*this);
-
-
+	CollisionEffect getCollisionEffect() {
+	
+	
+	
+		return CollisionEffect(0, 0, 3);
+	
+	
+	
 	}
+
+
+    Item* Clone() {
+
+        return new SpeedReduce(*this);
+
+
+    }
 };
 

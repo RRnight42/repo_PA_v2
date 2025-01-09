@@ -1,5 +1,7 @@
 #pragma once
 #include "Barrel.h"
+#include "CollisionEffect.h"
+
 class DDBarrel :
     public Barrel
 {
@@ -22,8 +24,13 @@ public :
     
     }
 
+     CollisionEffect getCollisionEffect() {
+    
+        return CollisionEffect(-2,0,0);
+    
+    }
 
-    Solid* Clone() {
+    Item* Clone() {
     
         return new DDBarrel(*this);
     

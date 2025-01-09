@@ -17,7 +17,7 @@ void Emitter::Render()
 
 // funcion de probabilidades///
 
-Solid* Emitter::generateSolidByProbability(const vector<pair<Solid*, float>>& solidsWithProbabilities) {
+Item* Emitter::generateSolidByProbability(const vector<pair<Item*, float>>& solidsWithProbabilities) {
 	// Calcular la suma de las probabilidades (por si no suman exactamente 1.0)
 	float totalProbability = 0.0f;
 	for (const auto& entry : solidsWithProbabilities) {
@@ -48,6 +48,7 @@ Solid* Emitter::generateSolidByProbability(const vector<pair<Solid*, float>>& so
 
 void Emitter::Update(const float& timeUpdate)
 {
+
 	milliseconds currentTime = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
 	long deltaTime = (currentTime.count() - this->initialMilliseconds.count()) - this->lastUpdateTime;
 
@@ -99,7 +100,7 @@ void Emitter::Update(const float& timeUpdate)
 			int particleID = particlesVector.size();
 
 		
-			Solid* newParticle = generateSolidByProbability(conf.getVectorAndProbabilites());
+			Item* newParticle = generateSolidByProbability(conf.getVectorAndProbabilites());
 
 			// Generar un desplazamiento solo en el eje Z
 			Vector3D basePosition = this->GetPosition();

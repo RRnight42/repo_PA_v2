@@ -24,11 +24,17 @@ public:
     }
 
 
-    Solid* Clone() {
+        CollisionEffect getCollisionEffect() {
 
-        return new SpeedBarrel(*this);
+            return CollisionEffect(-1, 0, 0);
 
-    }
+        }
+
+        Item* Clone() {
+
+            return new SpeedBarrel(*this);
+
+        }
 
 };
 

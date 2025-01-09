@@ -7,6 +7,8 @@
 #include <random>
 #include "EmitterConfiguration.h"
 #include "ModelLoader.h"
+#include "Item.h"
+#include "Player.h"
 
 using namespace std;
 using namespace chrono;
@@ -15,7 +17,7 @@ class Emitter : public Solid
 {
 private:
     EmitterConfiguration conf;
-    vector<Solid*> particlesVector;
+    vector<Item*> particlesVector;
     vector<long> particleCreationTimes; 
 
     milliseconds initialMilliseconds;
@@ -35,7 +37,7 @@ public:
         this->nextInterval = generateRandom(conf.GetMinInterval(), conf.GetMaxInterval());
     }
 
-    inline vector<Solid*> getParticles() { return this->particlesVector; }
+    inline vector<Item*> getParticles() { return this->particlesVector; }
 
     Color randomColor(int particleId);
     Vector3D randomSpeed(int particleId);
@@ -50,7 +52,20 @@ public:
     
     Vector3D randomPositionOffsetZ(int particleId);
 
-    Solid* generateSolidByProbability(const vector<pair<Solid*, float>>& solidsWithProbabilities);
+    Item* generateSolidByProbability(const vector<pair<Item*, float>>& solidsWithProbabilities);
+
+    void checkCollisionsPlayer(Player player) {
+
+        for (Item* particle : particlesVector) {
+
+            if (particle->Distance(player.GetPosition()) < player.getDistanceColission()) {
+
+                player.applyCollisionEffect(particle->getCollisionEffect());
+
+
+            }
+         }
+    }
 
     Solid* Clone();
 };

@@ -57,9 +57,6 @@ void GameScene::Init() {
 	barrelEmitters.push_back(emitterBarrelC2);
 	barrelEmitters.push_back(emitterBarrelC3);
 
-	powerUpEmitters.push_back(emitterPowerUp1); 
-	powerUpEmitters.push_back(emitterPowerUp2);
-	powerUpEmitters.push_back(emitterPowerUp3);
 
 	if (this->getLevel() == this->Level1) {
 
@@ -104,12 +101,36 @@ void GameScene::Init() {
 	//AddGameObject(emitterWideBarrel2);
 }
 
+
+void GameScene::Render() {
+
+	Scene::Render();
+
+	if (shieldEffect = true) {
+
+
+		shield->Render();
+
+	}
+
+
+
+}
+
 void GameScene::Update(const float& timeUpdate) {
 
 	Scene::Update(timeUpdate);
 
-	powerUpCollisions();
-	barrelCollisions();
+	this->emitterBarrelC1->checkCollisionsPlayer(*player);
+	this->emitterBarrelC2->checkCollisionsPlayer(*player);
+	this->emitterBarrelC3->checkCollisionsPlayer(*player);
+
+	this->emitterWideBarrel1->checkCollisionsPlayer(*player);
+	this->emitterWideBarrel2->checkCollisionsPlayer(*player);
+
+	this->emitterPowerUp1->checkCollisionsPlayer(*player);
+	this->emitterPowerUp2->checkCollisionsPlayer(*player);
+	this->emitterPowerUp3->checkCollisionsPlayer(*player);
 
 	if (shieldEffect || speedEffect) {
 		auto elapsed = chrono::steady_clock::now() - timePowerUp;
@@ -167,7 +188,7 @@ void GameScene::Reset() {
 	emitterPowerUp3 = nullptr;
 
 	barrelEmitters.clear();
-	powerUpEmitters.clear();
+	
 
 	delete canva;
 	canva = nullptr;
@@ -244,13 +265,7 @@ void GameScene::Reset() {
 	barrelEmitters.push_back(emitterBarrelC2);
 	barrelEmitters.push_back(emitterBarrelC3);
 
-	powerUpEmitters.push_back(emitterPowerUp1);
-	powerUpEmitters.push_back(emitterPowerUp2);
-	powerUpEmitters.push_back(emitterPowerUp3);
-
 	AddGameObject(player);
-	//AddGameObject(shield);
-
 	AddGameObject(canva);
 	AddGameObject(carretera);
 	AddGameObject(sep1);
@@ -289,62 +304,8 @@ void GameScene::usePowerUpPlayer() {
 		player->notifyUICanva();
 	}
 }
-void GameScene::recogerPowerUp(const int& nuevoPowerUp) {
-		
-		if (player->getCurrentPowerUp() != 0) {
-			cout << "Usa tu powerup antes de coger otro" << endl;
-		}else {
-		// Actualizar UICanva con el nuevo power-up
-		player->setPowerUp(nuevoPowerUp);
-		player->notifyUICanva();
-	}
-}
 
-void GameScene::powerUpCollisions() {
-	// Iterar sobre los emisores de power-ups
-	for (Emitter* emisor : powerUpEmitters) {
-		for (Solid* powerUp : emisor->getParticles()) {
 
-			if (player->GetPosition().Distance(powerUp->GetPosition()) < player->getDistanceColission()) {
-				// Colisión detectada: recoger el power-up
-				recogerPowerUp(powerUp->GetType());
-
-				emisor->removeParticle(powerUp);
-				break; 
-			}
-		}
-	}
-}
-
-void GameScene::barrelCollisions() {
-
-	for (Emitter* emisor : barrelEmitters) {
-		for (Solid* barrel : emisor->getParticles()) {
-
-		if(barrel.getTypeBarrel() = Barrel::BarrelType::WideBarrel){
-
-			if (player->GetPosition().Distance(barrel->GetPosition()) < player->getDistanceColissionWide()) {
-				
-				player->LoseLive(1);
-
-				emisor->removeParticle(barrel);
-				break;
-			}
-
-		} else {
-
-			if (player->GetPosition().Distance(barrel->GetPosition()) < player->getDistanceColission()) {
-				
-				player->LoseLive(1);
-
-				emisor->removeParticle(barrel);
-				break;
-			}
-		}
-		
-		}
-	}
-}
 
 
 void GameScene::activateRay() {
@@ -385,13 +346,13 @@ void GameScene::resetTimeEffects() {
 
 
 	if (player->getCurrentPowerUp() == 2) {
-		player->setPowerUp(0); // Quitamos el escudo
+		player->ResetPowerUp(); // Quitamos el escudo
 		shield->SetColor(Color(0, 1, 1, 0));
 		cout << "update: Escudo desactivado." << endl;
 	}
 
 	if (player->getCurrentPowerUp() == 3) {
-		player->setPowerUp(0); // Quitamos la velocidad
+		player->ResetPowerUp(); // Quitamos la velocidad
 		cout << "update: velocidad desactivada." << endl;
 	}
 

@@ -24,7 +24,13 @@ public:
 
     }
 
-    Solid* Clone() {
+    CollisionEffect getCollisionEffect() {
+
+        return CollisionEffect(0, 0, 1);
+
+    }
+
+    Item* Clone() {
 
         return new Ray(*this);
 

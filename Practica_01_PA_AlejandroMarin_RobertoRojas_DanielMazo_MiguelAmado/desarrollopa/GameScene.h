@@ -59,9 +59,7 @@ private:
 	// powerups 
 
 	vector<Emitter*> barrelEmitters;
-	vector <Emitter*> powerUpEmitters;
-
-
+	
 	bool shieldEffect = false;
 	bool speedEffect = false;
 	const float reduce = 0.5;
@@ -80,22 +78,9 @@ public :
 	GameScene(Level levelToSet) : level(levelToSet){}
 
 	void usePowerUpPlayer();
-	void recogerPowerUp(const int& nuevoPowerUp);
-
-
-
 	void Init();
-
 	void Reset();
-
-	// player 
 	
-	void powerUpCollisions();
-
-	
-	void barrelCollisions();
-
-
 	//powerups
 
 	void activateRay();
@@ -103,11 +88,13 @@ public :
 	void activateSpeedReduce(const float& speedFactor);
 	
 	void resetTimeEffects();
+
 	//inputs
 
 	void ProcessKeyPressed(unsigned char key, int px, int py);
 	void ProcessSpecialKeyPressed(int key, int px, int py);
 
+	void Render();
 	void Update(const float& timeUpdate);
 	
 };

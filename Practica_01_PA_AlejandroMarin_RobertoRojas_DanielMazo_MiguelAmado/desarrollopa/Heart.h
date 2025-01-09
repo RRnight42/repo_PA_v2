@@ -56,7 +56,30 @@ public:
 
     inline TypeHeart getHeartType() const { return this->typeheart; }
 
-    Solid* Clone() {
+    CollisionEffect getCollisionEffect() {
+    
+        switch (this->getHeartType()){
+        
+        
+        case NormalHeart:
+            return CollisionEffect(1,0,0);
+            break;
+        
+        case SuperHeart:
+            return CollisionEffect(2, 0, 0);
+            break;
+        
+        case PoisonHeart:
+            return CollisionEffect(-1, 0, 0);
+            break;
+        
+        }
+    
+    }
+
+
+
+    Item* Clone() {
     
         return new Heart(*this);
     

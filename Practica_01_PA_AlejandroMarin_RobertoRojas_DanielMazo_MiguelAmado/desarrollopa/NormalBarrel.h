@@ -22,8 +22,13 @@ public:
 
     }
 
+    CollisionEffect getCollisionEffect() {
 
-    Solid* Clone() {
+        return CollisionEffect(-1, 0, 0);
+
+    }
+
+    Item* Clone() {
 
         return new NormalBarrel(*this);
 

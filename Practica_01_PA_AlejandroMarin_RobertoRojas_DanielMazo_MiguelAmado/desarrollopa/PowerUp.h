@@ -1,8 +1,9 @@
 #pragma once
 #include "Model.h"
 #include "ModelLoader.h"
+#include "Item.h"
 
-class PowerUp : public Solid {
+class PowerUp : public Item {
 
 
 public:
@@ -38,7 +39,9 @@ public:
 
     }
 
-    virtual  Solid* Clone() = 0;
+    virtual CollisionEffect getCollisionEffect() = 0;
+
+    virtual  Item* Clone() = 0;
 };
 
 

@@ -37,7 +37,7 @@ private:
     Vector3D orientationSpeedParticle;
     Color colorParticle;
 
-    vector<pair<Solid*, float>> modelsProbability;
+    vector<pair<Item*, float>> modelsProbability;
 
 
     bool useModels;
@@ -64,7 +64,7 @@ public:
     {}
 
     EmitterConfiguration(
-        const vector<pair<Solid*, float>>& modelsWithProbabilities,
+        const vector<pair<Item*, float>>& modelsWithProbabilities,
         int maxParticles = 10,
         int minBurst = 1,
         int maxBurst = 5,
@@ -124,11 +124,11 @@ public:
 
     inline int getLifetimeParticle() const { return this->lifetimePerParticle; }
 
-    inline vector<pair<Solid*,float>> getVectorAndProbabilites() const { return this->modelsProbability; }
+    inline vector<pair<Item*,float>> getVectorAndProbabilites() const { return this->modelsProbability; }
     inline int getVectorSize() const { return this->modelsProbability.size(); }
 
 
-    inline Solid* GetParticle(int index) const {
+    inline Item* GetParticle(int index) const {
     
         if (index < 1 || index > modelsProbability.size()) {
             throw out_of_range("El índice está fuera del rango permitido.");

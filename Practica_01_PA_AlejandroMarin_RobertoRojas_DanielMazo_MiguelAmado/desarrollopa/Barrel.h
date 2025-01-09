@@ -4,7 +4,9 @@
 #include "Solid.h"
 #include "Model.h"
 #include "ModelLoader.h"
-class Barrel : public Solid
+#include "Item.h"
+
+class Barrel : public Item
 {
 public:
 
@@ -40,6 +42,8 @@ public:
     
     }
    
-    virtual  Solid* Clone() = 0; 
+    virtual CollisionEffect getCollisionEffect() = 0;
+
+    virtual  Item* Clone() = 0; 
 };
 

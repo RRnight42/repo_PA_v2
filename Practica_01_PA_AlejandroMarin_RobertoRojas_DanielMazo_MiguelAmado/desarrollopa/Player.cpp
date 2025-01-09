@@ -8,35 +8,32 @@ void Player::Render() {
     model.SetOrientation(Vector3D(0, 180, 0));
 }
 
+void Player::applyCollisionEffect(CollisionEffect col) {
 
-void Player::AddLive(const int& amount) {
+    this->lives += col.ColLives();
+    this->coinsValue += col.ColCoins();
+
+    if (col.ColPowerUpID() != 0 && this->powerUp != None) { // solo podemos tener un powerup a la vez
+
+        switch (col.ColPowerUpID()) {
+
+        case 1:
+            this->powerUp = Ray;
+            break;
+        case 2:
+            this->powerUp = Shield;
+            break;
+        case 3:
+            this->powerUp = SpeedReduce;
+            break;
 
 
-    if (lives == 3){
-    
-    }else{
-    this->lives += amount;
-   
+        }
     }
 
-    if (lives > 3) {
-    
-        lives = 3;
-    }
-}
-
-
-void Player::LoseLive(const int& amount) {
-
-    this->lives -= amount;
-    
-}
-
-void Player::addCoin() {
-    this->coinsValue += 1;
+    this->notifyUICanva();
 
 }
-
 
 int Player::usePowerUp() {
 
@@ -63,18 +60,6 @@ int Player::usePowerUp() {
     }
 	this->powerUp = None;
     return power;
-}
-
-void Player::setPowerUp(const int& newPowerUp) {
-    if (this->powerUp == Player::None) {
-        this->powerUp = static_cast<Player::PowerUp>(newPowerUp);
-        
-    }
-    else {
-    
-    
-    }
-  
 }
 
 int Player::getCurrentPowerUp() {

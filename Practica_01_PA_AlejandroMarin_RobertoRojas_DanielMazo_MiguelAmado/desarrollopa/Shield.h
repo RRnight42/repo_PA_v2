@@ -26,7 +26,15 @@ public:
 
     }
 
-    Solid* Clone() {
+    CollisionEffect getCollisionEffect() {
+
+        return CollisionEffect(0,0,2);
+
+    }
+
+
+
+    Item* Clone() {
 
         return new Shield(*this);
 
