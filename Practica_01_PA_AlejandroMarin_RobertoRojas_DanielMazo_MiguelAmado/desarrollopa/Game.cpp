@@ -15,8 +15,8 @@ void Game::Init()
 	
 
 	// solo para debug
-	this->activeScene = debug;
-    //this->activeScene = debug;
+	this->activeScene = lvl1;
+    
 
 
 	scenes.push_back(menu);

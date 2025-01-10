@@ -14,7 +14,6 @@ public:
         this->loader.SetScale(1);
         this->loader.LoadModel("barrel_k2.obj");
         this->SetModel(loader.GetModel());
-        this->setTypeBarrel(BarrelType::Normal);
         this->PaintBarrel(Color(1, 0.5, 0, 1));
         this->SetSpeed(Vector3D(0, 0, 0.35));
         this->SetOrientation(Vector3D(0, 0, 90));

@@ -8,24 +8,15 @@
 
 class Barrel : public Item
 {
-public:
-
-    enum BarrelType { Normal, WideBarrel, DoubleDamage, SpeedBarrel };
-
 
 private:
 
-    
-    BarrelType type;
     Model model;
-
 
 public:
 
     Barrel() {}
 
-    inline BarrelType GetType() const { return this->type; }
-    inline void setTypeBarrel(const BarrelType& bt) { this->type = bt; }
 
     inline void SetModel(const Model& mdl) { this->model = mdl; }
 

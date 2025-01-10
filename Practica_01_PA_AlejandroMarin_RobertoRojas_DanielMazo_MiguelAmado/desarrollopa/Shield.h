@@ -17,7 +17,6 @@ public:
       
         loader.SetScale(0.07);
         loader.LoadModel("Escudo.obj");
-        this->setTypePowerUp(PowerUp::Shield);
         this->SetModel(loader.GetModel());
         this->PaintPowerUp(Color(0.5, 0.5, 0.7, 1));
         this->SetSpeed(Vector3D(0, 0, 0.6));

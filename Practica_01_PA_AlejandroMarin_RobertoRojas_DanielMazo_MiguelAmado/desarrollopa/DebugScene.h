@@ -23,10 +23,6 @@ private:
 
     Emitter* emDebug = new Emitter();
 
-   
-
- 
-
     Cuboid* carretera = new Cuboid(10, 2, 150);
     Cuboid* sep1 = new Cuboid(0.5, 2, 160);
     Cuboid* sep2 = new Cuboid(0.5, 2, 160);

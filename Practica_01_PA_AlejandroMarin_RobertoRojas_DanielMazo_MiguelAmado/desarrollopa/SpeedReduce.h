@@ -13,7 +13,6 @@ public:
 		
 		loader.SetScale(0.4);
 		loader.LoadModel("Speedfactor.obj");
-		this->setTypePowerUp(PowerUp::SpeedReduce);
 		this->SetModel(loader.GetModel());
 		this->PaintPowerUp(Color(0, 0, 1, 1));
 		this->SetSpeed(Vector3D(0, 0, 0.6));

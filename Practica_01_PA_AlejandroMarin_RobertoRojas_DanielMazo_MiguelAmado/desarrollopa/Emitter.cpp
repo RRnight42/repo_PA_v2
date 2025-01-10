@@ -161,7 +161,7 @@ Color Emitter::randomColor(int particleId) {
 
 }
 
-Vector3D Emitter::randomSpeed(int particleId) {
+/*Vector3D Emitter::randomSpeed(int particleId) {
 
 
 	Vector3D spdReturn;
@@ -176,7 +176,7 @@ Vector3D Emitter::randomSpeed(int particleId) {
 	spdReturn.SetZ(distribution(generator));
 
 	return spdReturn * 0.05f;
-}
+}*/
 
 void Emitter::removeParticle(Item* particle) {
 	for (int i = 0; i < particlesVector.size(); i++) {

@@ -4,9 +4,7 @@ class Ray : public PowerUp
 {
 private:
 
-
     ModelLoader loader;
-
 
 public:
 
@@ -16,7 +14,6 @@ public:
 
         loader.SetScale(0.5);
         loader.LoadModel("Rayo.obj");
-        this->setTypePowerUp(PowerUp::Ray);
         this->SetModel(loader.GetModel());
         this->PaintPowerUp(Color(1, 1, 0, 1));
         this->SetSpeed(Vector3D(0, 0, 0.6));

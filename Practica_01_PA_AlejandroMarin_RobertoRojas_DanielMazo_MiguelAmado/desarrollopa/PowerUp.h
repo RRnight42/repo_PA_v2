@@ -5,24 +5,13 @@
 
 class PowerUp : public Item {
 
-
-public:
-
-    enum PowerUpType { Heart, Ray, Shield, SpeedReduce };
-
-
 private:
 
-
-    PowerUpType type;
     Model itemModel;
 
 public:
 
     PowerUp() {}
-
-    inline PowerUpType GetType() const { return this->type; }
-    inline void setTypePowerUp(const PowerUpType& pwt) { this->type = pwt; }
 
     inline void SetModel(const Model& mdl) { this->itemModel = mdl; }
 

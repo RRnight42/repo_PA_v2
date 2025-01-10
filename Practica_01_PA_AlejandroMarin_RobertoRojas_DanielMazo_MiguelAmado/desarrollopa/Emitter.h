@@ -40,7 +40,7 @@ public:
     inline vector<Item*> getParticles() { return this->particlesVector; }
 
     Color randomColor(int particleId);
-    Vector3D randomSpeed(int particleId);
+    //Vector3D randomSpeed(int particleId);
 
     void Render();
     void Update(const float& timeUpdate);

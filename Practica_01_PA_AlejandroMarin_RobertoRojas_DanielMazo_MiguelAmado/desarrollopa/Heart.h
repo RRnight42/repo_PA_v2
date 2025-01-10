@@ -27,13 +27,11 @@ public:
 
         loader.SetScale(0.5);
         loader.LoadModel("Corazon.obj");
-        this->setTypePowerUp(PowerUp::Heart);
         this->SetModel(loader.GetModel());
         this->SetSpeed(Vector3D(0, 0, 0.6));
         this->SetOrientationSpeed(Vector3D(0, 3, 0));
 
         switch (this->typeheart) {
-
 
         case NormalHeart:
             this->PaintPowerUp((Color(1, 0, 0, 1)));
@@ -47,11 +45,7 @@ public:
             this->PaintPowerUp((Color(0.31, 0.11, 0.36, 1)));
             break;
 
-
         }
-
-        
-
     }
 
     inline TypeHeart getHeartType() const { return this->typeheart; }
@@ -80,9 +74,8 @@ public:
 
 
     Item* Clone() {
-    
+
         return new Heart(*this);
-    
-    
+
     }
 };
