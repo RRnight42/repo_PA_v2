@@ -23,7 +23,7 @@ float Solid::Distance(const Vector3D& other) {
     float z = other.GetZ() - this->GetPosition().GetZ();
     float zz = z * z;
 
-    return sqrt(xx * yy * zz);
+    return sqrt(xx + yy + zz);
 
 }
 /*

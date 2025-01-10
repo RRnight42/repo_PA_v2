@@ -29,8 +29,8 @@ private:
     int carril;
 
 
-    const float distanceColission = 0.1;
-    const float distanceColissionWideBarrel = 1;
+    const float distanceColission = 1;
+    const float distanceColissionWideBarrel = 3;
 
 
 public:

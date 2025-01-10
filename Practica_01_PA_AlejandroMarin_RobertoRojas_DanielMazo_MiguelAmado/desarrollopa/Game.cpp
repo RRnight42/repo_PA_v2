@@ -58,14 +58,8 @@ void Game::Update()
 			this->activeScene = lvl1;
 		}
 		else if (this->activeScene == this->lvl1) {
-			if (this->lvl1->hasEndedScene()) {
 				this->win->endScene(false);
 				this->activeScene = win;
-			}
-			else {
-				this->lose->endScene(false);
-				this->activeScene = lose;
-			}
 		}
 	}
 }

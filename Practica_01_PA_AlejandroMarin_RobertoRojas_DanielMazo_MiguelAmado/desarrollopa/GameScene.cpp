@@ -58,7 +58,7 @@ void GameScene::Init() {
 
 	loaderMaterial->LoadModel("Player.obj");
 	
-	player->SetPosition(Vector3D(0 , 1 , 15));
+	player->SetPosition(Vector3D(0 , -0.5 , 15));
 	player->setModelPlayer(loaderMaterial->GetMaterialModel());
 
 	player->setCarril(2);

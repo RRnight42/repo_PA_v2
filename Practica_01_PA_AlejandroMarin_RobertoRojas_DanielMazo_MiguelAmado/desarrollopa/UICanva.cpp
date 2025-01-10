@@ -8,8 +8,10 @@ void UICanva::Update(const float& timeUpdate) {
     heart2->Update(timeUpdate);
     heart3->Update(timeUpdate);
 
- 
+    if (this->activePowerUp != nullptr) {
 
+        this->activePowerUp->Update(timeUpdate);
+    }
 }
 
 void UICanva::Render() {
