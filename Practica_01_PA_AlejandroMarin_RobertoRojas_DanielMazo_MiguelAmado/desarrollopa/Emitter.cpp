@@ -107,28 +107,6 @@ void Emitter::Update(const float& timeUpdate)
 			Vector3D offset = this->randomPositionOffsetZ(particleID);
 			newParticle->SetPosition(basePosition + offset);
 
-			if(!conf.IsUsingModels()){
-
-
-			if (conf.GetIsRandom())
-			{
-				newParticle->SetColor(this->randomColor(particleID));
-				newParticle->SetSpeed(this->randomSpeed(particleID));
-			}
-			else
-			{
-				newParticle->SetColor(conf.getColorConf());
-				newParticle->SetSpeed(conf.getSpeedConf());
-				newParticle->SetOrientation(conf.getOrientationConf());
-				newParticle->SetOrientationSpeed(conf.getOrientationSpeedConf());
-			}
-
-
-			}
-			
-
-
-
 			particlesVector.push_back(newParticle);
 			particleCreationTimes.push_back(currentMs);
 		}

@@ -9,6 +9,7 @@
 #include "Cuboid.h"
 #include "Teapot.h"
 #include "Torus.h"
+#include "Item.h"
 
 #include <string>
 #include <stdexcept>
@@ -17,7 +18,7 @@
 #include <ctime>
 #include <numeric>
 
-#include "item.h"
+
 
 using namespace std;
 
@@ -31,13 +32,8 @@ private:
     int minInterval;
     int maxInterval;
     long lifetimePerParticle;
-
     bool loopEmitter;
-    bool randomSpeedColor;
-    Vector3D speedParticle;
-    Vector3D orientationParticle;
-    Vector3D orientationSpeedParticle;
-    Color colorParticle;
+
 
     vector<pair<Item*, float>> modelsProbability;
 
@@ -57,11 +53,6 @@ public:
         maxInterval(1500),
         lifetimePerParticle(5000),
         loopEmitter(false),
-        randomSpeedColor(false),
-        speedParticle(Vector3D(0, 1, 0)),
-        orientationParticle(Vector3D()),
-        orientationSpeedParticle(Vector3D(0, 1, 0)),
-        colorParticle(Color(1, 1, 1, 1)),
         useModels(false)
     {}
 
@@ -116,13 +107,10 @@ public:
     inline int GetMinInterval() const { return this->minInterval; }
     inline int GetMaxInterval() const { return this->maxInterval; }
 
-    inline bool GetIsRandom() const { return this->randomSpeedColor; }
+   
     inline bool GetIsLooped() const { return this->loopEmitter; }
 
-    inline Vector3D getSpeedConf() const { return this->speedParticle; }
-    inline Vector3D getOrientationConf() const { return this->orientationParticle; }
-    inline Vector3D getOrientationSpeedConf() const { return this->orientationSpeedParticle; }
-    inline Color getColorConf() const { return this->colorParticle; }
+
 
     inline int getLifetimeParticle() const { return this->lifetimePerParticle; }
 

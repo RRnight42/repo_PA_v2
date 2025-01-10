@@ -15,7 +15,7 @@ void Game::Init()
 	
 
 	// solo para debug
-	this->activeScene = menu;
+	this->activeScene = debug;
     //this->activeScene = debug;
 
 
@@ -25,34 +25,7 @@ void Game::Init()
 	scenes.push_back(lose);
 	scenes.push_back(debug);
 
-	for (int i = 0; i < scenes.size(); i++)
-		scenes[i]->Init();
-
-	/*
-	EmitterConfiguration config(20, new Sphere(), 150 );
-
-	Model* skull = new Model();
-	ModelLoader loader;
-
-	
-	//loader.LoadModel("skull.obj");
-	
-	//loader.SetScale(0.03);
-	//*skull = loader.GetModel();
-
-	//skull->SetPosition(Vector3D(0.0 , 0.0 , -150.0));
-	//skull->SetOrientation(Vector3D(180, 0, 180));
-
-	Emitter* emisorParticulas = new Emitter(config);
-	
-	emisorParticulas->SetPosition(Vector3D(0, 8, 0));
-	emisorParticulas->SetGravity(false);
-
-	
-	this->activeScene->AddGameObject(emisorParticulas);
-	
-*/
-
+	this->activeScene->Init();
 
 }
 

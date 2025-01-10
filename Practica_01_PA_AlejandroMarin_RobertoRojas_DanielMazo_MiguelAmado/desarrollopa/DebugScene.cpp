@@ -3,11 +3,10 @@
 void DebugScene::Init() {
 
 
-
-	p1->SetPosition(Vector3D(0,  -1.5, -15));
-	p2->SetPosition(Vector3D(-2, -1.5,-15));
-	p3->SetPosition(Vector3D(-3, -1.5,-15));
-	p4->SetPosition(Vector3D(-4, -1.5,-15));
+	b1->SetPosition(Vector3D(0,  -1.5, -15));
+	b2->SetPosition(Vector3D(-2, -1.5,-15));
+	b3->SetPosition(Vector3D(-3, -1.5,-15));
+	b4->SetPosition(Vector3D(-4, -1.5,-15));
 	
 
 	carretera->SetPosition(Vector3D(0, -4, -60));
@@ -36,10 +35,10 @@ void DebugScene::Init() {
 
 
 	
-	//AddGameObject(p1);
-	//AddGameObject(p2);
-	//AddGameObject(p3);
-	//AddGameObject(p4);
+	AddGameObject(b1);
+	AddGameObject(b2);
+	AddGameObject(b3);
+	AddGameObject(b4);
 	//AddGameObject(emDebug);
 	AddGameObject(carretera);
 	AddGameObject(sep1);

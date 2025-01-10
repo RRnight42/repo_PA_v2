@@ -9,6 +9,10 @@ void GameScene::Init() {
 	// configuraciones comunes de todos los niveles
 	// dibujar escena y demas tralla
 
+
+	shieldEffect = false;
+	speedEffect = false;
+
 	player = new Player();
 
 	shield = new Sphere(0.18, 15, 10);
@@ -52,6 +56,7 @@ void GameScene::Init() {
 	
 	shield->SetOrientationSpeed(Vector3D(0, 5, 0));
 	shield->SetPosition(player->GetPosition());
+	shield->SetColor(Color(0, 1, 1, 0));
 	
 	player->SetOrientationSpeed(Vector3D(0, 3, 0));
 
@@ -70,7 +75,7 @@ void GameScene::Init() {
 	sep2->SetColor(Color(1, 1, 1, 1));
 	sep3->SetColor(Color(1, 1, 1, 1));
 	sep4->SetColor(Color(1, 1, 1, 1));
-	shield->SetColor(Color(0, 1, 1, 0.35));
+	
 
 	emitterBarrelC1->SetPosition(Vector3D(-3.45, -2, -40));
 	emitterBarrelC2->SetPosition(Vector3D(0, -2, -40));
@@ -93,8 +98,22 @@ void GameScene::Init() {
 	barrelEmitters.push_back(emitterWideBarrelC1);
 	barrelEmitters.push_back(emitterWideBarrelC2);
 
+	vector <pair<Item*, float>> barrelsDistribution = { {new NormalBarrel() , 0.5f } , {new SpeedBarrel() , 0.3f } , {new DDBarrel() , 0.2f}};
+	vector <pair<Item*, float>> barrelsWideDistribution = { {new WideBarrel() , 1.0f } };
 
 	if (this->getLevel() == this->Level1) {
+
+		EmitterConfiguration confBarrelLvl1(barrelsDistribution, 20, 1, 2, 5000, 12000, 8000, true);
+		EmitterConfiguration confWideBarrelLvl1(barrelsWideDistribution, 10, 1, 1, 12000, 20000, 8000, true);
+		
+
+		emitterBarrelC1->setConfiguration(confBarrelLvl1);
+		emitterBarrelC2->setConfiguration(confBarrelLvl1);
+		emitterBarrelC3->setConfiguration(confBarrelLvl1);
+
+		emitterWideBarrelC1->setConfiguration(confWideBarrelLvl1);
+		emitterWideBarrelC2->setConfiguration(confWideBarrelLvl1);
+
 	
 	}else if (this->getLevel() == this->Level2) {
 
@@ -115,9 +134,9 @@ void GameScene::Init() {
 	AddGameObject(sep3);
 	AddGameObject(sep4);
 
-//	AddGameObject(emitterBarrelC1);
-//	AddGameObject(emitterBarrelC2);
-//	AddGameObject(emitterBarrelC3);
+AddGameObject(emitterBarrelC1);
+AddGameObject(emitterBarrelC2);
+AddGameObject(emitterBarrelC3);
 
 	// de momento lo comentamos
 
@@ -125,8 +144,8 @@ void GameScene::Init() {
 	//AddGameObject(emitterPowerUp2);
 	//AddGameObject(emitterPowerUp3);
 	//
-	//AddGameObject(emitterWideBarrel1);
-	//AddGameObject(emitterWideBarrel2);
+	AddGameObject(emitterWideBarrelC1);
+	AddGameObject(emitterWideBarrelC2);
 }
 
 void GameScene::Reset() {

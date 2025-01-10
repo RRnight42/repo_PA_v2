@@ -15,15 +15,23 @@ void UICanva::Update(const float& timeUpdate) {
 void UICanva::Render() {
 
 
+    if(activeHeart1 != nullptr){
     this->activeHeart1->Render();
-    this->activeHeart2->Render();
-    this->activeHeart3->Render();
-          
+    }
+    if (activeHeart2 != nullptr) {
+        this->activeHeart2->Render();
+    }
+
+    if (activeHeart3 != nullptr) {
+        this->activeHeart3->Render();
+    }
+
+
     coinUI->Render();
     coinsText->Render();
 
-    if (activePowerUp == nullptr) {}
-    else { this->activePowerUp->Render(); }
+    if (activePowerUp != nullptr){ 
+    this->activePowerUp->Render(); }
 
 
 
@@ -115,11 +123,8 @@ void UICanva::UpdateHeartsUI(const int& currentLive) {
         this->activeHeart3 = heart3;
   
     }else if (currentLive == 2) {
-        this->activeHeart1 = heart1;
-        this->activeHeart2 = heart2;
         this->activeHeart3 = nullptr;
     }else if (currentLive == 1) {
-        this->activeHeart1 = heart1;
         this->activeHeart2 = nullptr;
         this->activeHeart3 = nullptr;
 

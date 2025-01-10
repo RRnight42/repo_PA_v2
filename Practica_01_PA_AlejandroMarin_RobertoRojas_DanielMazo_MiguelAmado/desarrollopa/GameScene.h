@@ -19,6 +19,10 @@
 #include "Heart.h"
 #include "SpeedReduce.h"
 #include"Barrel.h"
+#include "DDBarrel.h"
+#include "WideBarrel.h"
+#include "SpeedBarrel.h"
+#include "NormalBarrel.h"
 
 using namespace std;
 

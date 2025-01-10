@@ -11,7 +11,7 @@ const int WINDOW_WIDTH = 800;
 const int WINDOW_HEIGHT = 600;
 const int WINDOW_POSITION_X = 300;
 const int WINDOW_POSITION_Y = 100;
-const char TITLE[] = "PARTE 2";
+const char TITLE[] = "Barrel Escape X v1.0";
 
 const GLclampf RED = 0.0;
 const GLclampf GREEN = 0.6;
