@@ -1,9 +1,10 @@
 #pragma once
 #include "Solid.h"
+#include "Item.h"
 #include "Model.h"
 #include "ModelLoader.h"
 
-class Coin : public Solid
+class Coin : public Item
 {
 
 private:
@@ -35,8 +36,15 @@ public:
 
 	}
 
+
+	CollisionEffect getCollisionEffect() {
 	
-	Solid* Clone() {
+		return CollisionEffect(0, 1, 0);
+	
+	}
+
+	
+	Item* Clone() {
 	
 		return new Coin(*this);
 	

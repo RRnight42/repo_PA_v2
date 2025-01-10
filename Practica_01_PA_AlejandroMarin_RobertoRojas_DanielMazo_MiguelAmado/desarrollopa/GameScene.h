@@ -23,6 +23,9 @@
 #include "WideBarrel.h"
 #include "SpeedBarrel.h"
 #include "NormalBarrel.h"
+#include "Coin.h"
+#include "Item.h"
+#include "Time.h"
 
 using namespace std;
 
@@ -38,7 +41,7 @@ private:
 
 	Player* player;
 
-	Sphere* shield;
+	
 	
 	Cuboid* carretera;
 	Cuboid* sep1;
@@ -78,6 +81,11 @@ private:
 	Level level;
 
 
+	// tiempo 
+
+	float timePowerUps;
+	Time time;
+
 public : 
 	
 	inline Level getLevel() const { return this->level;}
@@ -94,15 +102,13 @@ public :
 	void activateRay();
 	void activateShield();
 	void activateSpeedReduce(const float& speedFactor);
-	
-	void resetTimeEffects();
 
 	//inputs
 
 	void ProcessKeyPressed(unsigned char key, int px, int py);
 	void ProcessSpecialKeyPressed(int key, int px, int py);
 
-	void Render();
+	
 	void Update(const float& timeUpdate);
 	
 };

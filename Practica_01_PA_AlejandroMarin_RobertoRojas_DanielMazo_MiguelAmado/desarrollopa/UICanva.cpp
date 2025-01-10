@@ -116,19 +116,24 @@ void UICanva::InitUI() {
 
 void UICanva::UpdateHeartsUI(const int& currentLive) {
 
+    lives = currentLive;
 
-    if (currentLive == 3) {   
+
+    if (lives == 3) {
         this->activeHeart1 = heart1;
         this->activeHeart2 = heart2;
         this->activeHeart3 = heart3;
   
-    }else if (currentLive == 2) {
+    }else if (lives == 2) {
+        this->activeHeart1 = heart1;
+        this->activeHeart2 = heart2;
         this->activeHeart3 = nullptr;
-    }else if (currentLive == 1) {
+    }else if (lives == 1) {
+        this->activeHeart1 = heart1;
         this->activeHeart2 = nullptr;
         this->activeHeart3 = nullptr;
 
-    }else if (currentLive == 0) {
+    }else if (lives == 0) {
         this->activeHeart1 = nullptr;
         this->activeHeart2 = nullptr;
         this->activeHeart3 = nullptr;

@@ -35,6 +35,8 @@ private:
 
     Model* coinUI = new Model();
 
+    int coins;
+    int lives;
     int powerUi;
 
 public:

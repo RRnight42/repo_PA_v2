@@ -3,9 +3,32 @@
 void Player::Render() {
 
     model.Render();
-   
-    model.SetPosition(this->GetPosition() + Vector3D(-0.06,0,-0.3));
+    
+    shield->SetPosition(this->GetPosition());
+    shield->SetOrientationSpeed(Vector3D(0, 5, 0));
+
+    if (activeShield) {
+    
+        this->shield->SetColor(Color(0, 1, 1, 0.35));
+        shield->Render();
+    }
+    else {
+    
+       
+    
+    }
+
+
+    model.SetPosition(this->GetPosition() + Vector3D(-0.31,0,-0.3));
     model.SetOrientation(Vector3D(0, 180, 0));
+}
+
+void Player::Update(const float& timeUpdate) {
+
+
+    this->shield->Update(timeUpdate);
+
+
 }
 
 void Player::applyCollisionEffect(CollisionEffect col) {

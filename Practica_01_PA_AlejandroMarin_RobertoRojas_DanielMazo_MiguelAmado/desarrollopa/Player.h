@@ -1,5 +1,6 @@
 #pragma once
 #include "Solid.h"
+#include "Sphere.h"
 #include "MaterialModel.h"
 #include "Text.h"
 #include "UICanva.h"
@@ -18,9 +19,12 @@ public:
 private:
 
     MaterialModel model;
+    Sphere* shield = new Sphere(1.2, 15, 10);
 
     int lives;
     int coinsValue;
+
+    bool activeShield = false;
 
     int carril;
 
@@ -49,8 +53,12 @@ public:
     bool hasPowerUp() const;
     inline int getCoins() const { return coinsValue; }
 
+    inline bool hasShieldActivated() const { return this->activeShield; }
+
     inline void setModelPlayer(const MaterialModel& mS) { this->model = mS; }
 
+    inline void setShield(const bool& s) { this->activeShield = s;}
+     
     int usePowerUp();
     void setUICanva(UICanva* ui);
     void notifyUICanva();
@@ -60,6 +68,8 @@ public:
 
     void applyCollisionEffect(CollisionEffect col);
    
+
+    void Update(const float& timeUpdate);
     void Render();
 
     Solid* Clone(){

@@ -101,6 +101,7 @@ void Emitter::Update(const float& timeUpdate)
 
 		
 			Item* newParticle = generateSolidByProbability(conf.getVectorAndProbabilites());
+			newParticle->SetPosition(this->GetPosition());
 
 			// Generar un desplazamiento solo en el eje Z
 			Vector3D basePosition = this->GetPosition();

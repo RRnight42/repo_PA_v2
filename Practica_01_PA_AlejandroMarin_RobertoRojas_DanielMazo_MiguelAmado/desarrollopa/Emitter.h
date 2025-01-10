@@ -58,7 +58,7 @@ public:
 
         for (Item* particle : particlesVector) {
 
-            if (particle->Distance(player.GetPosition()) < player.getDistanceColission()) {
+            if (particle->Distance(player.GetPosition()) < player.getDistanceColission() && !player.hasShieldActivated()) {
 
                 player.applyCollisionEffect(particle->getCollisionEffect());
 

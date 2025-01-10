@@ -166,6 +166,7 @@
     <ClCompile Include="Sphere.cpp" />
     <ClCompile Include="Teapot.cpp" />
     <ClCompile Include="Text.cpp" />
+    <ClCompile Include="Time.cpp" />
     <ClCompile Include="Torus.cpp" />
     <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="UICanva.cpp" />
@@ -211,6 +212,7 @@
     <ClInclude Include="Sphere.h" />
     <ClInclude Include="Teapot.h" />
     <ClInclude Include="Text.h" />
+    <ClInclude Include="Time.h" />
     <ClInclude Include="Torus.h" />
     <ClInclude Include="Triangle.h" />
     <ClInclude Include="UICanva.h" />
