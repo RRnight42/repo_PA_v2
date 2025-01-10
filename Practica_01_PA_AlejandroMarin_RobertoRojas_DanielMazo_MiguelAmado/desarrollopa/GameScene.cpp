@@ -98,7 +98,7 @@ void GameScene::Init() {
 		EmitterConfiguration confBarrelLvl1(barrelsDistribution, 20, 1, 2, 5000, 12000, 15000, true);
 		EmitterConfiguration confWideBarrelLvl1(barrelsWideDistribution, 10, 1, 1, 12000, 20000, 15000, true);
 		EmitterConfiguration confPULvl1(powersDistribution, 20, 1, 1, 15000, 20000, 15000, true);
-		EmitterConfiguration confCoinLvl(CoinsDistribution, 50, 1, 5, 8000, 30000, 15000, true);
+		EmitterConfiguration confCoinLvl(CoinsDistribution, 50, 1, 5, 8000, 20000, 15000, true);
 
 		emitterBarrelC1->setConfiguration(confBarrelLvl1);
 		emitterBarrelC2->setConfiguration(confBarrelLvl1);
@@ -132,17 +132,17 @@ void GameScene::Init() {
 	AddGameObject(sep2);
 	AddGameObject(sep3);
 	AddGameObject(sep4);
-    AddGameObject(emitterBarrelC1);
-    AddGameObject(emitterBarrelC2);
-    AddGameObject(emitterBarrelC3);
+   // AddGameObject(emitterBarrelC1);
+   // AddGameObject(emitterBarrelC2);
+   // AddGameObject(emitterBarrelC3);
 	AddGameObject(emitterPowerUpC1);
 	AddGameObject(emitterPowerUpC2);
 	AddGameObject(emitterPowerUpC3);
-	AddGameObject(emitterCoinsC1);
-	AddGameObject(emitterCoinsC2);
-	AddGameObject(emitterCoinsC3);
-	AddGameObject(emitterWideBarrelC1);
-	AddGameObject(emitterWideBarrelC2);
+	//AddGameObject(emitterCoinsC1);
+	//AddGameObject(emitterCoinsC2);
+	//AddGameObject(emitterCoinsC3);
+	//AddGameObject(emitterWideBarrelC1);
+	//AddGameObject(emitterWideBarrelC2);
 }
 
 void GameScene::Reset() {

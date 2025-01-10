@@ -58,10 +58,10 @@ public:
 
         for (Item* particle : particlesVector) {
 
-            if (particle->Distance(player.GetPosition()) < player.getDistanceColission() && !player.hasShieldActivated()) {
+            if (particle->Distance(player.GetPosition()) < player.getDistanceColission()) {
 
                 player.applyCollisionEffect(particle->getCollisionEffect());
-
+                player.notifyUICanva();
                 this->removeParticle(particle);
             }
 

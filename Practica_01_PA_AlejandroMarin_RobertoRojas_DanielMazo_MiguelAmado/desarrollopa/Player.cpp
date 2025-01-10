@@ -33,7 +33,11 @@ void Player::Update(const float& timeUpdate) {
 
 void Player::applyCollisionEffect(CollisionEffect col) {
 
+
+    if(!activeShield){
     this->lives += col.ColLives();
+    }
+
     this->coinsValue += col.ColCoins();
 
     if (col.ColPowerUpID() != 0 && this->powerUp != None) { // solo podemos tener un powerup a la vez
