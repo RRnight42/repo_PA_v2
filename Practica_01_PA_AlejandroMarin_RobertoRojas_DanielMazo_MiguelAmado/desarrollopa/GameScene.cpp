@@ -58,7 +58,7 @@ void GameScene::Init() {
 
 	loaderMaterial->LoadModel("Player.obj");
 	
-	player->SetPosition(Vector3D(0 , -0.5 , 15));
+	player->SetPosition(Vector3D(0 , -1 , 10));
 	player->setModelPlayer(loaderMaterial->GetMaterialModel());
 
 	player->setCarril(2);
@@ -95,10 +95,10 @@ void GameScene::Init() {
 
 	if (this->getLevel() == this->Level1) {
 
-		EmitterConfiguration confBarrelLvl1(barrelsDistribution, 20, 1, 2, 5000, 12000, 15000, true);
-		EmitterConfiguration confWideBarrelLvl1(barrelsWideDistribution, 10, 1, 1, 12000, 20000, 15000, true);
-		EmitterConfiguration confPULvl1(powersDistribution, 20, 1, 1, 15000, 20000, 15000, true);
-		EmitterConfiguration confCoinLvl(CoinsDistribution, 50, 1, 5, 8000, 20000, 15000, true);
+		EmitterConfiguration confBarrelLvl1(barrelsDistribution, 20, 1, 2, 5000, 12000, 30000, true);
+		EmitterConfiguration confWideBarrelLvl1(barrelsWideDistribution, 10, 1, 1, 12000, 20000, 30000, true);
+		EmitterConfiguration confPULvl1(powersDistribution, 20, 1, 1, 15000, 20000, 30000, true);
+		EmitterConfiguration confCoinLvl(CoinsDistribution, 50, 1, 5, 8000, 20000, 30000, true);
 
 		emitterBarrelC1->setConfiguration(confBarrelLvl1);
 		emitterBarrelC2->setConfiguration(confBarrelLvl1);
@@ -132,17 +132,17 @@ void GameScene::Init() {
 	AddGameObject(sep2);
 	AddGameObject(sep3);
 	AddGameObject(sep4);
-   // AddGameObject(emitterBarrelC1);
-   // AddGameObject(emitterBarrelC2);
-   // AddGameObject(emitterBarrelC3);
+    AddGameObject(emitterBarrelC1);
+    AddGameObject(emitterBarrelC2);
+    AddGameObject(emitterBarrelC3);
 	AddGameObject(emitterPowerUpC1);
 	AddGameObject(emitterPowerUpC2);
 	AddGameObject(emitterPowerUpC3);
-	//AddGameObject(emitterCoinsC1);
-	//AddGameObject(emitterCoinsC2);
-	//AddGameObject(emitterCoinsC3);
-	//AddGameObject(emitterWideBarrelC1);
-	//AddGameObject(emitterWideBarrelC2);
+	AddGameObject(emitterCoinsC1);
+	AddGameObject(emitterCoinsC2);
+	AddGameObject(emitterCoinsC3);
+	AddGameObject(emitterWideBarrelC1);
+	AddGameObject(emitterWideBarrelC2);
 }
 
 void GameScene::Reset() {
@@ -259,7 +259,9 @@ void GameScene::Update(const float& timeUpdate) {
 
 		}
 	}
-
+	cambioEscena();
+	cout << player->getLives() << ", " << player->getCoins()<< endl;
+	
 }
 
 
@@ -329,6 +331,17 @@ void GameScene::activateSpeedReduce(const float& speedFactor) {
 
 }
 
+void GameScene::cambioEscena() {
+
+	if (player->getCoins() >= 30) {
+		this->condVictoria = true;
+		this->endScene(true);
+	}
+	else if (this->player->getLives() <= 0) {
+		this->endScene(true);
+	}
+}
+
 void GameScene::ProcessKeyPressed(unsigned char key, int px, int py) {
 
 
@@ -361,13 +374,15 @@ void GameScene::ProcessKeyPressed(unsigned char key, int px, int py) {
 	
 	//Para debugear las condiciones de derrota y victoria y el cambio de escena, añadimos dos teclas especificas
 	case 'o':
-		//this->SetVictoryCondition(false);
+		
 		this->endScene(true);
+		this->setCondVictoria(false);
 		break;
 
 	case'p':
-		//this->SetVictoryCondition(true);
+		
 		this->endScene(true);
+		this->setCondVictoria(true);
 		break;
 
      }

@@ -30,7 +30,7 @@ private:
 
 
     const float distanceColission = 1;
-    const float distanceColissionWideBarrel = 3;
+    const float distanceColissionWideBarrel = 5;
 
 
 public:
@@ -44,6 +44,11 @@ public:
 
     inline float getDistanceColission() const { return this->distanceColission; }
     inline float getDistanceColissionWide() const { return this->distanceColissionWideBarrel; }
+
+    inline void setPowerUp(const Player::PowerUp& pow) { this->powerUp = pow; }
+
+    inline int getLives() const { return this->lives; }
+    
 
     int getCurrentPowerUp();
 

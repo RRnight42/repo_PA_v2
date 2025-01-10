@@ -45,13 +45,13 @@ void Player::applyCollisionEffect(CollisionEffect col) {
         switch (col.ColPowerUpID()) {
 
         case 1:
-            this->powerUp = Ray;
+            this->setPowerUp(Ray);
             break;
         case 2:
-            this->powerUp = Shield;
+            this->setPowerUp(Shield);
             break;
         case 3:
-            this->powerUp = SpeedReduce;
+            this->setPowerUp(SpeedReduce);
             break;
 
 
@@ -100,11 +100,11 @@ void Player::setUICanva(UICanva* ui) {
 }
 
 void Player::notifyUICanva() {
-    if (uiCanva != nullptr) {
+    //if (uiCanva != nullptr) {
         uiCanva->UpdateHeartsUI(this->lives);
         uiCanva->UpdateCoinsText(this->coinsValue);
         uiCanva->SetActivePowerUpUI(this->powerUp);
-    }
+    //}
 }
 
 bool Player::hasPowerUp() const {

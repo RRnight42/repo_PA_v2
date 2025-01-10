@@ -183,12 +183,12 @@ void Emitter::removeParticle(Item* particle) {
 	for (int i = 0; i < particlesVector.size(); i++) {
 		
 		if (particlesVector[i] == particle) {
+
 			
 			delete particlesVector[i];
 			
 			particlesVector.erase(particlesVector.begin() + i);
 			
-			return;
 		}
 	}
 }

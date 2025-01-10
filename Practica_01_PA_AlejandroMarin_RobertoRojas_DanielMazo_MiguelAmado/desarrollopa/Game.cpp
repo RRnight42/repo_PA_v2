@@ -15,7 +15,7 @@ void Game::Init()
 	
 
 	// solo para debug
-	this->activeScene = lvl1;
+	this->activeScene = win;
     
 
 
@@ -25,7 +25,10 @@ void Game::Init()
 	scenes.push_back(lose);
 	scenes.push_back(debug);
 
-	this->activeScene->Init();
+	this->menu->Init();
+	this->lvl1->Init();
+	this->win->Init();
+	this->lose->Init();
 
 }
 
@@ -46,20 +49,51 @@ void Game::Update()
 
 	if (this->activeScene->hasEndedScene()) {
 		if (this->activeScene == this->menu) {
+			this->lvl1->endScene(false);
+			this->lvl1->Reset();
 			this->activeScene = lvl1;
 		}
-		else if (this->activeScene == this->win || this->activeScene == this->lose) {
-			this->lvl1->endScene(false);
+		else if (this->activeScene == this->win) {
+			
+			if (win->getMenuTransicion() == true) {
+				this->menu->endScene(false);
+				this->activeScene = menu;
+			}
+			else {
+				this->lvl1->endScene(false);
+				this->lvl1->Reset();
+				this->activeScene = lvl1;
+			}
+			
 			//this->lvl2->endScene(false);
 			//this->lvl3->endScene(false);
 
-			this->lvl1->Reset();
+		}
+		else if (this->activeScene == this->lose) {
 
-			this->activeScene = lvl1;
+			if (lose->getMenuTransicion() == true) {
+				this->menu->endScene(false);
+				this->activeScene = menu;
+			}
+			else {
+				this->lvl1->endScene(false);
+				this->lvl1->Reset();
+				this->activeScene = lvl1;
+			}
+
+			//this->lvl2->endScene(false);
+			//this->lvl3->endScene(false);
+
 		}
 		else if (this->activeScene == this->lvl1) {
+			if (this->lvl1->getCondVictoria() == true) {
 				this->win->endScene(false);
 				this->activeScene = win;
+			}
+			else if (this->lvl1->getCondVictoria() == false) {
+				this->lose->endScene(false);
+				this->activeScene = lose;
+			}
 		}
 	}
 }

@@ -86,6 +86,8 @@ private:
 	float timePowerUps;
 	Time time;
 
+	bool condVictoria;
+
 public : 
 	
 	inline Level getLevel() const { return this->level;}
@@ -103,10 +105,16 @@ public :
 	void activateShield();
 	void activateSpeedReduce(const float& speedFactor);
 
+	inline bool getCondVictoria() const { return this->condVictoria; }
+	inline void setCondVictoria(const bool& co) { this->condVictoria = co; }
+	
 	//inputs
+
 
 	void ProcessKeyPressed(unsigned char key, int px, int py);
 	void ProcessSpecialKeyPressed(int key, int px, int py);
+
+	void cambioEscena();
 
 	
 	void Update(const float& timeUpdate);

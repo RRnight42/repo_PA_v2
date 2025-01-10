@@ -21,7 +21,7 @@ public:
 		this->loader.LoadModel("Coin.obj");
 		coinModel.SetModel(loader.GetModel());
 		this->coinModel.PaintColor(Color(1, 1, 0, 1));
-		this->SetSpeed(Vector3D(0, 0, 0.45));
+		this->SetSpeed(Vector3D(0, 0, 0.9));
 		this->SetOrientationSpeed(Vector3D(0, 3, 0));
 
 	}

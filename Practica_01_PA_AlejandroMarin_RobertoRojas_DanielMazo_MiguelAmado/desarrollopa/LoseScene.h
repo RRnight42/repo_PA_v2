@@ -1,8 +1,6 @@
 #pragma once
 #include "Scene.h"
 #include "Text.h"
-#include "Model.h"
-#include "ModelLoader.h"
 
 class LoseScene : public Scene
 {
@@ -10,12 +8,11 @@ private:
 
 	Text* textoPerder;
 	Text* reinicio;
+	Text* menu;
 	Text* salir;
-	//Model* donkyLose = new Model();
-
-	//Model* barrels[];
 
 	unsigned int selected;
+	bool gomenu;
 	
 public:
 
@@ -27,5 +24,8 @@ public:
 
 	void ProcessKeyPressed(unsigned char key, int px, int py);
 	void ProcessSpecialKeyPressed(int key, int px, int py);
+
+	inline bool getMenuTransicion() const { return this->gomenu; }
+	inline void menuTransicion(const bool& men) { this->gomenu = men; }
 };
 

@@ -28,7 +28,7 @@ public:
         loader.SetScale(0.5);
         loader.LoadModel("Corazon.obj");
         this->SetModel(loader.GetModel());
-        this->SetSpeed(Vector3D(0, 0, 0.6));
+        this->SetSpeed(Vector3D(0, 0, 1));
         this->SetOrientationSpeed(Vector3D(0, 3, 0));
 
         switch (this->typeheart) {

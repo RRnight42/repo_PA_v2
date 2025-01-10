@@ -5,12 +5,13 @@
 #include "Model.h"
 #include "ModelLoader.h"
 #include "Item.h"
+#include "Sphere.h"
 
 class Barrel : public Item
 {
 
 private:
-
+    //Sphere* esfera = new Sphere(0.7);    //Esta esfera es para renderizar las posiciones reales de los barriles en debug
     Model model;
 
 public:
@@ -30,7 +31,8 @@ public:
         this->model.SetSpeed(this->GetSpeed());
         this->model.SetOrientationSpeed(this->GetOrientationSpeed());
         this->model.Render();
-    
+        //this->esfera->SetPosition(this->GetPosition());
+        //this->esfera->Render();
     }
    
     virtual CollisionEffect getCollisionEffect() = 0;

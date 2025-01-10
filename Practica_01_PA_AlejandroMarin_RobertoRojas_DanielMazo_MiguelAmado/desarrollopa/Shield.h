@@ -19,7 +19,7 @@ public:
         loader.LoadModel("Escudo.obj");
         this->SetModel(loader.GetModel());
         this->PaintPowerUp(Color(0.5, 0.5, 0.7, 1));
-        this->SetSpeed(Vector3D(0, 0, 0.6));
+        this->SetSpeed(Vector3D(0, 0, 1));
         this->SetOrientation(Vector3D(0, 0, -90));
         this->SetOrientationSpeed(Vector3D(0, 3, 0));
 
