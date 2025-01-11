@@ -260,7 +260,7 @@ void GameScene::Update(const float& timeUpdate) {
 		}
 	}
 	cambioEscena();
-	cout << player->getLives() << ", " << player->getCoins()<< endl;
+	cout << player->getLives() << ", " << player->getCoins()<< "," << player->getCurrentPowerUp() << endl;
 	
 }
 
