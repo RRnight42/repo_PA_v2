@@ -6,13 +6,10 @@
 class Heart : public PowerUp
 {
 
-public:
-
-    enum TypeHeart { NormalHeart, SuperHeart, PoisonHeart };
 
 private:
 
-    TypeHeart typeheart;
+    int typeheart;
     ModelLoader loader;
 
 public:
@@ -22,8 +19,10 @@ public:
 
 
        
-        srand(static_cast<unsigned>(time(0)));
-        this->typeheart = static_cast<TypeHeart>(rand() % 3);
+        srand((time(0)));
+        typeheart = (rand() % 3);
+
+  
 
         loader.SetScale(0.5);
         loader.LoadModel("Corazon.obj");
@@ -31,39 +30,39 @@ public:
         this->SetSpeed(Vector3D(0, 0, 1));
         this->SetOrientationSpeed(Vector3D(0, 3, 0));
 
-        switch (this->typeheart) {
+        switch (typeheart) {
 
-        case NormalHeart:
+        case 0:
             this->PaintPowerUp((Color(1, 0, 0, 1)));
             break;
 
-        case SuperHeart:
+        case 1:
             this->PaintPowerUp((Color(1, 1, 0, 1)));
             break;
 
-        case PoisonHeart:
+        case 2:
             this->PaintPowerUp((Color(0.31, 0.11, 0.36, 1)));
             break;
 
         }
     }
 
-    inline TypeHeart getHeartType() const { return this->typeheart; }
+    inline int getHeartType() const { return this->typeheart; }
 
     CollisionEffect getCollisionEffect() {
     
         switch (this->getHeartType()){
         
         
-        case NormalHeart:
+        case 0:
             return CollisionEffect(1,0,0);
             break;
         
-        case SuperHeart:
+        case 1:
             return CollisionEffect(2, 0, 0);
             break;
         
-        case PoisonHeart:
+        case 2:
             return CollisionEffect(-1, 0, 0);
             break;
         
