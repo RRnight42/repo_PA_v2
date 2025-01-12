@@ -16,7 +16,7 @@ void Emitter::Render()
 }
 
 // funcion de probabilidades///
-
+/*
 Item* Emitter::generateSolidByProbability(const vector<pair<Item*, float>>& solidsWithProbabilities) {
 	// Calcular la suma de las probabilidades (por si no suman exactamente 1.0)
 	float totalProbability = 0.0f;
@@ -41,8 +41,39 @@ Item* Emitter::generateSolidByProbability(const vector<pair<Item*, float>>& soli
 	}
 
 	return nullptr; // No debería llegar aquí
-}
+}*/
 
+Item* Emitter::generateSolidByProbability(const vector<pair<Item*, float>>& solidsWithProbabilities) {
+	// Calcular la suma de las probabilidades
+	float totalProbability = 0.0f;
+	for (const auto& entry : solidsWithProbabilities) {
+		totalProbability += entry.second;
+	}
+
+	// Validar que las probabilidades sean válidas (ninguna debe ser negativa)
+	if (totalProbability < 0.0f) {
+		throw invalid_argument("La suma de las probabilidades no puede ser negativa.");
+	}
+
+	// Generar un número aleatorio entre 0.0 y 1.0
+	random_device rd;
+	mt19937 gen(rd());
+	uniform_real_distribution<float> dis(0.0f, 1.0f);
+
+	float randomValue = dis(gen); // Valor aleatorio entre 0 y 1
+	float cumulative = 0.0f;
+
+	// Evaluar qué probabilidad corresponde al valor generado
+	for (const auto& entry : solidsWithProbabilities) {
+		cumulative += entry.second / totalProbability; // Normalizar las probabilidades a un rango [0, 1]
+		if (randomValue <= cumulative) {
+			return entry.first->Clone(); // Generar el clon del objeto seleccionado
+		}
+	}
+
+	// Si el valor generado está fuera del rango de probabilidades, no generar nada
+	return nullptr;
+}
 
 
 

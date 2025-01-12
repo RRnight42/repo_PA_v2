@@ -4,23 +4,26 @@ void WinScene::Init() {
 
 	message = new Text("¡FELICIDADES, HAS GANADO", Text::TimesNewRoman24, Color());
 	restart = new Text("Volver a jugar", Text::Helvetica18, Color(1, 0.5, 0, 1));
+	nextLvl = new Text("Siguiente nivel", Text::Helvetica12, Color(0, 0, 0, 1));
 	menu = new Text("Menu", Text::Helvetica12, Color(0, 0, 0, 1));
 	salir = new Text("Salir", Text::Helvetica12, Color(0, 0, 0, 1));
-	
 
-	message->SetPosition(Vector3D(-5, 6, 0));
-	restart->SetPosition(Vector3D(-1.5, 0, 0));
-	menu->SetPosition(Vector3D(-1, -3, 0));
+
+	message->SetPosition(Vector3D(-5, 8, 0));
+	restart->SetPosition(Vector3D(-1.5, 3, 0));
+	menu->SetPosition(Vector3D(-1, 0, 0));
+	nextLvl->SetPosition(Vector3D(-1.5, -3, 0));
 	salir->SetPosition(Vector3D(-1, -6, 0));
 
 	AddGameObject(message);
 	AddGameObject(restart);
+	AddGameObject(nextLvl);
 	AddGameObject(menu);
 	AddGameObject(salir);
 }
 
 void WinScene::ProcessKeyPressed(unsigned char key, int px, int py) {
-	
+
 	switch (key) {
 		/*
 	case 13:
@@ -40,37 +43,58 @@ void WinScene::ProcessKeyPressed(unsigned char key, int px, int py) {
 	case 'w':
 
 		if (selected == 1) {
-		selected = 0;
+			selected = 0;
 
-		restart->setType(Text::Helvetica18);
-		menu->setType(Text::Helvetica12);
-		salir->setType(Text::Helvetica12);
+			restart->setType(Text::Helvetica18);
+			menu->setType(Text::Helvetica12);
+			nextLvl->setType(Text::Helvetica12);
+			salir->setType(Text::Helvetica12);
 
-		restart->SetColor(Color(1, 0.5, 0, 1));
-		salir->SetColor(Color(0, 0, 0, 1));
-		salir->SetColor(Color(0, 0, 0, 1));
-
-		} else if (selected == 2) {
-		selected = 1;
-
-		restart->setType(Text::Helvetica12);
-		menu->setType(Text::Helvetica18);
-		salir->setType(Text::Helvetica12);
-
-		restart->SetColor(Color(0, 0, 0, 1));
-		salir->SetColor(Color(1, 0.5, 0, 1));
-		salir->SetColor(Color(0, 0, 0, 1));
+			restart->SetColor(Color(1, 0.5, 0, 1));
+			menu->SetColor(Color(0, 0, 0, 1));
+			nextLvl->SetColor(Color(0, 0, 0, 1));
+			salir->SetColor(Color(0, 0, 0, 1));
 
 		}
-		else if (selected == 0) {
+		else if (selected == 2) {
+			selected = 1;
+
+			restart->setType(Text::Helvetica12);
+			menu->setType(Text::Helvetica18);
+			nextLvl->setType(Text::Helvetica12);
+			salir->setType(Text::Helvetica12);
+
+			restart->SetColor(Color(0, 0, 0, 1));
+			menu->SetColor(Color(1, 0.5, 0, 1));
+			nextLvl->SetColor(Color(0, 0, 0, 1));
+			salir->SetColor(Color(0, 0, 0, 1));
+
+		}
+		else if (selected == 3) {
 			selected = 2;
 
 			restart->setType(Text::Helvetica12);
 			menu->setType(Text::Helvetica12);
+			nextLvl->setType(Text::Helvetica18);
+			salir->setType(Text::Helvetica12);
+
+			restart->SetColor(Color(0, 0, 0, 1));
+			menu->SetColor(Color(0, 0, 0, 1));
+			nextLvl->SetColor(Color(1, 0.5, 0, 1));
+			salir->SetColor(Color(0, 0, 0, 1));
+
+		}
+		else if (selected == 0) {
+			selected = 3;
+
+			restart->setType(Text::Helvetica12);
+			menu->setType(Text::Helvetica12);
+			nextLvl->setType(Text::Helvetica12);
 			salir->setType(Text::Helvetica18);
 
 			restart->SetColor(Color(0, 0, 0, 1));
-			salir->SetColor(Color(0, 0, 0, 1));
+			menu->SetColor(Color(0, 0, 0, 1));
+			nextLvl->SetColor(Color(0, 0, 0, 1));
 			salir->SetColor(Color(1, 0.5, 0, 1));
 		}
 		break;
@@ -80,30 +104,48 @@ void WinScene::ProcessKeyPressed(unsigned char key, int px, int py) {
 			selected = 1;
 			restart->setType(Text::Helvetica12);
 			menu->setType(Text::Helvetica18);
+			nextLvl->setType(Text::Helvetica12);
 			salir->setType(Text::Helvetica12);
 
 			restart->SetColor(Color(0, 0, 0, 1));
-			salir->SetColor(Color(1, 0.5, 0, 1));
+			menu->SetColor(Color(1, 0.5, 0, 1));
+			nextLvl->SetColor(Color(0, 0, 0, 1));
 			salir->SetColor(Color(0, 0, 0, 1));
 		}
 		else if (selected == 1) {
 			selected = 2;
 			restart->setType(Text::Helvetica12);
 			menu->setType(Text::Helvetica12);
+			nextLvl->setType(Text::Helvetica18);
+			salir->setType(Text::Helvetica12);
+
+			restart->SetColor(Color(0, 0, 0, 1));
+			menu->SetColor(Color(0, 0, 0, 1));
+			nextLvl->SetColor(Color(1, 0.5, 0, 1));
+			salir->SetColor(Color(0, 0, 0, 1));
+		}
+		else if (selected == 2) {
+			selected = 3;
+			restart->setType(Text::Helvetica12);
+			menu->setType(Text::Helvetica12);
+			nextLvl->setType(Text::Helvetica12);
 			salir->setType(Text::Helvetica18);
 
 			restart->SetColor(Color(0, 0, 0, 1));
-			salir->SetColor(Color(0, 0, 0, 1));
+			menu->SetColor(Color(0, 0, 0, 1));
+			nextLvl->SetColor(Color(0, 0, 0, 1));
 			salir->SetColor(Color(1, 0.5, 0, 1));
 		}
-		else if (selected == 2) {
+		else if (selected == 3) {
 			selected = 0;
 			restart->setType(Text::Helvetica18);
 			menu->setType(Text::Helvetica12);
+			nextLvl->setType(Text::Helvetica12);
 			salir->setType(Text::Helvetica12);
 
 			restart->SetColor(Color(1, 0.5, 0, 1));
-			salir->SetColor(Color(0, 0, 0, 1));
+			menu->SetColor(Color(0, 0, 0, 1));
+			nextLvl->SetColor(Color(0, 0, 0, 1));
 			salir->SetColor(Color(0, 0, 0, 1));
 		}
 		break;
@@ -112,16 +154,26 @@ void WinScene::ProcessKeyPressed(unsigned char key, int px, int py) {
 
 		if (selected == 0) {
 			this->menuTransicion(false);
+			this->NextLevel(false);
 			this->endScene(true);
-			
+
 		}
 		else if (selected == 1) {
 			this->menuTransicion(true);
+			this->NextLevel(false);
+			this->endScene(true);
+		}
+		else if (selected == 2) {
+			this->menuTransicion(false);
+			this->NextLevel(true);
 			this->endScene(true);
 		}
 		else {
 			exit(0);
 		}
+		break;
+
+	default:
 		break;
 	}
 }
@@ -138,10 +190,12 @@ void WinScene::ProcessSpecialKeyPressed(int key, int px, int py) {
 
 			restart->setType(Text::Helvetica18);
 			menu->setType(Text::Helvetica12);
+			nextLvl->setType(Text::Helvetica12);
 			salir->setType(Text::Helvetica12);
 
 			restart->SetColor(Color(1, 0.5, 0, 1));
-			salir->SetColor(Color(0, 0, 0, 1));
+			menu->SetColor(Color(0, 0, 0, 1));
+			nextLvl->SetColor(Color(0, 0, 0, 1));
 			salir->SetColor(Color(0, 0, 0, 1));
 
 		}
@@ -150,22 +204,40 @@ void WinScene::ProcessSpecialKeyPressed(int key, int px, int py) {
 
 			restart->setType(Text::Helvetica12);
 			menu->setType(Text::Helvetica18);
+			nextLvl->setType(Text::Helvetica12);
 			salir->setType(Text::Helvetica12);
 
 			restart->SetColor(Color(0, 0, 0, 1));
-			salir->SetColor(Color(1, 0.5, 0, 1));
+			menu->SetColor(Color(1, 0.5, 0, 1));
+			nextLvl->SetColor(Color(0, 0, 0, 1));
 			salir->SetColor(Color(0, 0, 0, 1));
 
 		}
-		else if (selected == 0) {
+		else if (selected == 3) {
 			selected = 2;
 
 			restart->setType(Text::Helvetica12);
 			menu->setType(Text::Helvetica12);
+			nextLvl->setType(Text::Helvetica18);
+			salir->setType(Text::Helvetica12);
+
+			restart->SetColor(Color(0, 0, 0, 1));
+			menu->SetColor(Color(0, 0, 0, 1));
+			nextLvl->SetColor(Color(1, 0.5, 0, 1));
+			salir->SetColor(Color(0, 0, 0, 1));
+
+		}
+		else if (selected == 0) {
+			selected = 3;
+
+			restart->setType(Text::Helvetica12);
+			menu->setType(Text::Helvetica12);
+			nextLvl->setType(Text::Helvetica12);
 			salir->setType(Text::Helvetica18);
 
 			restart->SetColor(Color(0, 0, 0, 1));
-			salir->SetColor(Color(0, 0, 0, 1));
+			menu->SetColor(Color(0, 0, 0, 1));
+			nextLvl->SetColor(Color(0, 0, 0, 1));
 			salir->SetColor(Color(1, 0.5, 0, 1));
 		}
 		break;
@@ -175,30 +247,48 @@ void WinScene::ProcessSpecialKeyPressed(int key, int px, int py) {
 			selected = 1;
 			restart->setType(Text::Helvetica12);
 			menu->setType(Text::Helvetica18);
+			nextLvl->setType(Text::Helvetica12);
 			salir->setType(Text::Helvetica12);
 
 			restart->SetColor(Color(0, 0, 0, 1));
-			salir->SetColor(Color(1, 0.5, 0, 1));
+			menu->SetColor(Color(1, 0.5, 0, 1));
+			nextLvl->SetColor(Color(0, 0, 0, 1));
 			salir->SetColor(Color(0, 0, 0, 1));
 		}
 		else if (selected == 1) {
 			selected = 2;
 			restart->setType(Text::Helvetica12);
 			menu->setType(Text::Helvetica12);
+			nextLvl->setType(Text::Helvetica18);
+			salir->setType(Text::Helvetica12);
+
+			restart->SetColor(Color(0, 0, 0, 1));
+			menu->SetColor(Color(0, 0, 0, 1));
+			nextLvl->SetColor(Color(1, 0.5, 0, 1));
+			salir->SetColor(Color(0, 0, 0, 1));
+		}
+		else if (selected == 2) {
+			selected = 3;
+			restart->setType(Text::Helvetica12);
+			menu->setType(Text::Helvetica12);
+			nextLvl->setType(Text::Helvetica12);
 			salir->setType(Text::Helvetica18);
 
 			restart->SetColor(Color(0, 0, 0, 1));
-			salir->SetColor(Color(0, 0, 0, 1));
+			menu->SetColor(Color(0, 0, 0, 1));
+			nextLvl->SetColor(Color(0, 0, 0, 1));
 			salir->SetColor(Color(1, 0.5, 0, 1));
 		}
-		else if (selected == 2) {
+		else if (selected == 3) {
 			selected = 0;
 			restart->setType(Text::Helvetica18);
 			menu->setType(Text::Helvetica12);
+			nextLvl->setType(Text::Helvetica12);
 			salir->setType(Text::Helvetica12);
 
 			restart->SetColor(Color(1, 0.5, 0, 1));
-			salir->SetColor(Color(0, 0, 0, 1));
+			menu->SetColor(Color(0, 0, 0, 1));
+			nextLvl->SetColor(Color(0, 0, 0, 1));
 			salir->SetColor(Color(0, 0, 0, 1));
 		}
 		break;

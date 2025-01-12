@@ -8,12 +8,14 @@ private:
 
 	Text* message;
 	Text* restart;
+	Text* nextLvl;
 	Text* menu;
 	Text* salir;
 	
 
 	unsigned int selected;
 	bool gomenu;
+	bool goNxtLvl;
 
 public:
 
@@ -29,6 +31,9 @@ public:
 
 	inline bool getMenuTransicion() const { return this->gomenu; }
 	inline void menuTransicion(const bool& men) { this->gomenu = men; }
+
+	inline bool getNextLevel() const { return this->goNxtLvl; }
+	inline void NextLevel(const bool& l) { this->goNxtLvl = l; }
 
 };
 

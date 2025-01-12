@@ -57,12 +57,21 @@ public:
     void checkCollisionsPlayer(Player* player) {
 
         for (Item* particle : particlesVector) {
+            if (particle->isWideBarrel()) {
+                if (particle->Distance(player->GetPosition()) < player->getDistanceColissionWide()) {
 
-            if (particle->Distance(player->GetPosition()) < player->getDistanceColission()) {
+                    player->applyCollisionEffect(particle->getCollisionEffect());
+                    player->notifyUICanva();
+                    this->removeParticle(particle);
+                }
+            }
+            else {
+                if (particle->Distance(player->GetPosition()) < player->getDistanceColission()) {
 
-                player->applyCollisionEffect(particle->getCollisionEffect());
-                player->notifyUICanva();
-                this->removeParticle(particle);
+                    player->applyCollisionEffect(particle->getCollisionEffect());
+                    player->notifyUICanva();
+                    this->removeParticle(particle);
+                }
             }
 
             

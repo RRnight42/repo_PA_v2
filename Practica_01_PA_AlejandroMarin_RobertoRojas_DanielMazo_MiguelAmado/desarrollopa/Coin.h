@@ -49,5 +49,7 @@ public:
 		return new Coin(*this);
 	
 	}
+
+	bool isWideBarrel() { return false; }
 };
 

@@ -9,13 +9,11 @@ void Player::Render() {
 
     if (activeShield) {
     
-        this->shield->SetColor(Color(0, 1, 1, 0.35));
+        this->shield->SetColor(Color(0.2509, 0.8784, 0.8156, 0.35));
         shield->Render();
     }
     else {
-    
-       
-    
+
     }
 
 

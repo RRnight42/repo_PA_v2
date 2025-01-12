@@ -35,5 +35,7 @@ public:
 
         }
 
+        bool isWideBarrel() { return false; }
+
 };
 

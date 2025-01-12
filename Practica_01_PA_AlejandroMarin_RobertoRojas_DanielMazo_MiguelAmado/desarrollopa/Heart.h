@@ -78,4 +78,6 @@ public:
         return new Heart(*this);
 
     }
+
+    bool isWideBarrel() { return false; }
 };

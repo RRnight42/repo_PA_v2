@@ -34,5 +34,6 @@ public :
         return new DDBarrel(*this);
     
     }
+    bool isWideBarrel() { return false; }
 };
 

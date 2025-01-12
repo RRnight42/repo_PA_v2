@@ -269,12 +269,6 @@
     <ClInclude Include="WinScene.h">
       <Filter>Archivos de encabezado\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="UICanva.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="DebugScene.h">
       <Filter>Archivos de encabezado\Scenes</Filter>
     </ClInclude>
@@ -299,9 +293,6 @@
     <ClInclude Include="Text.h">
       <Filter>Archivos de encabezado\Primitivas</Filter>
     </ClInclude>
-    <ClInclude Include="Coin.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="DDBarrel.h">
       <Filter>Archivos de encabezado\Barrels</Filter>
     </ClInclude>
@@ -314,14 +305,23 @@
     <ClInclude Include="SpeedBarrel.h">
       <Filter>Archivos de encabezado\Barrels</Filter>
     </ClInclude>
-    <ClInclude Include="Item.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="Coin.h">
+      <Filter>Archivos de encabezado\auxiliares</Filter>
     </ClInclude>
     <ClInclude Include="CollisionEffect.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\auxiliares</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Archivos de encabezado\auxiliares</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Archivos de encabezado\auxiliares</Filter>
     </ClInclude>
     <ClInclude Include="Time.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\auxiliares</Filter>
+    </ClInclude>
+    <ClInclude Include="UICanva.h">
+      <Filter>Archivos de encabezado\auxiliares</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

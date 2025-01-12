@@ -27,7 +27,6 @@ private:
 
 	// scenes
 
-
 	MenuScene* menu;
 	GameScene* lvl1;
 	GameScene* lvl2;
@@ -37,6 +36,7 @@ private:
 	WinScene* win;
 	LoseScene* lose;
 
+	int nivelActual = 1;
 public:
 
 	Game() {}

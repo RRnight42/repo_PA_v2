@@ -19,7 +19,7 @@ public:
 private:
 
     MaterialModel model;
-    Sphere* shield = new Sphere(1.2, 15, 10);
+    Sphere* shield = new Sphere(1.7, 15, 10);
 
     int lives;
     int coinsValue;

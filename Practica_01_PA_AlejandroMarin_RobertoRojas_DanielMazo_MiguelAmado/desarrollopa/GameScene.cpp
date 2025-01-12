@@ -45,7 +45,7 @@ void GameScene::Init() {
 	emitterPowerUpC1->SetPosition(Vector3D(-3.45, -1, -40));
 	emitterPowerUpC2->SetPosition(Vector3D(0, -1, -40));
 	emitterPowerUpC3->SetPosition(Vector3D(3.45, -1, -40));
-	
+
 	emitterCoinsC1->SetPosition(Vector3D(-3.45, -1, -40));
 	emitterCoinsC2->SetPosition(Vector3D(0, -1, -40));
 	emitterCoinsC3->SetPosition(Vector3D(3.45, -1, -40));
@@ -53,12 +53,12 @@ void GameScene::Init() {
 	emitterWideBarrelC1->SetPosition(Vector3D(-1.7, -1, -40));
 	emitterWideBarrelC2->SetPosition(Vector3D(1.7, -1, -40));
 
-	
+
 	loaderMaterial = new MaterialModelLoader(0.6);
 
 	loaderMaterial->LoadModel("Player.obj");
-	
-	player->SetPosition(Vector3D(0 , -1 , 10));
+
+	player->SetPosition(Vector3D(0, -1, 10));
 	player->setModelPlayer(loaderMaterial->GetMaterialModel());
 
 	player->setCarril(2);
@@ -71,8 +71,8 @@ void GameScene::Init() {
 	sep2->SetPosition(Vector3D(-5, -3, -60));
 	sep3->SetPosition(Vector3D(1.7, -3, -60));
 	sep4->SetPosition(Vector3D(5, -3, -60));
-	
-	
+
+
 	carretera->SetColor(Color(0, 0, 0, 1));
 
 	sep1->SetColor(Color(1, 1, 1, 1));
@@ -88,12 +88,13 @@ void GameScene::Init() {
 	barrelEmitters.push_back(emitterWideBarrelC1);
 	barrelEmitters.push_back(emitterWideBarrelC2);
 
-	vector <pair<Item*, float>> barrelsDistribution = { {new NormalBarrel() , 0.5f } , {new SpeedBarrel() , 0.3f } , {new DDBarrel() , 0.2f}};
-	vector <pair<Item*, float>> barrelsWideDistribution = { {new WideBarrel() , 1.0f } };
-	vector <pair<Item*, float>> powersDistribution = { {new Heart() , 0.25f } ,{new Ray() , 0.25f } , {new Shield() , 0.25f } , {new SpeedReduce() , 0.25f} };
-	vector <pair<Item*, float>> CoinsDistribution = { {new Coin() , 1.0f } };
 
 	if (this->getLevel() == this->Level1) {
+
+		vector <pair<Item*, float>> barrelsDistribution = { {new NormalBarrel() , 0.5f } , {new SpeedBarrel() , 0.3f } , {new DDBarrel() , 0.2f} };
+		vector <pair<Item*, float>> barrelsWideDistribution = { {new WideBarrel() , 0.3f } };
+		vector <pair<Item*, float>> powersDistribution = { {new Heart() , 0.25f } ,{new Ray() , 0.25f } , {new Shield() , 0.25f } , {new SpeedReduce() , 0.25f} };
+		vector <pair<Item*, float>> CoinsDistribution = { {new Coin() , 1.0f } };
 
 		EmitterConfiguration confBarrelLvl1(barrelsDistribution, 20, 1, 2, 5000, 12000, 30000, true);
 		EmitterConfiguration confWideBarrelLvl1(barrelsWideDistribution, 10, 1, 1, 12000, 20000, 30000, true);
@@ -115,16 +116,116 @@ void GameScene::Init() {
 		emitterCoinsC2->setConfiguration(confCoinLvl);
 		emitterCoinsC3->setConfiguration(confCoinLvl);
 
-	
-	}else if (this->getLevel() == this->Level2) {
 
-	}else if (this->getLevel() == this->Level3) {
+	}
+	else if (this->getLevel() == this->Level2) {
+		vector <pair<Item*, float>> barrelsDistribution = { {new NormalBarrel() , 0.5f } , {new SpeedBarrel() , 0.3f } , {new DDBarrel() , 0.2f} };
+		vector <pair<Item*, float>> barrelsWideDistribution = { {new WideBarrel() , 0.3f } };
+		vector <pair<Item*, float>> powersDistribution = { {new Heart() , 0.25f } ,{new Ray() , 0.25f } , {new Shield() , 0.25f } , {new SpeedReduce() , 0.25f} };
+		vector <pair<Item*, float>> CoinsDistribution = { {new Coin() , 1.0f } };
 
-	}else if (this->getLevel() == this->Level4) {
+		EmitterConfiguration confBarrelLvl1(barrelsDistribution, 20, 1, 2, 5000, 12000, 30000, true);
+		EmitterConfiguration confWideBarrelLvl1(barrelsWideDistribution, 10, 1, 1, 12000, 20000, 30000, true);
+		EmitterConfiguration confPULvl1(powersDistribution, 20, 1, 1, 15000, 20000, 30000, true);
+		EmitterConfiguration confCoinLvl(CoinsDistribution, 50, 1, 5, 8000, 20000, 30000, true);
 
-	}else if (this->getLevel() == this->Level5) {
+		emitterBarrelC1->setConfiguration(confBarrelLvl1);
+		emitterBarrelC2->setConfiguration(confBarrelLvl1);
+		emitterBarrelC3->setConfiguration(confBarrelLvl1);
 
-	}	
+		emitterWideBarrelC1->setConfiguration(confWideBarrelLvl1);
+		emitterWideBarrelC2->setConfiguration(confWideBarrelLvl1);
+
+		emitterPowerUpC1->setConfiguration(confPULvl1);
+		emitterPowerUpC2->setConfiguration(confPULvl1);
+		emitterPowerUpC3->setConfiguration(confPULvl1);
+
+		emitterCoinsC1->setConfiguration(confCoinLvl);
+		emitterCoinsC2->setConfiguration(confCoinLvl);
+		emitterCoinsC3->setConfiguration(confCoinLvl);
+
+	}
+	else if (this->getLevel() == this->Level3) {
+		vector <pair<Item*, float>> barrelsDistribution = { {new NormalBarrel() , 0.5f } , {new SpeedBarrel() , 0.3f } , {new DDBarrel() , 0.2f} };
+		vector <pair<Item*, float>> barrelsWideDistribution = { {new WideBarrel() , 0.3f } };
+		vector <pair<Item*, float>> powersDistribution = { {new Heart() , 0.25f } ,{new Ray() , 0.25f } , {new Shield() , 0.25f } , {new SpeedReduce() , 0.25f} };
+		vector <pair<Item*, float>> CoinsDistribution = { {new Coin() , 1.0f } };
+
+		EmitterConfiguration confBarrelLvl1(barrelsDistribution, 20, 1, 2, 5000, 12000, 30000, true);
+		EmitterConfiguration confWideBarrelLvl1(barrelsWideDistribution, 10, 1, 1, 12000, 20000, 30000, true);
+		EmitterConfiguration confPULvl1(powersDistribution, 20, 1, 1, 15000, 20000, 30000, true);
+		EmitterConfiguration confCoinLvl(CoinsDistribution, 50, 1, 5, 8000, 20000, 30000, true);
+
+		emitterBarrelC1->setConfiguration(confBarrelLvl1);
+		emitterBarrelC2->setConfiguration(confBarrelLvl1);
+		emitterBarrelC3->setConfiguration(confBarrelLvl1);
+
+		emitterWideBarrelC1->setConfiguration(confWideBarrelLvl1);
+		emitterWideBarrelC2->setConfiguration(confWideBarrelLvl1);
+
+		emitterPowerUpC1->setConfiguration(confPULvl1);
+		emitterPowerUpC2->setConfiguration(confPULvl1);
+		emitterPowerUpC3->setConfiguration(confPULvl1);
+
+		emitterCoinsC1->setConfiguration(confCoinLvl);
+		emitterCoinsC2->setConfiguration(confCoinLvl);
+		emitterCoinsC3->setConfiguration(confCoinLvl);
+
+	}
+	else if (this->getLevel() == this->Level4) {
+		vector <pair<Item*, float>> barrelsDistribution = { {new NormalBarrel() , 0.5f } , {new SpeedBarrel() , 0.3f } , {new DDBarrel() , 0.2f} };
+		vector <pair<Item*, float>> barrelsWideDistribution = { {new WideBarrel() , 0.3f } };
+		vector <pair<Item*, float>> powersDistribution = { {new Heart() , 0.25f } ,{new Ray() , 0.25f } , {new Shield() , 0.25f } , {new SpeedReduce() , 0.25f} };
+		vector <pair<Item*, float>> CoinsDistribution = { {new Coin() , 1.0f } };
+
+		EmitterConfiguration confBarrelLvl1(barrelsDistribution, 20, 1, 2, 5000, 12000, 30000, true);
+		EmitterConfiguration confWideBarrelLvl1(barrelsWideDistribution, 10, 1, 1, 12000, 20000, 30000, true);
+		EmitterConfiguration confPULvl1(powersDistribution, 20, 1, 1, 15000, 20000, 30000, true);
+		EmitterConfiguration confCoinLvl(CoinsDistribution, 50, 1, 5, 8000, 20000, 30000, true);
+
+		emitterBarrelC1->setConfiguration(confBarrelLvl1);
+		emitterBarrelC2->setConfiguration(confBarrelLvl1);
+		emitterBarrelC3->setConfiguration(confBarrelLvl1);
+
+		emitterWideBarrelC1->setConfiguration(confWideBarrelLvl1);
+		emitterWideBarrelC2->setConfiguration(confWideBarrelLvl1);
+
+		emitterPowerUpC1->setConfiguration(confPULvl1);
+		emitterPowerUpC2->setConfiguration(confPULvl1);
+		emitterPowerUpC3->setConfiguration(confPULvl1);
+
+		emitterCoinsC1->setConfiguration(confCoinLvl);
+		emitterCoinsC2->setConfiguration(confCoinLvl);
+		emitterCoinsC3->setConfiguration(confCoinLvl);
+
+	}
+	else if (this->getLevel() == this->Level5) {
+		vector <pair<Item*, float>> barrelsDistribution = { {new NormalBarrel() , 0.5f } , {new SpeedBarrel() , 0.3f } , {new DDBarrel() , 0.2f} };
+		vector <pair<Item*, float>> barrelsWideDistribution = { {new WideBarrel() , 0.3f } };
+		vector <pair<Item*, float>> powersDistribution = { {new Heart() , 0.25f } ,{new Ray() , 0.25f } , {new Shield() , 0.25f } , {new SpeedReduce() , 0.25f} };
+		vector <pair<Item*, float>> CoinsDistribution = { {new Coin() , 1.0f } };
+
+		EmitterConfiguration confBarrelLvl1(barrelsDistribution, 20, 1, 2, 5000, 12000, 30000, true);
+		EmitterConfiguration confWideBarrelLvl1(barrelsWideDistribution, 10, 1, 1, 12000, 20000, 30000, true);
+		EmitterConfiguration confPULvl1(powersDistribution, 20, 1, 1, 15000, 20000, 30000, true);
+		EmitterConfiguration confCoinLvl(CoinsDistribution, 50, 1, 5, 8000, 20000, 30000, true);
+
+		emitterBarrelC1->setConfiguration(confBarrelLvl1);
+		emitterBarrelC2->setConfiguration(confBarrelLvl1);
+		emitterBarrelC3->setConfiguration(confBarrelLvl1);
+
+		emitterWideBarrelC1->setConfiguration(confWideBarrelLvl1);
+		emitterWideBarrelC2->setConfiguration(confWideBarrelLvl1);
+
+		emitterPowerUpC1->setConfiguration(confPULvl1);
+		emitterPowerUpC2->setConfiguration(confPULvl1);
+		emitterPowerUpC3->setConfiguration(confPULvl1);
+
+		emitterCoinsC1->setConfiguration(confCoinLvl);
+		emitterCoinsC2->setConfiguration(confCoinLvl);
+		emitterCoinsC3->setConfiguration(confCoinLvl);
+
+	}
 	AddGameObject(player);
 	AddGameObject(canva);
 	AddGameObject(carretera);
@@ -132,17 +233,17 @@ void GameScene::Init() {
 	AddGameObject(sep2);
 	AddGameObject(sep3);
 	AddGameObject(sep4);
-    AddGameObject(emitterBarrelC1);
-    AddGameObject(emitterBarrelC2);
-    AddGameObject(emitterBarrelC3);
-	AddGameObject(emitterPowerUpC1);
-	AddGameObject(emitterPowerUpC2);
-	AddGameObject(emitterPowerUpC3);
+	AddGameObject(emitterBarrelC1);
+	AddGameObject(emitterBarrelC2);
+	AddGameObject(emitterBarrelC3);
+	AddGameObject(emitterWideBarrelC1);
+	AddGameObject(emitterWideBarrelC2);
 	AddGameObject(emitterCoinsC1);
 	AddGameObject(emitterCoinsC2);
 	AddGameObject(emitterCoinsC3);
-	AddGameObject(emitterWideBarrelC1);
-	AddGameObject(emitterWideBarrelC2);
+	AddGameObject(emitterPowerUpC1);
+	AddGameObject(emitterPowerUpC2);
+	AddGameObject(emitterPowerUpC3);
 }
 
 void GameScene::Reset() {
@@ -198,9 +299,6 @@ void GameScene::Reset() {
 
 	shieldEffect = false;
 	speedEffect = false;
-
-
-	this->Init();
 }
 
 void GameScene::Update(const float& timeUpdate) {
@@ -220,23 +318,23 @@ void GameScene::Update(const float& timeUpdate) {
 	this->emitterPowerUpC1->checkCollisionsPlayer(player);
 	this->emitterPowerUpC2->checkCollisionsPlayer(player);
 	this->emitterPowerUpC3->checkCollisionsPlayer(player);
-	
+
 	this->emitterCoinsC1->checkCollisionsPlayer(player);
 	this->emitterCoinsC2->checkCollisionsPlayer(player);
 	this->emitterCoinsC3->checkCollisionsPlayer(player);
 
 	if (shieldEffect || speedEffect) {
-		
-		int duration = 10; 
-		timePowerUps +=  time.GetDeltaTime();
+
+		int duration = 10;
+		timePowerUps += time.GetDeltaTime();
 
 		if (timePowerUps >= duration) {
 
 
-            player->ResetPowerUp();
+			player->ResetPowerUp();
 
 
-			if (speedEffect) {		
+			if (speedEffect) {
 				for (Emitter* em : barrelEmitters) {
 					for (Item* barrel : em->getParticles()) {
 						barrel->SetSpeed(Vector3D(0, 0, barrel->GetSpeed().GetZ() * 2)); // Restauramos la velocidad original
@@ -245,23 +343,24 @@ void GameScene::Update(const float& timeUpdate) {
 				}
 
 				timePowerUps = 0;
-              speedEffect = false;
+				speedEffect = false;
 			}
-			
-			if (shieldEffect) {
-			  this->player->setShield(false);
-			  timePowerUps = 0;
-			  shieldEffect = false;
-			}		
-			
 
-			
+			if (shieldEffect) {
+				this->player->setShield(false);
+				timePowerUps = 0;
+				shieldEffect = false;
+			}
+
+
+
 
 		}
 	}
 	cambioEscena();
-	cout << player->getLives() << ", " << player->getCoins()<< "," << player->getCurrentPowerUp() << endl;
+	//cout << player->getLives() << ", " << player->getCoins() << "," << player->getCurrentPowerUp() << endl;
 	
+
 }
 
 
@@ -281,7 +380,7 @@ void GameScene::usePowerUpPlayer() {
 			speedEffect = true;
 			break;
 
-			
+
 		case Player::Shield:
 			activateShield();
 			break;
@@ -301,9 +400,9 @@ void GameScene::usePowerUpPlayer() {
 void GameScene::activateRay() {
 
 	for (Emitter* em : barrelEmitters) {
-	
+
 		em->clearParticles();
-	
+
 	}
 
 }
@@ -347,45 +446,45 @@ void GameScene::ProcessKeyPressed(unsigned char key, int px, int py) {
 
 
 	switch (key) {
-	
+
 	case 'L':
 	case 'l':
 		usePowerUpPlayer();
-	break;
-	
+		break;
+
 	case 'A':
 	case 'a':
 		if (player->getCarril() == 1) {}
 		else {
 			player->setCarril(player->getCarril() - 1);
-			player->SetPosition(player->GetPosition() - Vector3D(3.45,0,0));
+			player->SetPosition(player->GetPosition() - Vector3D(3.45, 0, 0));
 		}
 		break;
-	
+
 	case 'D':
 	case 'd':
 		if (player->getCarril() == 3) {}
 		else {
 			player->setCarril(player->getCarril() + 1);
 			player->SetPosition(player->GetPosition() + Vector3D(3.45, 0, 0));
-		
+
 		}
 		break;
-	
-	//Para debugear las condiciones de derrota y victoria y el cambio de escena, añadimos dos teclas especificas
+
+		//Para debugear las condiciones de derrota y victoria y el cambio de escena, añadimos dos teclas especificas
 	case 'o':
-		
+
 		this->endScene(true);
 		this->setCondVictoria(false);
 		break;
 
 	case'p':
-		
+
 		this->endScene(true);
 		this->setCondVictoria(true);
 		break;
 
-     }
+	}
 
 }
 

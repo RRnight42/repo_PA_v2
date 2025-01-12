@@ -35,6 +35,8 @@ public:
     virtual CollisionEffect getCollisionEffect() = 0;
 
     virtual  Item* Clone() = 0;
+
+    virtual bool isWideBarrel() = 0;
 };
 
 
