@@ -30,6 +30,10 @@ private:
 
 	MenuScene* menu;
 	GameScene* lvl1;
+	GameScene* lvl2;
+	GameScene* lvl3;
+	GameScene* lvl4;
+	GameScene* lvl5;
 	WinScene* win;
 	LoseScene* lose;
 

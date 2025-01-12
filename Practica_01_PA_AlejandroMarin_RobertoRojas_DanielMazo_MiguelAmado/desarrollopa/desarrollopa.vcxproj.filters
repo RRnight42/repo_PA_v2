@@ -132,12 +132,6 @@
     <ClCompile Include="WinScene.cpp">
       <Filter>Archivos de origen\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="UICanva.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="Heart.cpp">
       <Filter>Archivos de origen\PowerUps</Filter>
     </ClCompile>
@@ -162,9 +156,6 @@
     <ClCompile Include="Text.cpp">
       <Filter>Archivos de origen\Primitivas</Filter>
     </ClCompile>
-    <ClCompile Include="Coin.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="DDBarrel.cpp">
       <Filter>Archivos de origen\Barrels</Filter>
     </ClCompile>
@@ -178,13 +169,22 @@
       <Filter>Archivos de origen\Barrels</Filter>
     </ClCompile>
     <ClCompile Include="Item.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\auxiliares</Filter>
     </ClCompile>
-    <ClCompile Include="CollisionEffect.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="UICanva.cpp">
+      <Filter>Archivos de origen\auxiliares</Filter>
     </ClCompile>
     <ClCompile Include="Time.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\auxiliares</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Archivos de origen\auxiliares</Filter>
+    </ClCompile>
+    <ClCompile Include="Coin.cpp">
+      <Filter>Archivos de origen\auxiliares</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionEffect.cpp">
+      <Filter>Archivos de origen\auxiliares</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

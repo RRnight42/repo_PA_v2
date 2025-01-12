@@ -7,7 +7,13 @@ void Game::Init()
 	cout << "[GAME] Init..." << endl;
 
     menu = new	MenuScene();
-    lvl1 = new GameScene(GameScene::Level1);
+
+    lvl1 = new GameScene(GameScene::Level1 , 15);
+	lvl2 = new GameScene(GameScene::Level2, 30);
+	lvl3 = new GameScene(GameScene::Level3, 45);
+	lvl4 = new GameScene(GameScene::Level4, 75);
+	lvl5 = new GameScene(GameScene::Level5, 100);
+
 	win = new WinScene();
 	lose = new LoseScene();
 

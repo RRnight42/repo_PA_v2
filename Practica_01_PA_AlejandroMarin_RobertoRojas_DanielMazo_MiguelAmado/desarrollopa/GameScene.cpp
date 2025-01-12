@@ -333,7 +333,7 @@ void GameScene::activateSpeedReduce(const float& speedFactor) {
 
 void GameScene::cambioEscena() {
 
-	if (player->getCoins() >= 30) {
+	if (player->getCoins() >= coinsToWin) {
 		this->condVictoria = true;
 		this->endScene(true);
 	}

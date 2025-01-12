@@ -88,12 +88,14 @@ private:
 
 	bool condVictoria;
 
+	int coinsToWin;
+
 public : 
 	
 	inline Level getLevel() const { return this->level;}
 
 
-	GameScene(Level levelToSet) : level(levelToSet){}
+	GameScene(Level levelToSet ,  int coinsObjective) : level(levelToSet) , coinsToWin(coinsObjective){}
 
 	void usePowerUpPlayer();
 	void Init();
