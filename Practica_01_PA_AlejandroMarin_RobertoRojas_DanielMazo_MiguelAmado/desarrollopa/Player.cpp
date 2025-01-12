@@ -32,8 +32,13 @@ void Player::Update(const float& timeUpdate) {
 void Player::applyCollisionEffect(CollisionEffect col) {
 
 
-    if(!activeShield){
-    this->lives += col.ColLives();
+    if (!activeShield) {
+        this->lives += col.ColLives();
+
+    }
+
+    if (lives > 3) {
+        lives = 3;
     }
 
     this->coinsValue += col.ColCoins();

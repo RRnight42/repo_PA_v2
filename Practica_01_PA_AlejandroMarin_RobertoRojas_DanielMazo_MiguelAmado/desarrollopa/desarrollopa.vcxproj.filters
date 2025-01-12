@@ -150,9 +150,6 @@
     <ClCompile Include="Barrel.cpp">
       <Filter>Archivos de origen\Barrels</Filter>
     </ClCompile>
-    <ClCompile Include="DebugScene.cpp">
-      <Filter>Archivos de origen\Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="Text.cpp">
       <Filter>Archivos de origen\Primitivas</Filter>
     </ClCompile>
@@ -267,9 +264,6 @@
       <Filter>Archivos de encabezado\Scenes</Filter>
     </ClInclude>
     <ClInclude Include="WinScene.h">
-      <Filter>Archivos de encabezado\Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="DebugScene.h">
       <Filter>Archivos de encabezado\Scenes</Filter>
     </ClInclude>
     <ClInclude Include="Barrel.h">

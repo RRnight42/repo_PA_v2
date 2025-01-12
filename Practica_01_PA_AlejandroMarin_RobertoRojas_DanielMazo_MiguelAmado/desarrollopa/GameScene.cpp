@@ -91,13 +91,13 @@ void GameScene::Init() {
 
 	if (this->getLevel() == this->Level1) {
 
-		vector <pair<Item*, float>> barrelsDistribution = { {new NormalBarrel() , 0.5f } , {new SpeedBarrel() , 0.3f } , {new DDBarrel() , 0.2f} };
-		vector <pair<Item*, float>> barrelsWideDistribution = { {new WideBarrel() , 0.3f } };
+		vector <pair<Item*, float>> barrelsDistribution = { {new NormalBarrel() , 0.3f } , {new SpeedBarrel() , 0.2f } , {new DDBarrel() , 0.1f} };
+		vector <pair<Item*, float>> barrelsWideDistribution = { {new WideBarrel() , 0.2f } };
 		vector <pair<Item*, float>> powersDistribution = { {new Heart() , 0.25f } ,{new Ray() , 0.25f } , {new Shield() , 0.25f } , {new SpeedReduce() , 0.25f} };
 		vector <pair<Item*, float>> CoinsDistribution = { {new Coin() , 1.0f } };
 
-		EmitterConfiguration confBarrelLvl1(barrelsDistribution, 20, 1, 2, 5000, 12000, 30000, true);
-		EmitterConfiguration confWideBarrelLvl1(barrelsWideDistribution, 10, 1, 1, 12000, 20000, 30000, true);
+		EmitterConfiguration confBarrelLvl1(barrelsDistribution, 20, 1, 2, 1000, 12000, 30000, true);
+		EmitterConfiguration confWideBarrelLvl1(barrelsWideDistribution, 10, 1, 1, 12000, 30000, 30000, true);
 		EmitterConfiguration confPULvl1(powersDistribution, 20, 1, 1, 15000, 20000, 30000, true);
 		EmitterConfiguration confCoinLvl(CoinsDistribution, 50, 1, 5, 8000, 20000, 30000, true);
 
@@ -119,26 +119,26 @@ void GameScene::Init() {
 
 	}
 	else if (this->getLevel() == this->Level2) {
-		vector <pair<Item*, float>> barrelsDistribution = { {new NormalBarrel() , 0.5f } , {new SpeedBarrel() , 0.3f } , {new DDBarrel() , 0.2f} };
+		vector <pair<Item*, float>> barrelsDistribution = { {new NormalBarrel() , 0.4f } , {new SpeedBarrel() , 0.4f } , {new DDBarrel() , 0.2f} };
 		vector <pair<Item*, float>> barrelsWideDistribution = { {new WideBarrel() , 0.3f } };
 		vector <pair<Item*, float>> powersDistribution = { {new Heart() , 0.25f } ,{new Ray() , 0.25f } , {new Shield() , 0.25f } , {new SpeedReduce() , 0.25f} };
 		vector <pair<Item*, float>> CoinsDistribution = { {new Coin() , 1.0f } };
 
-		EmitterConfiguration confBarrelLvl1(barrelsDistribution, 20, 1, 2, 5000, 12000, 30000, true);
-		EmitterConfiguration confWideBarrelLvl1(barrelsWideDistribution, 10, 1, 1, 12000, 20000, 30000, true);
-		EmitterConfiguration confPULvl1(powersDistribution, 20, 1, 1, 15000, 20000, 30000, true);
+		EmitterConfiguration confBarrelLvl2(barrelsDistribution, 20, 1, 2, 5000, 12000, 30000, true);
+		EmitterConfiguration confWideBarrelLvl2(barrelsWideDistribution, 10, 1, 1, 12000, 20000, 30000, true);
+		EmitterConfiguration confPULvl2(powersDistribution, 20, 1, 1, 15000, 20000, 30000, true);
 		EmitterConfiguration confCoinLvl(CoinsDistribution, 50, 1, 5, 8000, 20000, 30000, true);
 
-		emitterBarrelC1->setConfiguration(confBarrelLvl1);
-		emitterBarrelC2->setConfiguration(confBarrelLvl1);
-		emitterBarrelC3->setConfiguration(confBarrelLvl1);
+		emitterBarrelC1->setConfiguration(confBarrelLvl2);
+		emitterBarrelC2->setConfiguration(confBarrelLvl2);
+		emitterBarrelC3->setConfiguration(confBarrelLvl2);
 
-		emitterWideBarrelC1->setConfiguration(confWideBarrelLvl1);
-		emitterWideBarrelC2->setConfiguration(confWideBarrelLvl1);
+		emitterWideBarrelC1->setConfiguration(confWideBarrelLvl2);
+		emitterWideBarrelC2->setConfiguration(confWideBarrelLvl2);
 
-		emitterPowerUpC1->setConfiguration(confPULvl1);
-		emitterPowerUpC2->setConfiguration(confPULvl1);
-		emitterPowerUpC3->setConfiguration(confPULvl1);
+		emitterPowerUpC1->setConfiguration(confPULvl2);
+		emitterPowerUpC2->setConfiguration(confPULvl2);
+		emitterPowerUpC3->setConfiguration(confPULvl2);
 
 		emitterCoinsC1->setConfiguration(confCoinLvl);
 		emitterCoinsC2->setConfiguration(confCoinLvl);
@@ -146,26 +146,26 @@ void GameScene::Init() {
 
 	}
 	else if (this->getLevel() == this->Level3) {
-		vector <pair<Item*, float>> barrelsDistribution = { {new NormalBarrel() , 0.5f } , {new SpeedBarrel() , 0.3f } , {new DDBarrel() , 0.2f} };
+		vector <pair<Item*, float>> barrelsDistribution = { {new NormalBarrel() , 0.3f } , {new SpeedBarrel() , 0.3f } , {new DDBarrel() , 0.3f} };
 		vector <pair<Item*, float>> barrelsWideDistribution = { {new WideBarrel() , 0.3f } };
 		vector <pair<Item*, float>> powersDistribution = { {new Heart() , 0.25f } ,{new Ray() , 0.25f } , {new Shield() , 0.25f } , {new SpeedReduce() , 0.25f} };
 		vector <pair<Item*, float>> CoinsDistribution = { {new Coin() , 1.0f } };
 
-		EmitterConfiguration confBarrelLvl1(barrelsDistribution, 20, 1, 2, 5000, 12000, 30000, true);
-		EmitterConfiguration confWideBarrelLvl1(barrelsWideDistribution, 10, 1, 1, 12000, 20000, 30000, true);
-		EmitterConfiguration confPULvl1(powersDistribution, 20, 1, 1, 15000, 20000, 30000, true);
+		EmitterConfiguration confBarrelLvl3(barrelsDistribution, 20, 1, 2, 3000, 7000, 30000, true);
+		EmitterConfiguration confWideBarrelLvl3(barrelsWideDistribution, 10, 1, 1, 12000, 20000, 30000, true);
+		EmitterConfiguration confPULvl3(powersDistribution, 20, 1, 1, 15000, 20000, 30000, true);
 		EmitterConfiguration confCoinLvl(CoinsDistribution, 50, 1, 5, 8000, 20000, 30000, true);
 
-		emitterBarrelC1->setConfiguration(confBarrelLvl1);
-		emitterBarrelC2->setConfiguration(confBarrelLvl1);
-		emitterBarrelC3->setConfiguration(confBarrelLvl1);
+		emitterBarrelC1->setConfiguration(confBarrelLvl3);
+		emitterBarrelC2->setConfiguration(confBarrelLvl3);
+		emitterBarrelC3->setConfiguration(confBarrelLvl3);
 
-		emitterWideBarrelC1->setConfiguration(confWideBarrelLvl1);
-		emitterWideBarrelC2->setConfiguration(confWideBarrelLvl1);
+		emitterWideBarrelC1->setConfiguration(confWideBarrelLvl3);
+		emitterWideBarrelC2->setConfiguration(confWideBarrelLvl3);
 
-		emitterPowerUpC1->setConfiguration(confPULvl1);
-		emitterPowerUpC2->setConfiguration(confPULvl1);
-		emitterPowerUpC3->setConfiguration(confPULvl1);
+		emitterPowerUpC1->setConfiguration(confPULvl3);
+		emitterPowerUpC2->setConfiguration(confPULvl3);
+		emitterPowerUpC3->setConfiguration(confPULvl3);
 
 		emitterCoinsC1->setConfiguration(confCoinLvl);
 		emitterCoinsC2->setConfiguration(confCoinLvl);
@@ -173,26 +173,26 @@ void GameScene::Init() {
 
 	}
 	else if (this->getLevel() == this->Level4) {
-		vector <pair<Item*, float>> barrelsDistribution = { {new NormalBarrel() , 0.5f } , {new SpeedBarrel() , 0.3f } , {new DDBarrel() , 0.2f} };
-		vector <pair<Item*, float>> barrelsWideDistribution = { {new WideBarrel() , 0.3f } };
+		vector <pair<Item*, float>> barrelsDistribution = { {new NormalBarrel() , 0.1f } , {new SpeedBarrel() , 0.4f } , {new DDBarrel() , 0.4f} };
+		vector <pair<Item*, float>> barrelsWideDistribution = { {new WideBarrel() , 0.15f } };
 		vector <pair<Item*, float>> powersDistribution = { {new Heart() , 0.25f } ,{new Ray() , 0.25f } , {new Shield() , 0.25f } , {new SpeedReduce() , 0.25f} };
 		vector <pair<Item*, float>> CoinsDistribution = { {new Coin() , 1.0f } };
 
-		EmitterConfiguration confBarrelLvl1(barrelsDistribution, 20, 1, 2, 5000, 12000, 30000, true);
-		EmitterConfiguration confWideBarrelLvl1(barrelsWideDistribution, 10, 1, 1, 12000, 20000, 30000, true);
-		EmitterConfiguration confPULvl1(powersDistribution, 20, 1, 1, 15000, 20000, 30000, true);
+		EmitterConfiguration confBarrelLvl4(barrelsDistribution, 20, 1, 2, 5000, 12000, 30000, true);
+		EmitterConfiguration confWideBarrelLvl4(barrelsWideDistribution, 10, 1, 1, 12000, 20000, 30000, true);
+		EmitterConfiguration confPULvl4(powersDistribution, 20, 1, 1, 15000, 20000, 30000, true);
 		EmitterConfiguration confCoinLvl(CoinsDistribution, 50, 1, 5, 8000, 20000, 30000, true);
 
-		emitterBarrelC1->setConfiguration(confBarrelLvl1);
-		emitterBarrelC2->setConfiguration(confBarrelLvl1);
-		emitterBarrelC3->setConfiguration(confBarrelLvl1);
+		emitterBarrelC1->setConfiguration(confBarrelLvl4);
+		emitterBarrelC2->setConfiguration(confBarrelLvl4);
+		emitterBarrelC3->setConfiguration(confBarrelLvl4);
 
-		emitterWideBarrelC1->setConfiguration(confWideBarrelLvl1);
-		emitterWideBarrelC2->setConfiguration(confWideBarrelLvl1);
+		emitterWideBarrelC1->setConfiguration(confWideBarrelLvl4);
+		emitterWideBarrelC2->setConfiguration(confWideBarrelLvl4);
 
-		emitterPowerUpC1->setConfiguration(confPULvl1);
-		emitterPowerUpC2->setConfiguration(confPULvl1);
-		emitterPowerUpC3->setConfiguration(confPULvl1);
+		emitterPowerUpC1->setConfiguration(confPULvl4);
+		emitterPowerUpC2->setConfiguration(confPULvl4);
+		emitterPowerUpC3->setConfiguration(confPULvl4);
 
 		emitterCoinsC1->setConfiguration(confCoinLvl);
 		emitterCoinsC2->setConfiguration(confCoinLvl);
@@ -200,26 +200,26 @@ void GameScene::Init() {
 
 	}
 	else if (this->getLevel() == this->Level5) {
-		vector <pair<Item*, float>> barrelsDistribution = { {new NormalBarrel() , 0.5f } , {new SpeedBarrel() , 0.3f } , {new DDBarrel() , 0.2f} };
-		vector <pair<Item*, float>> barrelsWideDistribution = { {new WideBarrel() , 0.3f } };
+		vector <pair<Item*, float>> barrelsDistribution = { {new NormalBarrel() , 0.01f } , {new SpeedBarrel() , 0.01f } , {new DDBarrel() , 0.98f} };
+		vector <pair<Item*, float>> barrelsWideDistribution = { {new WideBarrel() , 0.01f } };
 		vector <pair<Item*, float>> powersDistribution = { {new Heart() , 0.25f } ,{new Ray() , 0.25f } , {new Shield() , 0.25f } , {new SpeedReduce() , 0.25f} };
 		vector <pair<Item*, float>> CoinsDistribution = { {new Coin() , 1.0f } };
 
-		EmitterConfiguration confBarrelLvl1(barrelsDistribution, 20, 1, 2, 5000, 12000, 30000, true);
-		EmitterConfiguration confWideBarrelLvl1(barrelsWideDistribution, 10, 1, 1, 12000, 20000, 30000, true);
-		EmitterConfiguration confPULvl1(powersDistribution, 20, 1, 1, 15000, 20000, 30000, true);
+		EmitterConfiguration confBarrelLvl5(barrelsDistribution, 20, 1, 2, 5000, 12000, 30000, true);
+		EmitterConfiguration confWideBarrelLvl5(barrelsWideDistribution, 10, 1, 1, 12000, 20000, 30000, true);
+		EmitterConfiguration confPULvl5(powersDistribution, 20, 1, 1, 15000, 20000, 30000, true);
 		EmitterConfiguration confCoinLvl(CoinsDistribution, 50, 1, 5, 8000, 20000, 30000, true);
 
-		emitterBarrelC1->setConfiguration(confBarrelLvl1);
-		emitterBarrelC2->setConfiguration(confBarrelLvl1);
-		emitterBarrelC3->setConfiguration(confBarrelLvl1);
+		emitterBarrelC1->setConfiguration(confBarrelLvl5);
+		emitterBarrelC2->setConfiguration(confBarrelLvl5);
+		emitterBarrelC3->setConfiguration(confBarrelLvl5);
 
-		emitterWideBarrelC1->setConfiguration(confWideBarrelLvl1);
-		emitterWideBarrelC2->setConfiguration(confWideBarrelLvl1);
+		emitterWideBarrelC1->setConfiguration(confWideBarrelLvl5);
+		emitterWideBarrelC2->setConfiguration(confWideBarrelLvl5);
 
-		emitterPowerUpC1->setConfiguration(confPULvl1);
-		emitterPowerUpC2->setConfiguration(confPULvl1);
-		emitterPowerUpC3->setConfiguration(confPULvl1);
+		emitterPowerUpC1->setConfiguration(confPULvl5);
+		emitterPowerUpC2->setConfiguration(confPULvl5);
+		emitterPowerUpC3->setConfiguration(confPULvl5);
 
 		emitterCoinsC1->setConfiguration(confCoinLvl);
 		emitterCoinsC2->setConfiguration(confCoinLvl);

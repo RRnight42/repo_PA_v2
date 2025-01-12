@@ -1,6 +1,5 @@
 #include "Game.h"
 #include <iostream>
-#include "DebugScene.h"
 
 void Game::Init()
 {
@@ -17,7 +16,7 @@ void Game::Init()
 	win = new WinScene();
 	lose = new LoseScene();
 
-	DebugScene* debug = new DebugScene();
+	nivelActual = 1;
 	
 
 	// solo para debug
@@ -33,7 +32,6 @@ void Game::Init()
 	scenes.push_back(lvl5);
 	scenes.push_back(win);
 	scenes.push_back(lose);
-	scenes.push_back(debug);
 
 	this->menu->Init();
 	this->lvl1->Init();
@@ -62,12 +60,13 @@ void Game::Update()
 			this->lvl1->endScene(false);
 			this->lvl1->Reset();
 			this->lvl1->Init();
+			nivelActual = 1;
 			this->activeScene = lvl1;
 		}
 		else if (this->activeScene == this->win) {
 			
 			if (win->getMenuTransicion() == true) {
-				nivelActual = 0;
+				nivelActual = 1;
 				this->menu->endScene(false);
 				this->activeScene = menu;
 			}
@@ -148,10 +147,12 @@ void Game::Update()
 
 			if (lose->getMenuTransicion() == true) {
 				this->menu->endScene(false);
+				nivelActual = 1;
 				this->activeScene = menu;
 			}
 			else {
 				this->lvl1->endScene(false);
+				nivelActual = 1;
 				this->lvl1->Reset();
 				this->lvl1->Init();
 				this->activeScene = lvl1;

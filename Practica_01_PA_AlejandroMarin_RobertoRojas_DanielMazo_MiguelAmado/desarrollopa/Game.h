@@ -36,7 +36,7 @@ private:
 	WinScene* win;
 	LoseScene* lose;
 
-	int nivelActual = 1;
+	int nivelActual;
 public:
 
 	Game() {}
