@@ -8,10 +8,6 @@ void UICanva::Update(const float& timeUpdate) {
     heart2->Update(timeUpdate);
     heart3->Update(timeUpdate);
 
-    if (this->activePowerUp != nullptr) {
-
-        this->activePowerUp->Update(timeUpdate);
-    }
 }
 
 void UICanva::Render() {
@@ -35,9 +31,6 @@ void UICanva::Render() {
     if (activePowerUp != nullptr){ 
     this->activePowerUp->Render(); }
 
-
-
-   
 
 
 }
@@ -78,7 +71,7 @@ void UICanva::InitUI() {
     loader.Clear();
     rayPowerUpUI->SetOrientation(Vector3D(0,180,0));
     rayPowerUpUI->PaintColor(Color(1, 1, 0, 1));
-    rayPowerUpUI->SetPosition(this->GetPosition() + Vector3D(-0.65, 0.25,18.9));
+    rayPowerUpUI->SetPosition(this->GetPosition() + Vector3D(-0.65, 2.25,18.9));
 
     
     loader.SetScale(0.025);
@@ -86,14 +79,14 @@ void UICanva::InitUI() {
     *shieldPowerUpUI = loader.GetModel();
     loader.Clear();
     shieldPowerUpUI->SetOrientation(Vector3D(0,-90,-90));
-    shieldPowerUpUI->SetPosition(this->GetPosition() + Vector3D(-0.7,0.07,18.9));
+    shieldPowerUpUI->SetPosition(this->GetPosition() + Vector3D(-0.4,2,18.9));
 
 
     loader.SetScale(0.07);
     loader.LoadModel("Speedfactor.obj");
     *speedPowerUpUI = loader.GetModel();
     loader.Clear();
-    speedPowerUpUI->SetPosition(this->GetPosition() + Vector3D(-0.7, 0.2, 18.9));
+    speedPowerUpUI->SetPosition(this->GetPosition() + Vector3D(-0.7, 2.2, 18.9));
     speedPowerUpUI->PaintColor(Color(0, 0, 1, 1));
     speedPowerUpUI->SetOrientation(Vector3D(0,-90,0));
 

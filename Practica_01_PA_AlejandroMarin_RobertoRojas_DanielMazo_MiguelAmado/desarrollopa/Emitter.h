@@ -54,14 +54,14 @@ public:
 
     Item* generateSolidByProbability(const vector<pair<Item*, float>>& solidsWithProbabilities);
 
-    void checkCollisionsPlayer(Player player) {
+    void checkCollisionsPlayer(Player* player) {
 
         for (Item* particle : particlesVector) {
 
-            if (particle->Distance(player.GetPosition()) < player.getDistanceColission()) {
+            if (particle->Distance(player->GetPosition()) < player->getDistanceColission()) {
 
-                player.applyCollisionEffect(particle->getCollisionEffect());
-                player.notifyUICanva();
+                player->applyCollisionEffect(particle->getCollisionEffect());
+                player->notifyUICanva();
                 this->removeParticle(particle);
             }
 

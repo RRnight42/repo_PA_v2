@@ -40,7 +40,7 @@ void Player::applyCollisionEffect(CollisionEffect col) {
 
     this->coinsValue += col.ColCoins();
 
-    if (col.ColPowerUpID() != 0 && this->powerUp != None) { // solo podemos tener un powerup a la vez
+    if (col.ColPowerUpID() != 0 && this->powerUp == None) { // solo podemos tener un powerup a la vez
 
         switch (col.ColPowerUpID()) {
 

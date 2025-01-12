@@ -210,20 +210,20 @@ void GameScene::Update(const float& timeUpdate) {
 	time.Run();
 
 
-	this->emitterBarrelC1->checkCollisionsPlayer(*player);
-	this->emitterBarrelC2->checkCollisionsPlayer(*player);
-	this->emitterBarrelC3->checkCollisionsPlayer(*player);
+	this->emitterBarrelC1->checkCollisionsPlayer(player);
+	this->emitterBarrelC2->checkCollisionsPlayer(player);
+	this->emitterBarrelC3->checkCollisionsPlayer(player);
 
-	this->emitterWideBarrelC1->checkCollisionsPlayer(*player);
-	this->emitterWideBarrelC2->checkCollisionsPlayer(*player);
+	this->emitterWideBarrelC1->checkCollisionsPlayer(player);
+	this->emitterWideBarrelC2->checkCollisionsPlayer(player);
 
-	this->emitterPowerUpC1->checkCollisionsPlayer(*player);
-	this->emitterPowerUpC2->checkCollisionsPlayer(*player);
-	this->emitterPowerUpC3->checkCollisionsPlayer(*player);
+	this->emitterPowerUpC1->checkCollisionsPlayer(player);
+	this->emitterPowerUpC2->checkCollisionsPlayer(player);
+	this->emitterPowerUpC3->checkCollisionsPlayer(player);
 	
-	this->emitterCoinsC1->checkCollisionsPlayer(*player);
-	this->emitterCoinsC2->checkCollisionsPlayer(*player);
-	this->emitterCoinsC3->checkCollisionsPlayer(*player);
+	this->emitterCoinsC1->checkCollisionsPlayer(player);
+	this->emitterCoinsC2->checkCollisionsPlayer(player);
+	this->emitterCoinsC3->checkCollisionsPlayer(player);
 
 	if (shieldEffect || speedEffect) {
 		

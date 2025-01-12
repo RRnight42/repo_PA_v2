@@ -32,13 +32,13 @@ private:
     const float distanceColission = 1;
     const float distanceColissionWideBarrel = 5;
 
-
-public:
-
     UICanva* uiCanva = nullptr;
 
 
-    PowerUp powerUp;
+    int powerUp;
+public:
+
+
 
     Player() : Solid(), lives(3), coinsValue(0), powerUp(None) {}
 
