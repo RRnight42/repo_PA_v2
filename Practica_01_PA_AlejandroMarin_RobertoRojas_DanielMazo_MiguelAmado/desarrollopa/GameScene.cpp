@@ -471,19 +471,6 @@ void GameScene::ProcessKeyPressed(unsigned char key, int px, int py) {
 		}
 		break;
 
-		//Para debugear las condiciones de derrota y victoria y el cambio de escena, añadimos dos teclas especificas
-	case 'o':
-
-		this->endScene(true);
-		this->setCondVictoria(false);
-		break;
-
-	case'p':
-
-		this->endScene(true);
-		this->setCondVictoria(true);
-		break;
-
 	}
 
 }

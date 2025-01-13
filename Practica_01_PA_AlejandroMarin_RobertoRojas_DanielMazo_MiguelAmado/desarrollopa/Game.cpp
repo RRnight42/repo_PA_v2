@@ -163,6 +163,7 @@ void Game::Update()
 			if (this->lvl1->getCondVictoria() == true) {
 				this->win->endScene(false);
 				this->activeScene = win;
+				this->lvl1->Reset();
 			}
 			else if (this->lvl1->getCondVictoria() == false) {
 				this->lose->endScene(false);
@@ -173,40 +174,48 @@ void Game::Update()
 			if (this->lvl2->getCondVictoria() == true) {
 				this->win->endScene(false);
 				this->activeScene = win;
+				this->lvl2->Reset();
 			}
 			else if (this->lvl2->getCondVictoria() == false) {
 				this->lose->endScene(false);
 				this->activeScene = lose;
+				this->lvl2->Reset();
 			}
 		}
 		else if (this->activeScene == this->lvl3) {
 			if (this->lvl3->getCondVictoria() == true) {
 				this->win->endScene(false);
 				this->activeScene = win;
+				this->lvl3->Reset();
 			}
 			else if (this->lvl3->getCondVictoria() == false) {
 				this->lose->endScene(false);
 				this->activeScene = lose;
+				this->lvl3->Reset();
 			}
 		}
 		else if (this->activeScene == this->lvl4) {
 			if (this->lvl4->getCondVictoria() == true) {
 				this->win->endScene(false);
 				this->activeScene = win;
+				this->lvl4->Reset();
 			}
 			else if (this->lvl4->getCondVictoria() == false) {
 				this->lose->endScene(false);
 				this->activeScene = lose;
+				this->lvl4->Reset();
 			}
 		}
 		else if (this->activeScene == this->lvl5) {
 			if (this->lvl5->getCondVictoria() == true) {
 				this->win->endScene(false);
 				this->activeScene = win;
+				this->lvl5->Reset();
 			}
 			else if (this->lvl5->getCondVictoria() == false) {
 				this->lose->endScene(false);
 				this->activeScene = lose;
+				this->lvl5->Reset();
 			}
 		}
 	}
