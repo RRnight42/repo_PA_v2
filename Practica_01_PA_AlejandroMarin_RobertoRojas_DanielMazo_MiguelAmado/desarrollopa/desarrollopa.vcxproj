@@ -133,12 +133,9 @@
     <ClCompile Include="Coin.cpp" />
     <ClCompile Include="CollisionEffect.cpp" />
     <ClCompile Include="Color.cpp" />
-    <ClCompile Include="Cube.cpp" />
     <ClCompile Include="Cuboid.cpp" />
-    <ClCompile Include="Cylinder.cpp" />
     <ClCompile Include="DDBarrel.cpp" />
     <ClCompile Include="desarrollopa.cpp" />
-    <ClCompile Include="Display.cpp" />
     <ClCompile Include="Emitter.cpp" />
     <ClCompile Include="EmitterConfiguration.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -163,10 +160,8 @@
     <ClCompile Include="SpeedBarrel.cpp" />
     <ClCompile Include="SpeedReduce.cpp" />
     <ClCompile Include="Sphere.cpp" />
-    <ClCompile Include="Teapot.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="Time.cpp" />
-    <ClCompile Include="Torus.cpp" />
     <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="UICanva.cpp" />
     <ClCompile Include="Vector3D.cpp" />
@@ -179,11 +174,8 @@
     <ClInclude Include="Coin.h" />
     <ClInclude Include="CollisionEffect.h" />
     <ClInclude Include="Color.h" />
-    <ClInclude Include="Cube.h" />
     <ClInclude Include="Cuboid.h" />
-    <ClInclude Include="Cylinder.h" />
     <ClInclude Include="DDBarrel.h" />
-    <ClInclude Include="Display.h" />
     <ClInclude Include="Emitter.h" />
     <ClInclude Include="EmitterConfiguration.h" />
     <ClInclude Include="Game.h" />
@@ -208,10 +200,8 @@
     <ClInclude Include="SpeedBarrel.h" />
     <ClInclude Include="SpeedReduce.h" />
     <ClInclude Include="Sphere.h" />
-    <ClInclude Include="Teapot.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="Time.h" />
-    <ClInclude Include="Torus.h" />
     <ClInclude Include="Triangle.h" />
     <ClInclude Include="UICanva.h" />
     <ClInclude Include="Util.h" />

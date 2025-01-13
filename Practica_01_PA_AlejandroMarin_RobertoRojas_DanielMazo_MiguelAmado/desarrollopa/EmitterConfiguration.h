@@ -4,11 +4,7 @@
 #include "Vector3D.h"
 #include "Color.h"
 #include "Sphere.h"
-#include "Cube.h"
-#include "Cylinder.h"
 #include "Cuboid.h"
-#include "Teapot.h"
-#include "Torus.h"
 #include "Item.h"
 
 #include <string>

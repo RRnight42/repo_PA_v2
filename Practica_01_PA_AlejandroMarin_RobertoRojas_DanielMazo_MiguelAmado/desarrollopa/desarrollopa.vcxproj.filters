@@ -57,25 +57,10 @@
     <ClCompile Include="Game.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Cylinder.cpp">
-      <Filter>Archivos de origen\Primitivas</Filter>
-    </ClCompile>
     <ClCompile Include="Cuboid.cpp">
       <Filter>Archivos de origen\Primitivas</Filter>
     </ClCompile>
-    <ClCompile Include="Display.cpp">
-      <Filter>Archivos de origen\Primitivas</Filter>
-    </ClCompile>
-    <ClCompile Include="Cube.cpp">
-      <Filter>Archivos de origen\Primitivas</Filter>
-    </ClCompile>
     <ClCompile Include="Sphere.cpp">
-      <Filter>Archivos de origen\Primitivas</Filter>
-    </ClCompile>
-    <ClCompile Include="Teapot.cpp">
-      <Filter>Archivos de origen\Primitivas</Filter>
-    </ClCompile>
-    <ClCompile Include="Torus.cpp">
       <Filter>Archivos de origen\Primitivas</Filter>
     </ClCompile>
     <ClCompile Include="Triangle.cpp">
@@ -191,16 +176,7 @@
     <ClInclude Include="Camera.h">
       <Filter>Archivos de encabezado\Primitivas</Filter>
     </ClInclude>
-    <ClInclude Include="Cube.h">
-      <Filter>Archivos de encabezado\Primitivas</Filter>
-    </ClInclude>
-    <ClInclude Include="Cylinder.h">
-      <Filter>Archivos de encabezado\Primitivas</Filter>
-    </ClInclude>
     <ClInclude Include="Cuboid.h">
-      <Filter>Archivos de encabezado\Primitivas</Filter>
-    </ClInclude>
-    <ClInclude Include="Display.h">
       <Filter>Archivos de encabezado\Primitivas</Filter>
     </ClInclude>
     <ClInclude Include="Emitter.h">
@@ -209,16 +185,10 @@
     <ClInclude Include="Sphere.h">
       <Filter>Archivos de encabezado\Primitivas</Filter>
     </ClInclude>
-    <ClInclude Include="Teapot.h">
-      <Filter>Archivos de encabezado\Primitivas</Filter>
-    </ClInclude>
     <ClInclude Include="Triangle.h">
       <Filter>Archivos de encabezado\Primitivas</Filter>
     </ClInclude>
     <ClInclude Include="MaterialTriangle.h">
-      <Filter>Archivos de encabezado\Primitivas</Filter>
-    </ClInclude>
-    <ClInclude Include="Torus.h">
       <Filter>Archivos de encabezado\Primitivas</Filter>
     </ClInclude>
     <ClInclude Include="Material.h">

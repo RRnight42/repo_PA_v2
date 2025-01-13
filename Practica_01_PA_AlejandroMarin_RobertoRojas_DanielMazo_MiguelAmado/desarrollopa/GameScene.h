@@ -1,8 +1,6 @@
 #pragma once
 #include <chrono>
 #include "Scene.h"
-#include "Cube.h"
-#include "Cylinder.h"
 #include "Sphere.h"
 #include "Cuboid.h"
 #include "Text.h"
