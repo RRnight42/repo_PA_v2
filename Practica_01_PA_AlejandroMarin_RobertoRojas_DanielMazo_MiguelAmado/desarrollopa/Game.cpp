@@ -26,7 +26,7 @@ void Game::Init()
 
 
 	// solo para debug
-	this->activeScene = menu;
+	this->activeScene = ranking;
 
 
 

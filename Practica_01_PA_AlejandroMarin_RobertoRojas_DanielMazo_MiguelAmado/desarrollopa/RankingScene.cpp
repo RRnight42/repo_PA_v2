@@ -1,37 +1,76 @@
 #include "RankingScene.h"
-
+#include <iostream>
+#include <string>
 void RankingScene::Init() {
 
-	titulo = new Text("Barrel Escape X", Text::TimesNewRoman24, Color());
-	rank = new Text("Comenzar", Text::Helvetica18, Color(1, 0.5, 0, 1));   //De momento
-	inputText = new Text("Pulse enter paea volver a menú", Text::Helvetica12, Color(0, 0, 0, 0.7));
+	
 
-	// igual metemos un modelo de fondo para decorar
-
-	titulo->SetPosition(Vector3D(-2, 6, 0));
-	rank->SetPosition(Vector3D(-1.5, 0, 0));
-	inputText->SetPosition(Vector3D(-1, -3, 0));
+	titulo->SetPosition(Vector3D(-10, 6, 0));
+	inputText->SetPosition(Vector3D(-7, 0, 0));
 
 	AddGameObject(titulo);
-	AddGameObject(rank);
 	AddGameObject(inputText);
 
+    inputBuffer = "[____________________]"; 
+    inputLength = 0; 
+
+    inputText->setText(inputBuffer);
 }
+
+void RankingScene::GuardarDatos(string nombrePlayer, string filePath) {
+
+
+    // dani , guarda los datos aqui 
+
+    // y pon los operadores amigos en el .h
+
+
+
+
+
+}
+
 
 void RankingScene::Reset() {
 	this->ClearGameObject();
 
 	delete titulo;
-	delete rank;
 	delete inputText;
 }
 
 void RankingScene::ProcessKeyPressed(unsigned char key, int px, int py) {
 
-	switch (key) {
-	case 13:
-		this->endScene(true);
-		break;
-	}
+    switch (key) {
+    case 13:
+        GuardarDatos(this->GetRawNamePlayer() , "slots.txt");
+        this->endScene(true);
+        break;
+
+    case 8: 
+        if (inputLength > 0) {
+            inputLength--;
+            inputBuffer[inputLength + 1] = '_';
+            inputText->setText(inputBuffer);
+        }
+        break;
+
+    default:
+        
+        if (key >= 32 && key <= 126 && inputLength < inputBuffer.size() - 2) {
+            inputBuffer[inputLength + 1] = key; 
+            inputLength++;
+            inputText->setText(inputBuffer);
+        }
+        break;
+    }
+}
+
+string RankingScene::GetRawNamePlayer() {
+    // Extrae el contenido entre corchetes y elimina los guiones bajos sobrantes
+
+    string rawName = inputBuffer.substr(1, inputBuffer.size() - 2);
+    rawName.erase(std::remove(rawName.begin(), rawName.end(), '_'), rawName.end());
+    return rawName;
+
 }
 
