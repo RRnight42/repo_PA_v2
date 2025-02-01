@@ -6,6 +6,8 @@
 #include "ModelLoader.h"
 #include "Item.h"
 #include "Sphere.h"
+#include "CollisionEffect.h"
+#include "Vector3D.h"
 
 class Barrel : public Item
 {
@@ -13,16 +15,35 @@ class Barrel : public Item
 private:
     //Sphere* esfera = new Sphere(0.7);    //Esta esfera es para renderizar las posiciones reales de los barriles en debug
     Model model;
+    ModelLoader loader;
+    
+
+    string modelFile;
+    CollisionEffect effect;
+    bool Wide;
+
 
 public:
 
-    Barrel() {}
+    Barrel(string modelFileSet , float scale , CollisionEffect effectSet, Vector3D speedSet, Color colorSet , bool iWB = false){
+    
+        this->loader.LoadModel(modelFileSet);
+        this->model = loader.GetModel();
+        this->effect = effectSet;
+        this->SetSpeed(speedSet);
+        this->PaintBarrel(colorSet);
+        this->Wide = iWB;
+
+        this->SetOrientation(Vector3D(0,0,90));
+        this->SetOrientationSpeed(Vector3D(3,0,0));
+    }
 
 
     inline void SetModel(const Model& mdl) { this->model = mdl; }
 
     inline void PaintBarrel(const Color& c) { this->model.PaintColor(c); }
-
+   
+    bool isWideBarrel() { return this->Wide; }
 
     void Render() {
 
@@ -34,10 +55,27 @@ public:
         //this->esfera->SetPosition(this->GetPosition());
         //this->esfera->Render();
     }
-   
-    virtual CollisionEffect getCollisionEffect() = 0;
 
-    virtual  Item* Clone() = 0; 
-    virtual bool isWideBarrel() = 0;
+    void Update(const float& timeUpdate) {
+    
+    
+        Solid::Update(timeUpdate);
+        this->model.Update(timeUpdate);
+    
+    
+    }
+   
+    CollisionEffect getCollisionEffect() {
+    
+        return this->effect;
+    
+    }
+
+    Item* Clone() {
+    
+        return new Barrel(*this);
+    
+    }
+  
 };
 

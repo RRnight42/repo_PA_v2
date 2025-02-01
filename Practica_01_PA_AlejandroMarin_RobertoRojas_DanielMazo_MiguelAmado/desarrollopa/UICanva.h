@@ -3,10 +3,7 @@
 #include "Solid.h"
 #include "ModelLoader.h"
 #include "Text.h"
-#include "Ray.h"
-#include "Shield.h"
-#include "Heart.h"
-#include "SpeedReduce.h"
+
 
 class UICanva : public Solid
 {

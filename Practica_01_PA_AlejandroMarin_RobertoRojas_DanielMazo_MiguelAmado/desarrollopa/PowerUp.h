@@ -9,11 +9,34 @@ class PowerUp : public Item {
 private:
 
     Model itemModel;
+    ModelLoader loader;
+
+
+    string modelFile;
+    CollisionEffect effect;
+    
     //Sphere* esfera = new Sphere(1);
 
 public:
 
-    PowerUp() {}
+    PowerUp(string modelFileSet, float scale , CollisionEffect effectSet, Vector3D speedSet, Color colorSet) {
+    
+
+        this->loader.SetScale(scale);
+        this->loader.LoadModel(modelFileSet);
+        this->itemModel = loader.GetModel();
+        
+        this->SetSpeed(speedSet);
+        this->PaintPowerUp(colorSet);
+      
+
+        this->SetOrientationSpeed(Vector3D(0, 3, 0));   
+        
+        this->effect = effectSet;
+        
+    
+    
+    }
 
     inline void SetModel(const Model& mdl) { this->itemModel = mdl; }
 
@@ -32,11 +55,20 @@ public:
 
     }
 
-    virtual CollisionEffect getCollisionEffect() = 0;
+    CollisionEffect getCollisionEffect() {
+    
+        return this->effect;
+    
+    };
 
-    virtual  Item* Clone() = 0;
 
-    virtual bool isWideBarrel() = 0;
+    Item* Clone() {
+    
+        return new PowerUp(*this);
+    
+    };
+
+    
 };
 
 

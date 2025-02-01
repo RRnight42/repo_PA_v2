@@ -10,6 +10,7 @@ private:
 
 public :
 
+	CollisionEffect() {}
 	CollisionEffect(int lU , int coins , int IDpu)  : livesUpdate(lU) , coinUpdate(coins) , powerUpID(IDpu){}
 
 	inline int ColLives() const { return this->livesUpdate; }

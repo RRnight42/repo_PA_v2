@@ -12,15 +12,7 @@
 #include "Player.h"
 #include  "PowerUp.h"
 #include "UICanva.h"
-#include "Ray.h"
-#include "Shield.h"
-#include "Heart.h"
-#include "SpeedReduce.h"
 #include"Barrel.h"
-#include "DDBarrel.h"
-#include "WideBarrel.h"
-#include "SpeedBarrel.h"
-#include "NormalBarrel.h"
 #include "Coin.h"
 #include "Item.h"
 #include "Time.h"
@@ -32,7 +24,7 @@ class GameScene : public Scene
 
 public:
 	
-	enum Level {Level1 , Level2 , Level3 , Level4, Level5};
+	enum Level {Level1 , Level2 , Level3 , Level4, Level5 , Level6 , Level7 , Level8 , Level9 , FinalLevel};
 
 
 private:

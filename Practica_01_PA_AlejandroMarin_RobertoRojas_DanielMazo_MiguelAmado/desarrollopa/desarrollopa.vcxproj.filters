@@ -117,19 +117,7 @@
     <ClCompile Include="WinScene.cpp">
       <Filter>Archivos de origen\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="Heart.cpp">
-      <Filter>Archivos de origen\PowerUps</Filter>
-    </ClCompile>
-    <ClCompile Include="Ray.cpp">
-      <Filter>Archivos de origen\PowerUps</Filter>
-    </ClCompile>
-    <ClCompile Include="Shield.cpp">
-      <Filter>Archivos de origen\PowerUps</Filter>
-    </ClCompile>
     <ClCompile Include="PowerUp.cpp">
-      <Filter>Archivos de origen\PowerUps</Filter>
-    </ClCompile>
-    <ClCompile Include="SpeedReduce.cpp">
       <Filter>Archivos de origen\PowerUps</Filter>
     </ClCompile>
     <ClCompile Include="Barrel.cpp">
@@ -137,18 +125,6 @@
     </ClCompile>
     <ClCompile Include="Text.cpp">
       <Filter>Archivos de origen\Primitivas</Filter>
-    </ClCompile>
-    <ClCompile Include="DDBarrel.cpp">
-      <Filter>Archivos de origen\Barrels</Filter>
-    </ClCompile>
-    <ClCompile Include="NormalBarrel.cpp">
-      <Filter>Archivos de origen\Barrels</Filter>
-    </ClCompile>
-    <ClCompile Include="SpeedBarrel.cpp">
-      <Filter>Archivos de origen\Barrels</Filter>
-    </ClCompile>
-    <ClCompile Include="WideBarrel.cpp">
-      <Filter>Archivos de origen\Barrels</Filter>
     </ClCompile>
     <ClCompile Include="Item.cpp">
       <Filter>Archivos de origen\auxiliares</Filter>
@@ -167,6 +143,9 @@
     </ClCompile>
     <ClCompile Include="CollisionEffect.cpp">
       <Filter>Archivos de origen\auxiliares</Filter>
+    </ClCompile>
+    <ClCompile Include="SwitchBarrel.cpp">
+      <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -242,32 +221,8 @@
     <ClInclude Include="PowerUp.h">
       <Filter>Archivos de encabezado\PowerUps</Filter>
     </ClInclude>
-    <ClInclude Include="Heart.h">
-      <Filter>Archivos de encabezado\PowerUps</Filter>
-    </ClInclude>
-    <ClInclude Include="Ray.h">
-      <Filter>Archivos de encabezado\PowerUps</Filter>
-    </ClInclude>
-    <ClInclude Include="Shield.h">
-      <Filter>Archivos de encabezado\PowerUps</Filter>
-    </ClInclude>
-    <ClInclude Include="SpeedReduce.h">
-      <Filter>Archivos de encabezado\PowerUps</Filter>
-    </ClInclude>
     <ClInclude Include="Text.h">
       <Filter>Archivos de encabezado\Primitivas</Filter>
-    </ClInclude>
-    <ClInclude Include="DDBarrel.h">
-      <Filter>Archivos de encabezado\Barrels</Filter>
-    </ClInclude>
-    <ClInclude Include="WideBarrel.h">
-      <Filter>Archivos de encabezado\Barrels</Filter>
-    </ClInclude>
-    <ClInclude Include="NormalBarrel.h">
-      <Filter>Archivos de encabezado\Barrels</Filter>
-    </ClInclude>
-    <ClInclude Include="SpeedBarrel.h">
-      <Filter>Archivos de encabezado\Barrels</Filter>
     </ClInclude>
     <ClInclude Include="Coin.h">
       <Filter>Archivos de encabezado\auxiliares</Filter>
@@ -286,6 +241,9 @@
     </ClInclude>
     <ClInclude Include="UICanva.h">
       <Filter>Archivos de encabezado\auxiliares</Filter>
+    </ClInclude>
+    <ClInclude Include="SwitchBarrel.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
