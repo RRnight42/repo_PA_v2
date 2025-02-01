@@ -16,6 +16,7 @@ void Scene::Render()
 		this->gameObjects[idx]->Render();
 	}
 }
+void Scene::Reset() {}
 
 void Scene::Update(const float& timeUpdate)
 {

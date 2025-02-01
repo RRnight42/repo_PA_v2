@@ -20,6 +20,7 @@ void Game::Init()
 
 	win = new WinScene();
 	lose = new LoseScene();
+	ranking = new RankingScene();
 
 	nivelActual = 1;
 
@@ -42,11 +43,13 @@ void Game::Init()
 	scenes.push_back(lvl10);
 	scenes.push_back(win);
 	scenes.push_back(lose);
+	scenes.push_back(ranking);
 
 	this->menu->Init();
 	this->lvl1->Init();
 	this->win->Init();
 	this->lose->Init();
+	this->ranking->Init();
 
 }
 
@@ -72,6 +75,10 @@ void Game::Update()
 			this->lvl1->Init();
 			nivelActual = 1;
 			this->activeScene = lvl1;
+		}
+		else if (this->activeScene == this->win) {
+			this->menu->endScene(false);
+			this->activeScene = menu;
 		}
 		else if (this->activeScene == this->win) {
 

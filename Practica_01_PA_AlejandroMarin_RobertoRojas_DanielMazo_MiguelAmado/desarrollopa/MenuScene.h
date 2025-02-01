@@ -9,8 +9,10 @@ private:
 	Text* title;
 	Text* inputText1;
 	Text* inputText2;
+	Text* inputText3;
 
 	unsigned int selected;
+	bool esRanking;
 
 public:
 
@@ -18,6 +20,9 @@ public:
 
 	void Init();
 	//void Reset();
+
+	inline bool getEsRanking() const { return this->esRanking; }
+	inline bool setEsRanking(bool r) { esRanking = r; }
 
 	void ProcessKeyPressed(unsigned char key, int px, int py);
 	void ProcessSpecialKeyPressed(int key, int px, int py);

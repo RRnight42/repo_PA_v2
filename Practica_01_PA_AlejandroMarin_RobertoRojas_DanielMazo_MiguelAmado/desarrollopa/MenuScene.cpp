@@ -4,17 +4,20 @@ void MenuScene::Init() {
 
 	title = new Text("Barrel Escape X", Text::TimesNewRoman24 ,Color());
 	inputText1 = new Text("Comenzar" , Text::Helvetica18 ,Color(1, 0.5, 0, 1));
-	inputText2 = new Text("Salir", Text::Helvetica12, Color(0, 0, 0, 1));
+	inputText2 = new Text("Ranking", Text::Helvetica12, Color(0, 0, 0, 1));
+	inputText3 = new Text("Salir", Text::Helvetica12, Color(0, 0, 0, 1));
 
 	// igual metemos un modelo de fondo para decorar
 
 	title->SetPosition(Vector3D(-2, 6, 0));
 	inputText1->SetPosition(Vector3D(-1.5, 0, 0));
 	inputText2->SetPosition(Vector3D(-1, -3, 0));
+	inputText3->SetPosition(Vector3D(-0.5, -3, 0));
 
 	AddGameObject(title);
 	AddGameObject(inputText1);
 	AddGameObject(inputText2);
+	AddGameObject(inputText3);
 
 }
 

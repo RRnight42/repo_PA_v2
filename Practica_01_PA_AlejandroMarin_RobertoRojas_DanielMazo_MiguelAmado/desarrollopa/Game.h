@@ -4,6 +4,7 @@
 #include "WinScene.h"
 #include "MenuScene.h"
 #include "GameScene.h"
+#include "RankingScene.h"
 #include <chrono>
 
 using namespace chrono;
@@ -40,6 +41,7 @@ private:
 	GameScene* lvl10;
 	WinScene* win;
 	LoseScene* lose;
+	RankingScene* ranking;
 
 	int nivelActual;
 public:

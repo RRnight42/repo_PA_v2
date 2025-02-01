@@ -32,7 +32,7 @@ public:
 	virtual void Init();
 	virtual void Render();
 	virtual void Update(const float& timeUpdate);
-	//virtual void Reset();
+	virtual void Reset();
 
 	virtual void cambioEscena(){}
 	
