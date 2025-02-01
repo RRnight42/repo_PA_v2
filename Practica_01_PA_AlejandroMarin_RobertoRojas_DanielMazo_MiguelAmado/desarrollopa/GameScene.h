@@ -17,6 +17,7 @@
 #include "Item.h"
 #include "Time.h"
 #include "SwitchBarrel.h"
+#include "GhostBarrel.h"
 
 using namespace std;
 
@@ -37,6 +38,7 @@ private:
 	Barrel* ddBarrel;
 	Barrel* wideBarrel;
 	SwitchBarrel* switchBarrel;
+	GhostBarrel* ghostBarrel;
 
 	PowerUp* normalHeart;
 	PowerUp* superHeart;

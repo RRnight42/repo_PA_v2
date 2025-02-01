@@ -59,20 +59,9 @@ public :
 			
 			
 			case 1:
-
-
-				if (select == 0) {
-				
+					
 					this->actualCarril = 2;
-					this->SetPosition(Vector3D(c2, this->GetPosition().GetY(), this->GetPosition().GetZ()));
-				}
-				else {
-				
-					this->actualCarril = 3;
-					this->SetPosition(Vector3D(c3, this->GetPosition().GetY(), this->GetPosition().GetZ()));
-				
-				
-				}
+					this->SetPosition(Vector3D(c2, this->GetPosition().GetY(), this->GetPosition().GetZ()));				
 
 			break;
 			
@@ -95,18 +84,9 @@ public :
 
 			case 3:
 
-				if (select == 0) {
-
-					this->actualCarril = 1;
-					this->SetPosition(Vector3D(c1, this->GetPosition().GetY(), this->GetPosition().GetZ()));
-				}
-				else {
 
 					this->actualCarril = 2;
 					this->SetPosition(Vector3D(c2, this->GetPosition().GetY(), this->GetPosition().GetZ()));
-
-
-				}
 
 			break;
 			

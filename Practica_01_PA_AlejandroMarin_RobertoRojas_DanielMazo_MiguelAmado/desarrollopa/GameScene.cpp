@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "Barrel.h"
 #include "SwitchBarrel.h"
+#include "GhostBarrel.h"
 #include "PowerUp.h"
 #include<random>
 
@@ -20,7 +21,7 @@ void GameScene::Init() {
 	ddBarrel = new Barrel("barrel_k2.obj", 1, CollisionEffect(-2, 0, 0), Vector3D(0, 0, 0.7), Color(0.2, 0.2, 0.2, 1));
 	wideBarrel = new Barrel("barrelwide_k2.obj", 1.5, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 0.7), Color(0.42, 0.23, 0.16, 1), true);
 	switchBarrel = new SwitchBarrel("barrel_k2.obj", 1, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 0.7), Color(1, 0, 1, 1));
-
+	ghostBarrel = new GhostBarrel("barrel_k2.obj", 1, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 0.7), Color());
 
 
 	//////////////////////////////////
@@ -123,7 +124,7 @@ void GameScene::Init() {
 	if (this->getLevel() == this->Level1) {
 
 		//vector <pair<Item*, float>> barrelsDistribution = { {normalBarrel , 0.3f } , {speedBarrel , 0.2f } , {ddBarrel , 0.1f }};
-		vector <pair<Item*, float>> barrelsDistribution = { {switchBarrel , 0.3f } };
+		vector <pair<Item*, float>> barrelsDistribution = { {ghostBarrel , 0.3f } };
 
 		vector <pair<Item*, float>> barrelsWideDistribution = { { wideBarrel , 0.2f } };
 
@@ -271,8 +272,8 @@ void GameScene::Init() {
 	AddGameObject(sep3);
 	AddGameObject(sep4);
 	AddGameObject(emitterBarrelC1);
-	AddGameObject(emitterBarrelC2);
-	AddGameObject(emitterBarrelC3);
+	//AddGameObject(emitterBarrelC2);
+	//AddGameObject(emitterBarrelC3);
 	//AddGameObject(emitterWideBarrelC1);
 	//AddGameObject(emitterWideBarrelC2);
 	AddGameObject(emitterCoinsC1);

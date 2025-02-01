@@ -27,6 +27,7 @@ public:
 
     Barrel(string modelFileSet , float scale , CollisionEffect effectSet, Vector3D speedSet, Color colorSet , bool iWB = false){
     
+        this->loader.SetScale(scale);
         this->loader.LoadModel(modelFileSet);
         this->model = loader.GetModel();
         this->effect = effectSet;

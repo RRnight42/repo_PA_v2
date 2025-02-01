@@ -150,6 +150,9 @@
     <ClCompile Include="RankingScene.cpp">
       <Filter>Archivos de origen\Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="GhostBarrel.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -250,6 +253,9 @@
     </ClInclude>
     <ClInclude Include="RankingScene.h">
       <Filter>Archivos de encabezado\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="GhostBarrel.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
