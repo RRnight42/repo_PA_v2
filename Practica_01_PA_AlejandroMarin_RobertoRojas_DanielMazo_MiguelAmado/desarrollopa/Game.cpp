@@ -4,24 +4,29 @@
 void Game::Init()
 {
 	cout << "[GAME] Init..." << endl;
-	
-    menu = new	MenuScene();
 
-    lvl1 = new GameScene(GameScene::Level1 , 15);
-	lvl2 = new GameScene(GameScene::Level2, 30);
-	lvl3 = new GameScene(GameScene::Level3, 45);
-	lvl4 = new GameScene(GameScene::Level4, 75);
-	lvl5 = new GameScene(GameScene::Level5, 100);
+	menu = new	MenuScene();
+
+	lvl1 = new GameScene(GameScene::Level1, 15);
+	lvl2 = new GameScene(GameScene::Level1, 15);
+	lvl3 = new GameScene(GameScene::Level2, 30);
+	lvl4 = new GameScene(GameScene::Level2, 30);
+	lvl5 = new GameScene(GameScene::Level3, 45);
+	lvl6 = new GameScene(GameScene::Level3, 45);
+	lvl7 = new GameScene(GameScene::Level4, 75);
+	lvl8 = new GameScene(GameScene::Level4, 75);
+	lvl9 = new GameScene(GameScene::Level5, 100);
+	lvl10 = new GameScene(GameScene::Level5, 100);
 
 	win = new WinScene();
 	lose = new LoseScene();
 
 	nivelActual = 1;
-	
+
 
 	// solo para debug
 	this->activeScene = menu;
-    
+
 
 
 	scenes.push_back(menu);
@@ -30,6 +35,11 @@ void Game::Init()
 	scenes.push_back(lvl3);
 	scenes.push_back(lvl4);
 	scenes.push_back(lvl5);
+	scenes.push_back(lvl6);
+	scenes.push_back(lvl7);
+	scenes.push_back(lvl8);
+	scenes.push_back(lvl9);
+	scenes.push_back(lvl10);
 	scenes.push_back(win);
 	scenes.push_back(lose);
 
@@ -43,7 +53,7 @@ void Game::Init()
 void Game::Render()
 {
 	this->activeScene->Render();
-	
+
 }
 
 void Game::Update()
@@ -64,14 +74,14 @@ void Game::Update()
 			this->activeScene = lvl1;
 		}
 		else if (this->activeScene == this->win) {
-			
+
 			if (win->getMenuTransicion() == true) {
 				nivelActual = 1;
 				this->menu->endScene(false);
 				this->activeScene = menu;
 			}
-			else if (win->getNextLevel()){
-				if (nivelActual < 5) {
+			else if (win->getNextLevel()) {
+				if (nivelActual < 10) {
 					nivelActual++;
 				}
 				switch (nivelActual) {
@@ -101,6 +111,41 @@ void Game::Update()
 					this->lvl5->Reset();
 					this->lvl5->Init();
 					this->activeScene = lvl5;
+					break;
+
+				case 6:
+					this->lvl6->endScene(false);
+					this->lvl6->Reset();
+					this->lvl6->Init();
+					this->activeScene = lvl6;
+					break;
+
+				case 7:
+					this->lvl7->endScene(false);
+					this->lvl7->Reset();
+					this->lvl7->Init();
+					this->activeScene = lvl7;
+					break;
+
+				case 8:
+					this->lvl8->endScene(false);
+					this->lvl8->Reset();
+					this->lvl8->Init();
+					this->activeScene = lvl8;
+					break;
+
+				case 9:
+					this->lvl9->endScene(false);
+					this->lvl9->Reset();
+					this->lvl9->Init();
+					this->activeScene = lvl9;
+					break;
+
+				case 10:
+					this->lvl10->endScene(false);
+					this->lvl10->Reset();
+					this->lvl10->Init();
+					this->activeScene = lvl10;
 					break;
 				}
 			}
@@ -140,6 +185,42 @@ void Game::Update()
 					this->lvl5->Init();
 					this->activeScene = lvl5;
 					break;
+
+				case 6:
+					this->lvl6->endScene(false);
+					this->lvl6->Reset();
+					this->lvl6->Init();
+					this->activeScene = lvl6;
+					break;
+
+				case 7:
+					this->lvl7->endScene(false);
+					this->lvl7->Reset();
+					this->lvl7->Init();
+					this->activeScene = lvl7;
+					break;
+
+				case 8:
+					this->lvl8->endScene(false);
+					this->lvl8->Reset();
+					this->lvl8->Init();
+					this->activeScene = lvl8;
+					break;
+
+				case 9:
+					this->lvl9->endScene(false);
+					this->lvl9->Reset();
+					this->lvl9->Init();
+					this->activeScene = lvl9;
+					break;
+
+				case 10:
+					this->lvl10->endScene(false);
+					this->lvl10->Reset();
+					this->lvl10->Init();
+					this->activeScene = lvl10;
+					break;
+
 				}
 			}
 		}
@@ -218,6 +299,66 @@ void Game::Update()
 				this->lvl5->Reset();
 			}
 		}
+		else if (this->activeScene == this->lvl6) {
+			if (this->lvl6->getCondVictoria() == true) {
+				this->win->endScene(false);
+				this->activeScene = win;
+				this->lvl6->Reset();
+			}
+			else if (this->lvl6->getCondVictoria() == false) {
+				this->lose->endScene(false);
+				this->activeScene = lose;
+				this->lvl6->Reset();
+			}
+		}
+		else if (this->activeScene == this->lvl7) {
+			if (this->lvl7->getCondVictoria() == true) {
+				this->win->endScene(false);
+				this->activeScene = win;
+				this->lvl7->Reset();
+			}
+			else if (this->lvl7->getCondVictoria() == false) {
+				this->lose->endScene(false);
+				this->activeScene = lose;
+				this->lvl7->Reset();
+			}
+		}
+		else if (this->activeScene == this->lvl8) {
+			if (this->lvl8->getCondVictoria() == true) {
+				this->win->endScene(false);
+				this->activeScene = win;
+				this->lvl8->Reset();
+			}
+			else if (this->lvl8->getCondVictoria() == false) {
+				this->lose->endScene(false);
+				this->activeScene = lose;
+				this->lvl8->Reset();
+			}
+		}
+		else if (this->activeScene == this->lvl9) {
+			if (this->lvl9->getCondVictoria() == true) {
+				this->win->endScene(false);
+				this->activeScene = win;
+				this->lvl9->Reset();
+			}
+			else if (this->lvl9->getCondVictoria() == false) {
+				this->lose->endScene(false);
+				this->activeScene = lose;
+				this->lvl9->Reset();
+			}
+		}
+		else if (this->activeScene == this->lvl10) {
+			if (this->lvl10->getCondVictoria() == true) {
+				this->win->endScene(false);
+				this->activeScene = win;
+				this->lvl10->Reset();
+			}
+			else if (this->lvl10->getCondVictoria() == false) {
+				this->lose->endScene(false);
+				this->activeScene = lose;
+				this->lvl10->Reset();
+			}
+			}
 	}
 }
 
@@ -226,7 +367,7 @@ void Game::ProcessKeyPressed(unsigned char key, int px, int py)
 	this->activeScene->ProcessKeyPressed(key, px, py);
 }
 
-void Game::ProcessSpecialKeyPressed(int key, int px, int py) 
+void Game::ProcessSpecialKeyPressed(int key, int px, int py)
 {
 	this->activeScene->ProcessSpecialKeyPressed(key, px, py);
 }

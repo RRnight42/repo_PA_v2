@@ -15,11 +15,11 @@ void GameScene::Init() {
 
 	// barriles //
 
-	Barrel* normalBarrel= new Barrel("barrel_k2.obj", 1, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 0.7), Color(1, 0.5, 0, 1));
-	Barrel* speedBarrel = new Barrel("barrel_k2.obj", 1, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 1.7), Color(0, 0.7, 0, 1));
-	Barrel* ddBarrel    = new Barrel("barrel_k2.obj", 1, CollisionEffect(-2, 0, 0), Vector3D(0, 0, 0.7), Color(0.2, 0.2, 0.2, 1));
-	Barrel* wideBarrel  = new Barrel("barrelwide_k2.obj", 1.5, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 0.7), Color(0.42, 0.23, 0.16, 1), true);
-	SwitchBarrel* switchBarrel = new SwitchBarrel("barrel_k2.obj" , 1 , CollisionEffect(-1 , 0 ,0 ) , Vector3D(0 , 0 ,0.7) , Color(1,0,1,1));
+	normalBarrel = new Barrel("barrel_k2.obj", 1, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 0.7), Color(1, 0.5, 0, 1));
+	speedBarrel = new Barrel("barrel_k2.obj", 1, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 1.7), Color(0, 0.7, 0, 1));
+	ddBarrel = new Barrel("barrel_k2.obj", 1, CollisionEffect(-2, 0, 0), Vector3D(0, 0, 0.7), Color(0.2, 0.2, 0.2, 1));
+	wideBarrel = new Barrel("barrelwide_k2.obj", 1.5, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 0.7), Color(0.42, 0.23, 0.16, 1), true);
+	switchBarrel = new SwitchBarrel("barrel_k2.obj", 1, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 0.7), Color(1, 0, 1, 1));
 
 
 
@@ -27,12 +27,12 @@ void GameScene::Init() {
 
 	// PowerUps//
 
-	PowerUp* normalHeart  = new PowerUp("Corazon.obj", 0.5, CollisionEffect(1, 0, 0), Vector3D(0, 0, 1), Color(1, 0, 0, 1));
-	PowerUp* superHeart   = new PowerUp("Corazon.obj", 0.5, CollisionEffect(2, 0, 0), Vector3D(0, 0, 1), Color(1, 1, 0, 1));
-	PowerUp* poisonHeart  = new PowerUp("Corazon.obj", 0.5, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 1), Color(0.31, 0.11, 0.36, 1));
-	PowerUp* rayP         = new PowerUp("Rayo.obj", 0.5, CollisionEffect(0, 0, 1), Vector3D(0, 0, 1), Color(1, 1, 0, 1));
-	PowerUp* shieldP      = new PowerUp("Escudo.obj", 0.07, CollisionEffect(0, 0, 2), Vector3D(0, 0, 1), Color(0.5, 0.5, 0.7, 1));
-	PowerUp* speedReduceP = new PowerUp("SpeedFactor.obj", 0.4 , CollisionEffect(0 ,0, 3),	Vector3D(0,0,1) , Color(0,0,1,1));
+	normalHeart = new PowerUp("Corazon.obj", 0.5, CollisionEffect(1, 0, 0), Vector3D(0, 0, 1), Color(1, 0, 0, 1));
+	superHeart = new PowerUp("Corazon.obj", 0.5, CollisionEffect(2, 0, 0), Vector3D(0, 0, 1), Color(1, 1, 0, 1));
+	poisonHeart = new PowerUp("Corazon.obj", 0.5, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 1), Color(0.31, 0.11, 0.36, 1));
+	rayP = new PowerUp("Rayo.obj", 0.5, CollisionEffect(0, 0, 1), Vector3D(0, 0, 1), Color(1, 1, 0, 1));
+	shieldP = new PowerUp("Escudo.obj", 0.07, CollisionEffect(0, 0, 2), Vector3D(0, 0, 1), Color(0.5, 0.5, 0.7, 1));
+	speedReduceP = new PowerUp("SpeedFactor.obj", 0.4, CollisionEffect(0, 0, 3), Vector3D(0, 0, 1), Color(0, 0, 1, 1));
 
 
 
@@ -123,11 +123,11 @@ void GameScene::Init() {
 	if (this->getLevel() == this->Level1) {
 
 		//vector <pair<Item*, float>> barrelsDistribution = { {normalBarrel , 0.3f } , {speedBarrel , 0.2f } , {ddBarrel , 0.1f }};
-		vector <pair<Item*, float>> barrelsDistribution = { {switchBarrel , 0.3f }};
+		vector <pair<Item*, float>> barrelsDistribution = { {switchBarrel , 0.3f } };
 
 		vector <pair<Item*, float>> barrelsWideDistribution = { { wideBarrel , 0.2f } };
-		
-		vector <pair<Item*, float>> powersDistribution = { { normalHeart, 0.083f} , { superHeart, 0.083f }, {poisonHeart, 0.083f }, {rayP , 0.25f } , {shieldP , 0.25f } , {speedReduceP , 0.25f }};
+
+		vector <pair<Item*, float>> powersDistribution = { { normalHeart, 0.083f} , { superHeart, 0.083f }, {poisonHeart, 0.083f }, {rayP , 0.25f } , {shieldP , 0.25f } , {speedReduceP , 0.25f } };
 
 
 		vector <pair<Item*, float>> CoinsDistribution = { {new Coin() , 1.0f } };
@@ -288,6 +288,33 @@ void GameScene::Reset() {
 	this->ClearGameObject();
 	delete player;
 	player = nullptr;
+
+	delete normalBarrel;
+	delete speedBarrel;
+	delete ddBarrel;
+	delete wideBarrel;
+	delete switchBarrel;
+
+	normalBarrel = nullptr;
+	speedBarrel = nullptr;
+	ddBarrel = nullptr;
+	wideBarrel = nullptr;
+	switchBarrel = nullptr;
+
+	delete normalHeart;
+	delete superHeart;
+	delete poisonHeart;
+	delete rayP;
+	delete shieldP;
+	delete speedReduceP;
+
+	normalHeart = nullptr;
+	superHeart = nullptr;
+	poisonHeart = nullptr;
+	rayP = nullptr;
+	shieldP = nullptr;
+	speedReduceP = nullptr;
+
 	delete carretera;
 	carretera = nullptr;
 	delete sep1;
@@ -396,7 +423,7 @@ void GameScene::Update(const float& timeUpdate) {
 	}
 	cambioEscena();
 	//cout << player->getLives() << ", " << player->getCoins() << "," << player->getCurrentPowerUp() << endl;
-	
+
 
 }
 

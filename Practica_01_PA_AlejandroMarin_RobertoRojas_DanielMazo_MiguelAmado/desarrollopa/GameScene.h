@@ -16,6 +16,7 @@
 #include "Coin.h"
 #include "Item.h"
 #include "Time.h"
+#include "SwitchBarrel.h"
 
 using namespace std;
 
@@ -23,16 +24,27 @@ class GameScene : public Scene
 {
 
 public:
-	
-	enum Level {Level1 , Level2 , Level3 , Level4, Level5 , Level6 , Level7 , Level8 , Level9 , FinalLevel};
+
+	enum Level { Level1, Level2, Level3, Level4, Level5, Level6, Level7, Level8, Level9, FinalLevel };
 
 
 private:
 
 	Player* player;
 
-	
-	
+	Barrel* normalBarrel;
+	Barrel* speedBarrel;
+	Barrel* ddBarrel;
+	Barrel* wideBarrel;
+	SwitchBarrel* switchBarrel;
+
+	PowerUp* normalHeart;
+	PowerUp* superHeart;
+	PowerUp* poisonHeart;
+	PowerUp* rayP;
+	PowerUp* shieldP;
+	PowerUp* speedReduceP;
+
 	Cuboid* carretera;
 	Cuboid* sep1;
 	Cuboid* sep2;
@@ -59,7 +71,7 @@ private:
 	// powerups 
 
 	vector<Emitter*> barrelEmitters;
-	
+
 	bool shieldEffect = false;
 	bool speedEffect = false;
 	const float reduce = 0.5;
@@ -80,17 +92,17 @@ private:
 
 	int coinsToWin;
 
-public : 
-	
-	inline Level getLevel() const { return this->level;}
+public:
+
+	inline Level getLevel() const { return this->level; }
 
 
-	GameScene(Level levelToSet ,  int coinsObjective) : level(levelToSet) , coinsToWin(coinsObjective){}
+	GameScene(Level levelToSet, int coinsObjective) : level(levelToSet), coinsToWin(coinsObjective) {}
 
 	void usePowerUpPlayer();
 	void Init();
 	void Reset();
-	
+
 	//powerups
 
 	void activateRay();
@@ -99,7 +111,7 @@ public :
 
 	inline bool getCondVictoria() const { return this->condVictoria; }
 	inline void setCondVictoria(const bool& co) { this->condVictoria = co; }
-	
+
 	//inputs
 
 
@@ -108,8 +120,8 @@ public :
 
 	void cambioEscena();
 
-	
+
 	void Update(const float& timeUpdate);
-	
+
 };
 

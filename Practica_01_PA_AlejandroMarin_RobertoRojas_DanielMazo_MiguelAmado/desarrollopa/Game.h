@@ -33,6 +33,11 @@ private:
 	GameScene* lvl3;
 	GameScene* lvl4;
 	GameScene* lvl5;
+	GameScene* lvl6;
+	GameScene* lvl7;
+	GameScene* lvl8;
+	GameScene* lvl9;
+	GameScene* lvl10;
 	WinScene* win;
 	LoseScene* lose;
 

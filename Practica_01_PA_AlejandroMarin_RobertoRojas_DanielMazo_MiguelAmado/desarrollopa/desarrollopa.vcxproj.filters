@@ -147,6 +147,9 @@
     <ClCompile Include="SwitchBarrel.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="RankingScene.cpp">
+      <Filter>Archivos de origen\Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -244,6 +247,9 @@
     </ClInclude>
     <ClInclude Include="SwitchBarrel.h">
       <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="RankingScene.h">
+      <Filter>Archivos de encabezado\Scenes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
