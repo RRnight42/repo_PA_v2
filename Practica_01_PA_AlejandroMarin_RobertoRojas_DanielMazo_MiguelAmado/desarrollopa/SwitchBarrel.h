@@ -22,6 +22,8 @@ public :
 
 	SwitchBarrel(string modelFileSet, float scale, CollisionEffect effectSet, Vector3D speedSet, Color colorSet, bool iWB = false) : Barrel(modelFileSet, scale , effectSet , speedSet , colorSet , iWB) {
 	
+
+		seconds = 0;
 	
 		if (this->GetPosition().GetX() == c1) {
 		

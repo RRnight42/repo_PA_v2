@@ -13,18 +13,24 @@ class GhostBarrel :
 	bool iniciatedChange = false;
 	const float tiempoInicializacion = 1;
 	const float periodoActualizacion = 0.1f;
+
+
 public: 
 
-	GhostBarrel(string modelFileSet, float scale, CollisionEffect effectSet, Vector3D speedSet, Color colorSet, bool iWB = false) : Barrel(modelFileSet, scale, effectSet, speedSet, colorSet, iWB) {}
+	GhostBarrel(string modelFileSet, float scale, CollisionEffect effectSet, Vector3D speedSet, Color colorSet, bool iWB = false) : Barrel(modelFileSet, scale, effectSet, speedSet, colorSet, iWB) {
+	
+		this->seconds = 0;
+	
+	}
 
     void Fade() {
     
     
-		float alpha = this->GetColor().GetAlpha();
+		float newAlpha = this->GetColor().GetAlpha();
 
-		alpha = alpha - 0.1f;
+		newAlpha = newAlpha - 0.1f;
     
-		this->PaintBarrel(Color(1, 1, 1, alpha));
+		this->PaintBarrel(Color(1, 1, 1, newAlpha));
     
     }
 
@@ -40,20 +46,11 @@ public:
 		timer.Run();
 		seconds += timer.GetDeltaTime();
 
-		if (!iniciatedChange) {
-
-		while (seconds < tiempoInicializacion) {}
-		iniciatedChange = true;
-		seconds = 0;
-        }else if (seconds >= periodoActualizacion && this->GetColor().GetAlpha() > 0) {
+	    if (seconds >= periodoActualizacion) {
 			Fade();
 			seconds = 0;
 		}
 
-		
-
-
-		cout << seconds << endl;
 	}
 
 

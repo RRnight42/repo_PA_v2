@@ -18,6 +18,7 @@
 #include "Time.h"
 #include "SwitchBarrel.h"
 #include "GhostBarrel.h"
+#include "BrakeBarrel.h"
 
 using namespace std;
 
@@ -37,8 +38,11 @@ private:
 	Barrel* speedBarrel;
 	Barrel* ddBarrel;
 	Barrel* wideBarrel;
+	Barrel* freezeBarrel;
+
 	SwitchBarrel* switchBarrel;
 	GhostBarrel* ghostBarrel;
+	BrakeBarrel* brakeBarrel;
 
 	PowerUp* normalHeart;
 	PowerUp* superHeart;
@@ -76,6 +80,8 @@ private:
 
 	bool shieldEffect = false;
 	bool speedEffect = false;
+	
+
 	const float reduce = 0.5;
 	chrono::steady_clock::time_point timePowerUp;
 
@@ -88,8 +94,8 @@ private:
 	// tiempo 
 
 	float timePowerUps;
-	Time time;
-
+	Time timer;
+	float timerFrozen;
 	bool condVictoria;
 
 	int coinsToWin;

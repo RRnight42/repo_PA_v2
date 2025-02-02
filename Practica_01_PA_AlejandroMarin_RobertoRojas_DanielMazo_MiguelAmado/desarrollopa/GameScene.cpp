@@ -3,6 +3,7 @@
 #include "Barrel.h"
 #include "SwitchBarrel.h"
 #include "GhostBarrel.h"
+#include "BrakeBarrel.h"
 #include "PowerUp.h"
 #include<random>
 
@@ -20,9 +21,13 @@ void GameScene::Init() {
 	speedBarrel = new Barrel("barrel_k2.obj", 1, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 1.7), Color(0, 0.7, 0, 1));
 	ddBarrel = new Barrel("barrel_k2.obj", 1, CollisionEffect(-2, 0, 0), Vector3D(0, 0, 0.7), Color(0.2, 0.2, 0.2, 1));
 	wideBarrel = new Barrel("barrelwide_k2.obj", 1.5, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 0.7), Color(0.42, 0.23, 0.16, 1), true);
+	freezeBarrel = new Barrel("barrel_k2.obj", 1, CollisionEffect(0, 0, 4), Vector3D(0, 0, 0.7), Color(0.3, 0.3, 1, 1));
+
+	// nuevas herencias mas justificadas
+
 	switchBarrel = new SwitchBarrel("barrel_k2.obj", 1, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 0.7), Color(1, 0, 1, 1));
 	ghostBarrel = new GhostBarrel("barrel_k2.obj", 1, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 0.7), Color());
-
+	brakeBarrel = new BrakeBarrel("barrel_k2.obj", 1, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 1), Color(1,1,0.6,1), 1.5f , 3);
 
 	//////////////////////////////////
 
@@ -124,7 +129,7 @@ void GameScene::Init() {
 	if (this->getLevel() == this->Level1) {
 
 		//vector <pair<Item*, float>> barrelsDistribution = { {normalBarrel , 0.3f } , {speedBarrel , 0.2f } , {ddBarrel , 0.1f }};
-		vector <pair<Item*, float>> barrelsDistribution = { {ghostBarrel , 0.3f } };
+		vector <pair<Item*, float>> barrelsDistribution = { {freezeBarrel , 0.3f } };
 
 		vector <pair<Item*, float>> barrelsWideDistribution = { { wideBarrel , 0.2f } };
 
@@ -370,7 +375,7 @@ void GameScene::Update(const float& timeUpdate) {
 
 	Scene::Update(timeUpdate);
 
-	time.Run();
+	timer.Run();
 
 
 	this->emitterBarrelC1->checkCollisionsPlayer(player);
@@ -388,18 +393,41 @@ void GameScene::Update(const float& timeUpdate) {
 	this->emitterCoinsC2->checkCollisionsPlayer(player);
 	this->emitterCoinsC3->checkCollisionsPlayer(player);
 
-	if (shieldEffect || speedEffect) {
+	    if (this->player->getFrozen()) {
+		
+		int frozenduration = 3;
+
+		timerFrozen += timer.GetDeltaTime();
+
+
+		   if (timerFrozen >= frozenduration) {
+		
+			 
+				this->player->setFrozen(false);
+				timerFrozen = 0;
+				
+			
+		    }
+		
+		
+		
+		} 
+		
+		
+		if (shieldEffect || speedEffect) {
 
 		int duration = 10;
-		timePowerUps += time.GetDeltaTime();
+		
+		timePowerUps += timer.GetDeltaTime();
 
-		if (timePowerUps >= duration) {
+
+		   if (timePowerUps >= duration) {
 
 
 			player->ResetPowerUp();
 
 
-			if (speedEffect) {
+			 if (speedEffect) {
 				for (Emitter* em : barrelEmitters) {
 					for (Item* barrel : em->getParticles()) {
 						barrel->SetSpeed(Vector3D(0, 0, barrel->GetSpeed().GetZ() * 2)); // Restauramos la velocidad original
@@ -409,18 +437,18 @@ void GameScene::Update(const float& timeUpdate) {
 
 				timePowerUps = 0;
 				speedEffect = false;
-			}
+			 }
 
-			if (shieldEffect) {
+			 if (shieldEffect) {
 				this->player->setShield(false);
 				timePowerUps = 0;
 				shieldEffect = false;
-			}
+			 }
+
+			
 
 
-
-
-		}
+		    }
 	}
 	cambioEscena();
 	//cout << player->getLives() << ", " << player->getCoins() << "," << player->getCurrentPowerUp() << endl;
@@ -519,20 +547,30 @@ void GameScene::ProcessKeyPressed(unsigned char key, int px, int py) {
 
 	case 'A':
 	case 'a':
-		if (player->getCarril() == 1) {}
+
+		if (this->player->getFrozen()) {
+		}
 		else {
-			player->setCarril(player->getCarril() - 1);
-			player->SetPosition(player->GetPosition() - Vector3D(3.45, 0, 0));
+			if (player->getCarril() == 1) {}
+			else {
+				player->setCarril(player->getCarril() - 1);
+				player->SetPosition(player->GetPosition() - Vector3D(3.45, 0, 0));
+			}
 		}
 		break;
 
 	case 'D':
 	case 'd':
-		if (player->getCarril() == 3) {}
-		else {
-			player->setCarril(player->getCarril() + 1);
-			player->SetPosition(player->GetPosition() + Vector3D(3.45, 0, 0));
+		if (this->player->getFrozen()) {
 
+		}
+		else {
+			if (player->getCarril() == 3) {}
+			else {
+				player->setCarril(player->getCarril() + 1);
+				player->SetPosition(player->GetPosition() + Vector3D(3.45, 0, 0));
+
+			}
 		}
 		break;
 
@@ -545,18 +583,29 @@ void GameScene::ProcessSpecialKeyPressed(int key, int px, int py) {
 	switch (key) {
 
 	case GLUT_KEY_LEFT:
+
+		if (this->player->getFrozen()) {
+
+		}
+		else {
 		if (player->getCarril() == 1) {}
 		else {
 			player->setCarril(player->getCarril() - 1);
 			player->SetPosition(player->GetPosition() - Vector3D(3.45, 0, 0));
 		}
+		}
 		break;
 
 	case GLUT_KEY_RIGHT:
-		if (player->getCarril() == 3) {}
+		if (this->player->getFrozen()) {
+		
+		}
 		else {
-			player->setCarril(player->getCarril() + 1);
-			player->SetPosition(player->GetPosition() + Vector3D(3.45, 0, 0));
+			if (player->getCarril() == 3) {}
+			else {
+				player->setCarril(player->getCarril() + 1);
+				player->SetPosition(player->GetPosition() + Vector3D(3.45, 0, 0));
+			}
 		}
 		break;
 

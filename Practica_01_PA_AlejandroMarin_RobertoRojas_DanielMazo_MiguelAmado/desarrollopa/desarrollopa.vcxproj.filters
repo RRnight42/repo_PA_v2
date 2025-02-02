@@ -144,14 +144,17 @@
     <ClCompile Include="CollisionEffect.cpp">
       <Filter>Archivos de origen\auxiliares</Filter>
     </ClCompile>
-    <ClCompile Include="SwitchBarrel.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="RankingScene.cpp">
       <Filter>Archivos de origen\Scenes</Filter>
     </ClCompile>
     <ClCompile Include="GhostBarrel.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Barrels</Filter>
+    </ClCompile>
+    <ClCompile Include="SwitchBarrel.cpp">
+      <Filter>Archivos de origen\Barrels</Filter>
+    </ClCompile>
+    <ClCompile Include="BrakeBarrel.cpp">
+      <Filter>Archivos de origen\Barrels</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -248,14 +251,17 @@
     <ClInclude Include="UICanva.h">
       <Filter>Archivos de encabezado\auxiliares</Filter>
     </ClInclude>
-    <ClInclude Include="SwitchBarrel.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="RankingScene.h">
       <Filter>Archivos de encabezado\Scenes</Filter>
     </ClInclude>
     <ClInclude Include="GhostBarrel.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Barrels</Filter>
+    </ClInclude>
+    <ClInclude Include="SwitchBarrel.h">
+      <Filter>Archivos de encabezado\Barrels</Filter>
+    </ClInclude>
+    <ClInclude Include="BrakeBarrel.h">
+      <Filter>Archivos de encabezado\Barrels</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

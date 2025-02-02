@@ -76,7 +76,7 @@ void UICanva::InitUI() {
     loader.LoadModel("Escudo.obj");
     *shieldPowerUpUI = loader.GetModel();
     loader.Clear();
-    shieldPowerUpUI->SetOrientation(Vector3D(0,-90,-90));
+    shieldPowerUpUI->SetOrientation(Vector3D(0,-90,0));
     shieldPowerUpUI->SetPosition(this->GetPosition() + Vector3D(0.5, 2.1,18.9));
 
 

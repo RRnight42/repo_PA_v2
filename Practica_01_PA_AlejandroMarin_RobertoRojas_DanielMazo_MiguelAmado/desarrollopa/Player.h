@@ -1,9 +1,11 @@
 #pragma once
 #include "Solid.h"
 #include "Sphere.h"
+#include "Cuboid.h"
 #include "MaterialModel.h"
 #include "Text.h"
 #include "UICanva.h"
+#include "Time.h"
 #include "CollisionEffect.h"
 
 #include <vector>
@@ -20,11 +22,13 @@ private:
 
     MaterialModel model;
     Sphere* shield = new Sphere(1.7, 15, 10);
+    Cuboid* frozenCube = new Cuboid(3,3,3);
 
     int lives;
     int coinsValue;
 
     bool activeShield = false;
+    bool frozen = false;
 
     int carril;
 
@@ -36,6 +40,8 @@ private:
 
 
     int powerUp;
+
+
 public:
 
 
@@ -53,6 +59,9 @@ public:
     int getCurrentPowerUp();
 
     inline int getCarril() const { return this->carril; }
+
+    inline bool getFrozen() const { return this->frozen; }
+
     inline void setCarril(const int& carrilSet) { this->carril = carrilSet; }
 
     bool hasPowerUp() const;
@@ -63,6 +72,8 @@ public:
     inline void setModelPlayer(const MaterialModel& mS) { this->model = mS; }
 
     inline void setShield(const bool& s) { this->activeShield = s;}
+
+    inline void setFrozen(const bool& f) { this->frozen = f; }
      
     int usePowerUp();
     void setUICanva(UICanva* ui);

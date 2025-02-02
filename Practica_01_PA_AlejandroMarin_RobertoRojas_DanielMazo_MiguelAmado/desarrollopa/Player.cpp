@@ -5,6 +5,7 @@ void Player::Render() {
     model.Render();
     
     shield->SetPosition(this->GetPosition());
+    frozenCube->SetPosition(this->GetPosition());
     shield->SetOrientationSpeed(Vector3D(0, 5, 0));
 
     if (activeShield) {
@@ -14,6 +15,19 @@ void Player::Render() {
     }
     else {
 
+    }
+
+
+    if (frozen) {
+    
+        this->frozenCube->SetColor(Color(0.6, 0.6, 1, 1));
+        this->frozenCube->Render();
+    
+    
+    }
+    else {
+    
+    
     }
 
 
@@ -43,7 +57,13 @@ void Player::applyCollisionEffect(CollisionEffect col) {
 
     this->coinsValue += col.ColCoins();
 
-    if (col.ColPowerUpID() != 0 && this->powerUp == None) { // solo podemos tener un powerup a la vez
+    if (col.ColPowerUpID() == 4) {
+    
+        this->setFrozen(true);
+    
+    }
+
+    if (col.ColPowerUpID() != 0 && col.ColPowerUpID() != 4 && this->powerUp == None) { // solo podemos tener un powerup a la vez
 
         switch (col.ColPowerUpID()) {
 
@@ -56,7 +76,7 @@ void Player::applyCollisionEffect(CollisionEffect col) {
         case 3:
             this->setPowerUp(SpeedReduce);
             break;
-
+      
 
         }
     }
