@@ -42,7 +42,10 @@ public:
 
     inline void SetModel(const Model& mdl) { this->model = mdl; }
 
-    inline void PaintBarrel(const Color& c) { this->model.PaintColor(c); }
+    void PaintBarrel(Color c) { 
+        // c.SetAlpha(0.5);
+        this->model.PaintColor(c); 
+    }
    
     bool isWideBarrel() { return this->Wide; }
 

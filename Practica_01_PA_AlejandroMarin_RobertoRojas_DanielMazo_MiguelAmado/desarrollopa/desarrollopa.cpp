@@ -135,7 +135,7 @@ int main(int argc, char** argv)
 
     cout << "Generando ventana..." << endl;
     glutInit(&argc, argv);                                          // Inicializa GLUT
-    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);      // doble buffer, modo RGBA, depth buffer
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH | GLUT_ALPHA);      // doble buffer, modo RGBA, depth buffer
     glutInitWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);                // tamaño inicial de la ventana
     glutInitWindowPosition(WINDOW_POSITION_X, WINDOW_POSITION_Y);   // posición inicial de la ventana
     glutCreateWindow(TITLE);                                        // crea una ventana con el título dado
