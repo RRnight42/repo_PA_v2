@@ -34,7 +34,7 @@ void MenuScene::ProcessKeyPressed(unsigned char key, int px, int py) {
         break;
 
     case 13:  // Tecla Enter
-        if (selected == 0) {
+        if (selected == 0 || selected == 1) {
             this->endScene(true);  // Cambio de escena
         }
       

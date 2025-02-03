@@ -128,8 +128,8 @@ void GameScene::Init() {
 
 	if (this->getLevel() == this->Level1) {
 
-		//vector <pair<Item*, float>> barrelsDistribution = { {normalBarrel , 0.3f } , {speedBarrel , 0.2f } , {ddBarrel , 0.1f }};
-		vector <pair<Item*, float>> barrelsDistribution = { {freezeBarrel , 0.3f } };
+		vector <pair<Item*, float>> barrelsDistribution = { {normalBarrel , 0.3f } , {speedBarrel , 0.2f } , {ddBarrel , 0.1f }};
+		//vector <pair<Item*, float>> barrelsDistribution = { {freezeBarrel , 0.3f } };
 
 		vector <pair<Item*, float>> barrelsWideDistribution = { { wideBarrel , 0.2f } };
 
@@ -530,6 +530,7 @@ void GameScene::cambioEscena() {
 		this->endScene(true);
 	}
 	else if (this->player->getLives() <= 0) {
+		this->StoreInformation(this->level + 1, player->getCoins());
 		this->endScene(true);
 	}
 }

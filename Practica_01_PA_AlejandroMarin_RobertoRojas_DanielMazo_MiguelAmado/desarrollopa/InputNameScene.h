@@ -3,6 +3,8 @@
 #include "Text.h"
 #include <string>
 
+using namespace std;
+
 class InputNameScene :
     public Scene
 {
@@ -10,8 +12,8 @@ class InputNameScene :
 
 private:
 
-	int monedas;
-	int nivel;
+	int monedasTexto;
+	int nivelTexto;
 
 	string inputBuffer;
 	int inputLength;
@@ -27,8 +29,8 @@ public:
 
 	void RecibirDatos(int monedasDevolverNivel, int nivelDevolver) {
 
-		this->monedas = monedasDevolverNivel;
-		this->nivel = nivelDevolver;
+		this->monedasTexto = monedasDevolverNivel;
+		this->nivelTexto = nivelDevolver;
 
 	}
 

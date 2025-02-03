@@ -21,6 +21,7 @@ void Game::Init()
 	win = new WinScene();
 	lose = new LoseScene();
 	ranking = new RankingScene();
+	inputScene = new InputNameScene();
 
 	nivelActual = 1;
 
@@ -44,12 +45,14 @@ void Game::Init()
 	scenes.push_back(win);
 	scenes.push_back(lose);
 	scenes.push_back(ranking);
+	scenes.push_back(inputScene);
 
 	this->menu->Init();
 	this->lvl1->Init();
 	this->win->Init();
 	this->lose->Init();
 	this->ranking->Init();
+	this->inputScene->Init();
 
 }
 
@@ -72,8 +75,9 @@ void Game::Update()
 		if (this->activeScene == this->menu) {
 			if (this->menu->getEsRanking()) {
 
-				this->ranking->endScene(true);
+				this->ranking->endScene(false);
 				this->ranking->Reset();
+				this->ranking->Init();
 				this->activeScene = ranking;
 
 			}
@@ -264,9 +268,13 @@ void Game::Update()
 				this->activeScene = win;
 				this->lvl1->Reset();
 			}
+
+			//TRANSICIONES HACIA INPUT NAME
 			else if (this->lvl1->getCondVictoria() == false) {
-				this->lose->endScene(false);
-				this->activeScene = lose;
+				inputScene->RecibirDatos(this->lvl1->getInformationCoins(), this->lvl1->getInformationLevel());
+				this->inputScene->endScene(false);
+				this->activeScene = inputScene;
+				this->lvl1->Reset();
 			}
 		}
 		else if (this->activeScene == this->lvl2) {
@@ -276,8 +284,9 @@ void Game::Update()
 				this->lvl2->Reset();
 			}
 			else if (this->lvl2->getCondVictoria() == false) {
-				this->lose->endScene(false);
-				this->activeScene = lose;
+				inputScene->RecibirDatos(this->lvl2->getInformationCoins(), this->lvl2->getInformationLevel());
+				this->inputScene->endScene(false);
+				this->activeScene = inputScene;
 				this->lvl2->Reset();
 			}
 		}
@@ -288,8 +297,9 @@ void Game::Update()
 				this->lvl3->Reset();
 			}
 			else if (this->lvl3->getCondVictoria() == false) {
-				this->lose->endScene(false);
-				this->activeScene = lose;
+				inputScene->RecibirDatos(this->lvl3->getInformationCoins(), this->lvl3->getInformationLevel());
+				this->inputScene->endScene(false);
+				this->activeScene = inputScene;
 				this->lvl3->Reset();
 			}
 		}
@@ -300,8 +310,9 @@ void Game::Update()
 				this->lvl4->Reset();
 			}
 			else if (this->lvl4->getCondVictoria() == false) {
-				this->lose->endScene(false);
-				this->activeScene = lose;
+				inputScene->RecibirDatos(this->lvl4->getInformationCoins(), this->lvl4->getInformationLevel());
+				this->inputScene->endScene(false);
+				this->activeScene = inputScene;
 				this->lvl4->Reset();
 			}
 		}
@@ -312,8 +323,9 @@ void Game::Update()
 				this->lvl5->Reset();
 			}
 			else if (this->lvl5->getCondVictoria() == false) {
-				this->lose->endScene(false);
-				this->activeScene = lose;
+				inputScene->RecibirDatos(this->lvl5->getInformationCoins(), this->lvl5->getInformationLevel());
+				this->inputScene->endScene(false);
+				this->activeScene = inputScene;
 				this->lvl5->Reset();
 			}
 		}
@@ -324,8 +336,9 @@ void Game::Update()
 				this->lvl6->Reset();
 			}
 			else if (this->lvl6->getCondVictoria() == false) {
-				this->lose->endScene(false);
-				this->activeScene = lose;
+				inputScene->RecibirDatos(this->lvl6->getInformationCoins(), this->lvl6->getInformationLevel());
+				this->inputScene->endScene(false);
+				this->activeScene = inputScene;
 				this->lvl6->Reset();
 			}
 		}
@@ -336,8 +349,9 @@ void Game::Update()
 				this->lvl7->Reset();
 			}
 			else if (this->lvl7->getCondVictoria() == false) {
-				this->lose->endScene(false);
-				this->activeScene = lose;
+				inputScene->RecibirDatos(this->lvl7->getInformationCoins(), this->lvl7->getInformationLevel());
+				this->inputScene->endScene(false);
+				this->activeScene = inputScene;
 				this->lvl7->Reset();
 			}
 		}
@@ -348,8 +362,9 @@ void Game::Update()
 				this->lvl8->Reset();
 			}
 			else if (this->lvl8->getCondVictoria() == false) {
-				this->lose->endScene(false);
-				this->activeScene = lose;
+				inputScene->RecibirDatos(this->lvl8->getInformationCoins(), this->lvl8->getInformationLevel());
+				this->inputScene->endScene(false);
+				this->activeScene = inputScene;
 				this->lvl8->Reset();
 			}
 		}
@@ -360,8 +375,9 @@ void Game::Update()
 				this->lvl9->Reset();
 			}
 			else if (this->lvl9->getCondVictoria() == false) {
-				this->lose->endScene(false);
-				this->activeScene = lose;
+				inputScene->RecibirDatos(this->lvl9->getInformationCoins(), this->lvl9->getInformationLevel());
+				this->inputScene->endScene(false);
+				this->activeScene = inputScene;
 				this->lvl9->Reset();
 			}
 		}
@@ -372,11 +388,36 @@ void Game::Update()
 				this->lvl10->Reset();
 			}
 			else if (this->lvl10->getCondVictoria() == false) {
-				this->lose->endScene(false);
-				this->activeScene = lose;
+				inputScene->RecibirDatos(this->lvl10->getInformationCoins(), this->lvl10->getInformationLevel());
+				this->inputScene->endScene(false);
+				this->activeScene = inputScene;
 				this->lvl10->Reset();
 			}
+		}
+		else if(this->activeScene == this->inputScene){
+		
+			if (this->activeScene->hasEndedScene()) {
+				this->inputScene->endScene(false);
+				this->lose->endScene(false);
+				this->lose->Reset();
+				this->lose->Init();
+				this->inputScene->Reset();
+				this->activeScene = lose;
+
 			}
+		}
+		else if (this->activeScene == this->ranking) {
+		
+			if (this->ranking->hasEndedScene()) {
+				this->ranking->endScene(false);
+				this->menu->endScene(false);
+				this->menu->Reset();
+				this->menu->Init();
+				this->activeScene == menu;
+			}
+		
+		
+		}
 	}
 }
 

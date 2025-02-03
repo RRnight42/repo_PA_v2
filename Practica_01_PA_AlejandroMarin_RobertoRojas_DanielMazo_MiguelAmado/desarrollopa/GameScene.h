@@ -91,6 +91,12 @@ private:
 	Level level;
 
 
+	// variables de informacion para el ranking
+
+	int levelInfo;
+	int monedasInfo;
+
+
 	// tiempo 
 
 	float timePowerUps;
@@ -119,6 +125,24 @@ public:
 
 	inline bool getCondVictoria() const { return this->condVictoria; }
 	inline void setCondVictoria(const bool& co) { this->condVictoria = co; }
+
+	void StoreInformation(int lvl , int coins) {
+	
+		this->monedasInfo = coins;
+		this->levelInfo = lvl;
+	
+	}
+
+	int getInformationCoins() {
+		return this->monedasInfo;
+	}
+
+	int getInformationLevel() {
+	
+		return this->levelInfo;
+	
+	}
+
 
 	//inputs
 

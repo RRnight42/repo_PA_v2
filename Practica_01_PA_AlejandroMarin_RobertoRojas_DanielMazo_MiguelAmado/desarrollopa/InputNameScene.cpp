@@ -1,4 +1,7 @@
 #include "InputNameScene.h"
+#include <string>
+#include <iostream>
+
 void InputNameScene::Init() {
 
 
@@ -16,17 +19,46 @@ void InputNameScene::Init() {
 }
 
 void InputNameScene::GuardarDatos(string nombrePlayer, string filePath) {
+    try {
+        ifstream lector(filePath);  // Abrimos el archivo para contar los usuarios existentes
 
+        int contadorUsuarios = 0;
+        string linea;
 
-    // dani , aqui va el ostream
+        
+        while (getline(lector, linea)) {
+            if (!linea.empty()) {  
+                contadorUsuarios++;
+            }
+        }
 
-    // y pon los operadores amigos en el .h
+       
+        if (contadorUsuarios < 10) {
+           
+            ofstream escritor(filePath , ios::app);  // Abrimos el archivo en modo "append" para agregar al final
 
+            if (escritor.is_open()) {
+                
+                escritor << (contadorUsuarios + 1) << ". " << nombrePlayer << " --- Nivel " << nivelTexto << " --- " << monedasTexto << " monedas\n";
+                escritor.close();
+                cout << "Guardado correcto" << endl;
+            }
+            else {
+                cout << "No se ha podido abrir el archivo" << endl;
+            }
+        }
+        else {
+            cout << "Ya se han guardado 10 usuarios." << endl;
+        }
 
-
-
-
+        lector.close();
+    }
+    catch (exception& e) {
+        cout << "Error al manejar el fichero: " << e.what() << endl;
+    }
 }
+
+
 
 
 void InputNameScene::Reset() {
@@ -67,7 +99,7 @@ string InputNameScene::GetRawNamePlayer() {
     // Extrae el contenido entre corchetes y elimina los guiones bajos sobrantes
 
     string rawName = inputBuffer.substr(1, inputBuffer.size() - 2);
-    rawName.erase(std::remove(rawName.begin(), rawName.end(), '_'), rawName.end());
+    rawName.erase(remove(rawName.begin(), rawName.end(), '_'), rawName.end());
     return rawName;
 
 }
