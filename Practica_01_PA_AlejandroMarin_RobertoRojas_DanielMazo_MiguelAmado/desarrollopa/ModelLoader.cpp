@@ -6,7 +6,7 @@ using namespace std;
 
 
 
-void ModelLoader::calcBoundaries(Vector3D vector) {
+void ModelLoader::calcBoundaries(Vector3D<float> vector) {
 
 
 	this->maxX = fmax(this->maxX, vector.GetX());
@@ -38,7 +38,7 @@ void ModelLoader::LoadModel(const string& filePath) {
 
 				if (line[0] == 'v' && line[1] == 'n') { // formato : vn 0.0034 0.3603 0.0407
 
-					Vector3D normal = this->parseObjLinetoVector3D(line);
+					Vector3D<float> normal = this->parseObjLinetoVector3D(line);
 
 					this->normalCollection.push_back(normal);
 
@@ -47,7 +47,7 @@ void ModelLoader::LoadModel(const string& filePath) {
 
 				else if (line[0] == 'v') {
 
-					Vector3D vertex = this->parseObjLinetoVector3D(line);
+					Vector3D<float> vertex = this->parseObjLinetoVector3D(line);
 					this->calcBoundaries(vertex);
 					this->vertexCollection.push_back(vertex);
 				}
@@ -83,7 +83,7 @@ void ModelLoader::LoadModel(const string& filePath) {
 
 Triangle ModelLoader::center(Triangle triangle) {
 
-	Vector3D modelCenter(this->minX + this->GetWidth() / 2.0,
+	Vector3D<float> modelCenter(this->minX + this->GetWidth() / 2.0,
 		this->minY + this->GetHeight() / 2.0,
 		this->minZ + this->GetLength() / 2.0);
 
@@ -98,14 +98,14 @@ Triangle ModelLoader::center(Triangle triangle) {
 }
 
 
-Vector3D ModelLoader::parseObjLinetoVector3D(const string& line) {
+Vector3D<float> ModelLoader::parseObjLinetoVector3D(const string& line) {
 
 
 	string typeOfPoint;
 	float x, y, z;
 	istringstream stringstream(line);
 	stringstream >> typeOfPoint >> x >> y >> z;
-	Vector3D vector = Vector3D(x, y, z);
+	Vector3D<float> vector = Vector3D<float>(x, y, z);
 	return vector * this->GetScale();
 
 }
@@ -127,10 +127,10 @@ Triangle ModelLoader::parseObjTriangle(const string& line) {
 	stringstream >> idxVertex3 >> c >> c >> idxNormal3;
 
 
-	Vector3D vertex1 = this->vertexCollection[idxVertex1 - 1];
-	Vector3D vertex2 = this->vertexCollection[idxVertex2 - 1];
-	Vector3D vertex3 = this->vertexCollection[idxVertex3 - 1];
-	Vector3D normal = this->normalCollection[idxNormal1 - 1]; // las normales son iguales
+	Vector3D<float> vertex1 = this->vertexCollection[idxVertex1 - 1];
+	Vector3D<float> vertex2 = this->vertexCollection[idxVertex2 - 1];
+	Vector3D<float> vertex3 = this->vertexCollection[idxVertex3 - 1];
+	Vector3D<float> normal = this->normalCollection[idxNormal1 - 1]; // las normales son iguales
 
 	Triangle parsedTriangle = Triangle(vertex1, vertex2, vertex3, normal, normal, normal);
 

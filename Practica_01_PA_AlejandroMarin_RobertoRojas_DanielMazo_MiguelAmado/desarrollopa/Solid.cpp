@@ -6,7 +6,7 @@ void Solid::Update(const float& timeUpdate)
 
     if (this->GetGravity()) {
     
-        this->speed = this->speed + Vector3D(0, -0.0098f, 0) * timeUpdate;
+        this->speed = this->speed + Vector3D<float>(0, -0.0098f, 0) * timeUpdate;
     
     }
     // Actualizar la posición con la velocidad
@@ -14,7 +14,7 @@ void Solid::Update(const float& timeUpdate)
 }
 
 
-float Solid::Distance(const Vector3D& other) {
+float Solid::Distance(const Vector3D<float>& other) {
 
     float x = other.GetX() - this->GetPosition().GetX();
     float xx = x * x;

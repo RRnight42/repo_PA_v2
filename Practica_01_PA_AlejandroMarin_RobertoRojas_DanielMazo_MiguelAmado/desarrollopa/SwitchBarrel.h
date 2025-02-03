@@ -20,7 +20,7 @@ class SwitchBarrel : public Barrel
 
 public : 
 
-	SwitchBarrel(string modelFileSet, float scale, CollisionEffect effectSet, Vector3D speedSet, Color colorSet, bool iWB = false) : Barrel(modelFileSet, scale , effectSet , speedSet , colorSet , iWB) {
+	SwitchBarrel(string modelFileSet, float scale, CollisionEffect effectSet, Vector3D<float> speedSet, Color colorSet, bool iWB = false) : Barrel(modelFileSet, scale , effectSet , speedSet , colorSet , iWB) {
 	
 
 		seconds = 0;
@@ -63,7 +63,7 @@ public :
 			case 1:
 					
 					this->actualCarril = 2;
-					this->SetPosition(Vector3D(c2, this->GetPosition().GetY(), this->GetPosition().GetZ()));				
+					this->SetPosition(Vector3D<float>(c2, this->GetPosition().GetY(), this->GetPosition().GetZ()));
 
 			break;
 			
@@ -72,12 +72,12 @@ public :
 				if (select == 0) {
 
 					this->actualCarril = 1;
-					this->SetPosition(Vector3D(c1, this->GetPosition().GetY(), this->GetPosition().GetZ()));
+					this->SetPosition(Vector3D<float>(c1, this->GetPosition().GetY(), this->GetPosition().GetZ()));
 				}
 				else {
 
 					this->actualCarril = 3;
-					this->SetPosition(Vector3D(c3, this->GetPosition().GetY(), this->GetPosition().GetZ()));
+					this->SetPosition(Vector3D<float>(c3, this->GetPosition().GetY(), this->GetPosition().GetZ()));
 
 
 				}
@@ -88,7 +88,7 @@ public :
 
 
 					this->actualCarril = 2;
-					this->SetPosition(Vector3D(c2, this->GetPosition().GetY(), this->GetPosition().GetZ()));
+					this->SetPosition(Vector3D<float>(c2, this->GetPosition().GetY(), this->GetPosition().GetZ()));
 
 			break;
 			

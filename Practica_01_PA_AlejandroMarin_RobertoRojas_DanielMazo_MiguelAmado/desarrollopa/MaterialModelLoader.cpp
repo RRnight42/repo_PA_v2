@@ -63,12 +63,12 @@ void MaterialModelLoader::LoadModel(const string& filePath)
 				}
 				else if (line[0] == 'v' && line[1] == 'n') //ejemplo: vn 0.0000 0.3603 - 0.9328 = > normal
 				{
-					Vector3D normal = this->parseObjLinetoVector3D(line);
+					Vector3D<float> normal = this->parseObjLinetoVector3D(line);
 					this->normalCollection.push_back(normal);
 				}
 				else if (line[0] == 'v') //ejemplo: v -0.091741 0.641907 0.606832 => vértice
 				{
-					Vector3D vertex = this->parseObjLinetoVector3D(line);
+					Vector3D<float> vertex = this->parseObjLinetoVector3D(line);
 					this->calcBoundaries(vertex);
 					this->vertexCollection.push_back(vertex);
 				}
@@ -104,7 +104,7 @@ MaterialTriangle MaterialModelLoader::parseObjMaterialTriangle(const string& lin
 }
 MaterialTriangle MaterialModelLoader::center(MaterialTriangle triangle)
 {
-	Vector3D modelCenter(this->minX + this->GetWidth() / 2.0,
+	Vector3D<float> modelCenter(this->minX + this->GetWidth() / 2.0,
 		this->minY + this->GetHeight() / 2.0,
 		this->minZ + this->GetLength() / 2);
 	MaterialTriangle centeredTriangle(

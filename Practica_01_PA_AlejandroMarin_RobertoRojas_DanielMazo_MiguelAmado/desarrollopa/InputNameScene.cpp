@@ -3,8 +3,8 @@ void InputNameScene::Init() {
 
 
 
-    titulo->SetPosition(Vector3D(-10, 6, 0));
-    inputText->SetPosition(Vector3D(-7, 0, 0));
+    titulo->SetPosition(Vector3D<float>(-10, 6, 0));
+    inputText->SetPosition(Vector3D<float>(-7, 0, 0));
 
     AddGameObject(titulo);
     AddGameObject(inputText);

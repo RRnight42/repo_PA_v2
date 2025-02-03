@@ -9,11 +9,11 @@ void WinScene::Init() {
 	salir = new Text("Salir", Text::Helvetica12, Color(0, 0, 0, 1));
 
 
-	message->SetPosition(Vector3D(-5, 8, 0));
-	restart->SetPosition(Vector3D(-1.5, 3, 0));
-	menu->SetPosition(Vector3D(-1, 0, 0));
-	nextLvl->SetPosition(Vector3D(-1.5, -3, 0));
-	salir->SetPosition(Vector3D(-1, -6, 0));
+	message->SetPosition(Vector3D<float>(-5, 8, 0));
+	restart->SetPosition(Vector3D<float>(-1.5, 3, 0));
+	menu->SetPosition(Vector3D<float>(-1, 0, 0));
+	nextLvl->SetPosition(Vector3D<float>(-1.5, -3, 0));
+	salir->SetPosition(Vector3D<float>(-1, -6, 0));
 
 	AddGameObject(message);
 	AddGameObject(restart);

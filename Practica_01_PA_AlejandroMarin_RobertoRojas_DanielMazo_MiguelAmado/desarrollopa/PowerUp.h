@@ -19,7 +19,7 @@ private:
 
 public:
 
-    PowerUp(string modelFileSet, float scale , CollisionEffect effectSet, Vector3D speedSet, Color colorSet) {
+    PowerUp(string modelFileSet, float scale , CollisionEffect effectSet, Vector3D<float> speedSet, Color colorSet) {
     
 
         this->loader.SetScale(scale);
@@ -30,7 +30,7 @@ public:
         this->PaintPowerUp(colorSet);
       
 
-        this->SetOrientationSpeed(Vector3D(0, 3, 0));   
+        this->SetOrientationSpeed(Vector3D<float>(0, 3, 0));
         
         this->effect = effectSet;
         

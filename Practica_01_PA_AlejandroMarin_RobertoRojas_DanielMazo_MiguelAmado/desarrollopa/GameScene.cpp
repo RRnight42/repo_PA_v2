@@ -17,28 +17,28 @@ void GameScene::Init() {
 
 	// barriles //
 
-	normalBarrel = new Barrel("barrel_k2.obj", 1, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 0.7), Color(1, 0.5, 0, 1));
-	speedBarrel = new Barrel("barrel_k2.obj", 1, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 1.7), Color(0, 0.7, 0, 1));
-	ddBarrel = new Barrel("barrel_k2.obj", 1, CollisionEffect(-2, 0, 0), Vector3D(0, 0, 0.7), Color(0.2, 0.2, 0.2, 1));
-	wideBarrel = new Barrel("barrelwide_k2.obj", 1.5, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 0.7), Color(0.42, 0.23, 0.16, 1), true);
-	freezeBarrel = new Barrel("barrel_k2.obj", 1, CollisionEffect(0, 0, 4), Vector3D(0, 0, 0.7), Color(0.3, 0.3, 1, 1));
+	normalBarrel = new Barrel("barrel_k2.obj", 1, CollisionEffect(-1, 0, 0), Vector3D<float>(0, 0, 0.7), Color(1, 0.5, 0, 1));
+	speedBarrel = new Barrel("barrel_k2.obj", 1, CollisionEffect(-1, 0, 0), Vector3D<float>(0, 0, 1.7), Color(0, 0.7, 0, 1));
+	ddBarrel = new Barrel("barrel_k2.obj", 1, CollisionEffect(-2, 0, 0), Vector3D<float>(0, 0, 0.7), Color(0.2, 0.2, 0.2, 1));
+	wideBarrel = new Barrel("barrelwide_k2.obj", 1.5, CollisionEffect(-1, 0, 0), Vector3D<float>(0, 0, 0.7), Color(0.42, 0.23, 0.16, 1), true);
+	freezeBarrel = new Barrel("barrel_k2.obj", 1, CollisionEffect(0, 0, 4), Vector3D<float>(0, 0, 0.7), Color(0.3, 0.3, 1, 1));
 
 	// nuevas herencias mas justificadas
 
-	switchBarrel = new SwitchBarrel("barrel_k2.obj", 1, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 0.7), Color(1, 0, 1, 1));
-	ghostBarrel = new GhostBarrel("barrel_k2.obj", 1, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 0.7), Color());
-	brakeBarrel = new BrakeBarrel("barrel_k2.obj", 1, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 1), Color(1,1,0.6,1), 1.5f , 3);
+	switchBarrel = new SwitchBarrel("barrel_k2.obj", 1, CollisionEffect(-1, 0, 0), Vector3D<float>(0, 0, 0.7), Color(1, 0, 1, 1));
+	ghostBarrel = new GhostBarrel("barrel_k2.obj", 1, CollisionEffect(-1, 0, 0), Vector3D<float>(0, 0, 0.7), Color());
+	brakeBarrel = new BrakeBarrel("barrel_k2.obj", 1, CollisionEffect(-1, 0, 0), Vector3D<float>(0, 0, 1), Color(1,1,0.6,1), 1.5f , 3);
 
 	//////////////////////////////////
 
 	// PowerUps//
 
-	normalHeart = new PowerUp("Corazon.obj", 0.5, CollisionEffect(1, 0, 0), Vector3D(0, 0, 1), Color(1, 0, 0, 1));
-	superHeart = new PowerUp("Corazon.obj", 0.5, CollisionEffect(2, 0, 0), Vector3D(0, 0, 1), Color(1, 1, 0, 1));
-	poisonHeart = new PowerUp("Corazon.obj", 0.5, CollisionEffect(-1, 0, 0), Vector3D(0, 0, 1), Color(0.31, 0.11, 0.36, 1));
-	rayP = new PowerUp("Rayo.obj", 0.5, CollisionEffect(0, 0, 1), Vector3D(0, 0, 1), Color(1, 1, 0, 1));
-	shieldP = new PowerUp("Escudo.obj", 0.07, CollisionEffect(0, 0, 2), Vector3D(0, 0, 1), Color(0.5, 0.5, 0.7, 1));
-	speedReduceP = new PowerUp("SpeedFactor.obj", 0.4, CollisionEffect(0, 0, 3), Vector3D(0, 0, 1), Color(0, 0, 1, 1));
+	normalHeart = new PowerUp("Corazon.obj", 0.5, CollisionEffect(1, 0, 0), Vector3D<float>(0, 0, 1), Color(1, 0, 0, 1));
+	superHeart = new PowerUp("Corazon.obj", 0.5, CollisionEffect(2, 0, 0), Vector3D<float>(0, 0, 1), Color(1, 1, 0, 1));
+	poisonHeart = new PowerUp("Corazon.obj", 0.5, CollisionEffect(-1, 0, 0), Vector3D<float>(0, 0, 1), Color(0.31, 0.11, 0.36, 1));
+	rayP = new PowerUp("Rayo.obj", 0.5, CollisionEffect(0, 0, 1), Vector3D<float>(0, 0, 1), Color(1, 1, 0, 1));
+	shieldP = new PowerUp("Escudo.obj", 0.07, CollisionEffect(0, 0, 2), Vector3D<float>(0, 0, 1), Color(0.5, 0.5, 0.7, 1));
+	speedReduceP = new PowerUp("SpeedFactor.obj", 0.4, CollisionEffect(0, 0, 3), Vector3D<float>(0, 0, 1), Color(0, 0, 1, 1));
 
 
 
@@ -75,39 +75,39 @@ void GameScene::Init() {
 
 	canva = new UICanva();
 
-	emitterBarrelC1->SetPosition(Vector3D(-3.45, -1, -40));
-	emitterBarrelC2->SetPosition(Vector3D(0, -1, -40));
-	emitterBarrelC3->SetPosition(Vector3D(3.45, -1, -40));
+	emitterBarrelC1->SetPosition(Vector3D<float>(-3.45, -1, -40));
+	emitterBarrelC2->SetPosition(Vector3D<float>(0, -1, -40));
+	emitterBarrelC3->SetPosition(Vector3D<float>(3.45, -1, -40));
 
-	emitterPowerUpC1->SetPosition(Vector3D(-3.45, -1, -40));
-	emitterPowerUpC2->SetPosition(Vector3D(0, -1, -40));
-	emitterPowerUpC3->SetPosition(Vector3D(3.45, -1, -40));
+	emitterPowerUpC1->SetPosition(Vector3D<float>(-3.45, -1, -40));
+	emitterPowerUpC2->SetPosition(Vector3D<float>(0, -1, -40));
+	emitterPowerUpC3->SetPosition(Vector3D<float>(3.45, -1, -40));
 
-	emitterCoinsC1->SetPosition(Vector3D(-3.45, -1, -40));
-	emitterCoinsC2->SetPosition(Vector3D(0, -1, -40));
-	emitterCoinsC3->SetPosition(Vector3D(3.45, -1, -40));
+	emitterCoinsC1->SetPosition(Vector3D<float>(-3.45, -1, -40));
+	emitterCoinsC2->SetPosition(Vector3D<float>(0, -1, -40));
+	emitterCoinsC3->SetPosition(Vector3D<float>(3.45, -1, -40));
 
-	emitterWideBarrelC1->SetPosition(Vector3D(-1.7, -1, -40));
-	emitterWideBarrelC2->SetPosition(Vector3D(1.7, -1, -40));
+	emitterWideBarrelC1->SetPosition(Vector3D<float>(-1.7, -1, -40));
+	emitterWideBarrelC2->SetPosition(Vector3D<float>(1.7, -1, -40));
 
 
 	loaderMaterial = new MaterialModelLoader(0.6);
 
 	loaderMaterial->LoadModel("Player.obj");
 
-	player->SetPosition(Vector3D(0, -1, 10));
+	player->SetPosition(Vector3D<float>(0, -1, 10));
 	player->setModelPlayer(loaderMaterial->GetMaterialModel());
 
 	player->setCarril(2);
 	player->setUICanva(canva);
 
 	canva->InitUI();
-	canva->SetPosition(Vector3D(0, 0, 19));
-	carretera->SetPosition(Vector3D(0, -3.05, -60));
-	sep1->SetPosition(Vector3D(-1.7, -3, -60));
-	sep2->SetPosition(Vector3D(-5, -3, -60));
-	sep3->SetPosition(Vector3D(1.7, -3, -60));
-	sep4->SetPosition(Vector3D(5, -3, -60));
+	canva->SetPosition(Vector3D<float>(0, 0, 19));
+	carretera->SetPosition(Vector3D<float>(0, -3.05, -60));
+	sep1->SetPosition(Vector3D<float>(-1.7, -3, -60));
+	sep2->SetPosition(Vector3D<float>(-5, -3, -60));
+	sep3->SetPosition(Vector3D<float>(1.7, -3, -60));
+	sep4->SetPosition(Vector3D<float>(5, -3, -60));
 
 
 	carretera->SetColor(Color(0, 0, 0, 1));
@@ -430,7 +430,7 @@ void GameScene::Update(const float& timeUpdate) {
 			 if (speedEffect) {
 				for (Emitter* em : barrelEmitters) {
 					for (Item* barrel : em->getParticles()) {
-						barrel->SetSpeed(Vector3D(0, 0, barrel->GetSpeed().GetZ() * 2)); // Restauramos la velocidad original
+						barrel->SetSpeed(Vector3D<float>(0, 0, barrel->GetSpeed().GetZ() * 2)); // Restauramos la velocidad original
 					}
 
 				}
@@ -515,7 +515,7 @@ void GameScene::activateSpeedReduce(const float& speedFactor) {
 
 	for (Emitter* em : barrelEmitters) {
 		for (Solid* barrel : em->getParticles()) {
-			barrel->SetSpeed(Vector3D(0, 0, barrel->GetSpeed().GetZ() * speedFactor)); // reducir un 50%
+			barrel->SetSpeed(Vector3D<float>(0, 0, barrel->GetSpeed().GetZ() * speedFactor)); // reducir un 50%
 		}
 
 	}
@@ -554,7 +554,7 @@ void GameScene::ProcessKeyPressed(unsigned char key, int px, int py) {
 			if (player->getCarril() == 1) {}
 			else {
 				player->setCarril(player->getCarril() - 1);
-				player->SetPosition(player->GetPosition() - Vector3D(3.45, 0, 0));
+				player->SetPosition(player->GetPosition() - Vector3D<float>(3.45, 0, 0));
 			}
 		}
 		break;
@@ -568,7 +568,7 @@ void GameScene::ProcessKeyPressed(unsigned char key, int px, int py) {
 			if (player->getCarril() == 3) {}
 			else {
 				player->setCarril(player->getCarril() + 1);
-				player->SetPosition(player->GetPosition() + Vector3D(3.45, 0, 0));
+				player->SetPosition(player->GetPosition() + Vector3D<float>(3.45, 0, 0));
 
 			}
 		}
@@ -591,7 +591,7 @@ void GameScene::ProcessSpecialKeyPressed(int key, int px, int py) {
 		if (player->getCarril() == 1) {}
 		else {
 			player->setCarril(player->getCarril() - 1);
-			player->SetPosition(player->GetPosition() - Vector3D(3.45, 0, 0));
+			player->SetPosition(player->GetPosition() - Vector3D<float>(3.45, 0, 0));
 		}
 		}
 		break;
@@ -604,7 +604,7 @@ void GameScene::ProcessSpecialKeyPressed(int key, int px, int py) {
 			if (player->getCarril() == 3) {}
 			else {
 				player->setCarril(player->getCarril() + 1);
-				player->SetPosition(player->GetPosition() + Vector3D(3.45, 0, 0));
+				player->SetPosition(player->GetPosition() + Vector3D<float>(3.45, 0, 0));
 			}
 		}
 		break;

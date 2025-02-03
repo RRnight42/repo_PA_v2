@@ -17,7 +17,7 @@ class GhostBarrel :
 
 public: 
 
-	GhostBarrel(string modelFileSet, float scale, CollisionEffect effectSet, Vector3D speedSet, Color colorSet, bool iWB = false) : Barrel(modelFileSet, scale, effectSet, speedSet, colorSet, iWB) {
+	GhostBarrel(string modelFileSet, float scale, CollisionEffect effectSet, Vector3D<float> speedSet, Color colorSet, bool iWB = false) : Barrel(modelFileSet, scale, effectSet, speedSet, colorSet, iWB) {
 	
 		this->seconds = 0;
 	

@@ -10,8 +10,8 @@ protected:
 
 	float scale;
 	Model model;
-	vector<Vector3D> vertexCollection;
-	vector<Vector3D> normalCollection;
+	vector<Vector3D<float>> vertexCollection;
+	vector<Vector3D<float>> normalCollection;
 
 	float minX, minY, minZ;
 	float maxX, maxY, maxZ;
@@ -21,11 +21,11 @@ protected:
 	inline float GetHeight() { return this->maxY - this->minY; }
 	inline float GetLength() { return this->maxZ - this->minZ; }
 
-	void calcBoundaries(Vector3D vector);
+	void calcBoundaries(Vector3D<float> vector);
 
 	Triangle center(Triangle triangle);
 
-	Vector3D parseObjLinetoVector3D(const string& line);
+	Vector3D<float> parseObjLinetoVector3D(const string& line);
 
 	Triangle parseObjTriangle(const string& line);
 

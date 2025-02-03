@@ -7,10 +7,10 @@ void MenuScene::Init() {
     inputText2 = new Text("Ranking", Text::Helvetica12, Color(0, 0, 0, 1));
     inputText3 = new Text("Salir", Text::Helvetica12, Color(0, 0, 0, 1));
 
-    title->SetPosition(Vector3D(-2, 6, 0));
-    inputText1->SetPosition(Vector3D(-1.5, 0, 0));
-    inputText2->SetPosition(Vector3D(-1, -3, 0));
-    inputText3->SetPosition(Vector3D(-0.5, -6, 0));
+    title->SetPosition(Vector3D<float>(-2, 6, 0));
+    inputText1->SetPosition(Vector3D<float>(-1.5, 0, 0));
+    inputText2->SetPosition(Vector3D<float>(-1, -3, 0));
+    inputText3->SetPosition(Vector3D<float>(-0.5, -6, 0));
 
     AddGameObject(title);
     AddGameObject(inputText1);

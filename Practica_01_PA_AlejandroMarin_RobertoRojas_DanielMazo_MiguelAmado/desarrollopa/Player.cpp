@@ -6,7 +6,7 @@ void Player::Render() {
     
     shield->SetPosition(this->GetPosition());
     frozenCube->SetPosition(this->GetPosition());
-    shield->SetOrientationSpeed(Vector3D(0, 5, 0));
+    shield->SetOrientationSpeed(Vector3D<float>(0, 5, 0));
 
     if (activeShield) {
     
@@ -31,8 +31,8 @@ void Player::Render() {
     }
 
 
-    model.SetPosition(this->GetPosition() + Vector3D(-0.31,0,-0.3));
-    model.SetOrientation(Vector3D(0, 180, 0));
+    model.SetPosition(this->GetPosition() + Vector3D<float>(-0.31,0,-0.3));
+    model.SetOrientation(Vector3D<float>(0, 180, 0));
 }
 
 void Player::Update(const float& timeUpdate) {

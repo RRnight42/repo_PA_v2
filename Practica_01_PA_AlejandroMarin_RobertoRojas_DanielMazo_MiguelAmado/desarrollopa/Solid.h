@@ -10,16 +10,16 @@ class Solid
 
 
 private:
-	Vector3D position;
-	Vector3D orientation;
-	Vector3D speed;
-	Vector3D orientationSpeed;
+	Vector3D<float> position;
+	Vector3D<float> orientation;
+	Vector3D<float> speed;
+	Vector3D<float> orientationSpeed;
 	Color color;
 	bool useGravity;
 
 
 public:
-	Solid(Vector3D pos = Vector3D() , Vector3D rot = Vector3D() , Vector3D spd = Vector3D(), Vector3D rotSpeed = Vector3D(), Color col = Color() , bool gravity = false) :
+	Solid(Vector3D<float> pos = Vector3D<float>() , Vector3D<float> rot = Vector3D<float>() , Vector3D<float> spd = Vector3D<float>(), Vector3D<float> rotSpeed = Vector3D<float>(), Color col = Color() , bool gravity = false) :
 		position(pos),
 		orientation(rot),
 		speed(spd),
@@ -27,22 +27,22 @@ public:
 		color(col),
 	    useGravity(gravity){}
 
-	inline Vector3D GetPosition() const { return this->position; }
-	inline Vector3D GetOrientation() const { return this->orientation; }
-	inline Vector3D GetOrientationSpeed() const { return this->orientationSpeed; }
-	inline Vector3D GetSpeed() const { return this->speed; }
+	inline Vector3D<float> GetPosition() const { return this->position; }
+	inline Vector3D<float> GetOrientation() const { return this->orientation; }
+	inline Vector3D<float> GetOrientationSpeed() const { return this->orientationSpeed; }
+	inline Vector3D<float> GetSpeed() const { return this->speed; }
 	inline Color GetColor() const { return this->color; }
 	inline bool GetGravity() const { return this->useGravity; }
 
-	void SetPosition(const Vector3D& coordsToSet) { this->position = coordsToSet; }
-	void SetOrientation(const Vector3D& orientationToSet) { this->orientation = orientationToSet; }
-	void SetOrientationSpeed(const  Vector3D& orientationSpeedToSet) { this->orientationSpeed = orientationSpeedToSet; }
-	void SetSpeed(const  Vector3D& speedToSet) { this->speed = speedToSet; }
+	void SetPosition(const Vector3D<float>& coordsToSet) { this->position = coordsToSet; }
+	void SetOrientation(const Vector3D<float>& orientationToSet) { this->orientation = orientationToSet; }
+	void SetOrientationSpeed(const  Vector3D<float>& orientationSpeedToSet) { this->orientationSpeed = orientationSpeedToSet; }
+	void SetSpeed(const  Vector3D<float>& speedToSet) { this->speed = speedToSet; }
 	void SetColor(const Color& colorToSet) { this->color = colorToSet; }
 	void SetGravity(const bool& grav) { this->useGravity = grav; }
 
 	
-	float Distance(const Vector3D& other);
+	float Distance(const Vector3D<float>& other);
 	
 
 	virtual void Render() = 0;

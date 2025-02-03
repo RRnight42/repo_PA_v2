@@ -15,7 +15,7 @@ private:
 	Color ambientColor;
 	Color diffuseColor;
 	Color specularColor;
-	Vector3D emissiveCoeficient;
+	Vector3D<float> emissiveCoeficient;
 	float specularExponent;
 	float dissolved;
 	Color transmissionFilterColor;
@@ -44,8 +44,8 @@ public:
 		this->specularColor =
 			specularColorToSet;
 	}
-	inline Vector3D GetEmissiveCoeficient() const { return this->emissiveCoeficient; }
-	inline void SetEmissiveCoeficient(const Vector3D& emissiveCoeficientToSet) {
+	inline Vector3D<float> GetEmissiveCoeficient() const { return this->emissiveCoeficient; }
+	inline void SetEmissiveCoeficient(const Vector3D<float>& emissiveCoeficientToSet) {
 		this->emissiveCoeficient = emissiveCoeficientToSet;
 	}
 	inline float GetSpecularExponent() const { return this->specularExponent; }

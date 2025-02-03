@@ -50,7 +50,7 @@ public:
     void removeParticle(Item* particle);
     void clearParticles();
     
-    Vector3D randomPositionOffsetZ(int particleId);
+    Vector3D<float> randomPositionOffsetZ(int particleId);
 
     Item* generateSolidByProbability(const vector<pair<Item*, float>>& solidsWithProbabilities);
 

@@ -36,7 +36,7 @@ void UICanva::InitUI() {
  
 
     //posiciones en el canva
-    coinsText->SetPosition(this->GetPosition() + Vector3D(8,9.5,0));
+    coinsText->SetPosition(this->GetPosition() + Vector3D<float>(8,9.5,0));
   
 
     // aqui CONFIGURAMOS TODO EL CANVA
@@ -57,9 +57,9 @@ void UICanva::InitUI() {
     heart3->PaintColor(Color(1, 0, 0, 1));
     
     
-    heart1->SetPosition(this->GetPosition() + Vector3D(-13, 9, -0.5));
-    heart2->SetPosition(this->GetPosition() + Vector3D(-9.5, 9, -0.5));
-    heart3->SetPosition(this->GetPosition() + Vector3D(-6, 9, -0.5));
+    heart1->SetPosition(this->GetPosition() + Vector3D<float>(-13, 9, -0.5));
+    heart2->SetPosition(this->GetPosition() + Vector3D<float>(-9.5, 9, -0.5));
+    heart3->SetPosition(this->GetPosition() + Vector3D<float>(-6, 9, -0.5));
 
     loader.Clear();
 
@@ -67,26 +67,26 @@ void UICanva::InitUI() {
     loader.LoadModel("Rayo.obj"); 
     *rayPowerUpUI = loader.GetModel();
     loader.Clear();
-    rayPowerUpUI->SetOrientation(Vector3D(0,180,0));
+    rayPowerUpUI->SetOrientation(Vector3D<float>(0,180,0));
     rayPowerUpUI->PaintColor(Color(1, 1, 0, 1));
-    rayPowerUpUI->SetPosition(this->GetPosition() + Vector3D(0.5, 2.2,18.9));
+    rayPowerUpUI->SetPosition(this->GetPosition() + Vector3D<float>(0.5, 2.2,18.9));
 
     
     loader.SetScale(0.025);
     loader.LoadModel("Escudo.obj");
     *shieldPowerUpUI = loader.GetModel();
     loader.Clear();
-    shieldPowerUpUI->SetOrientation(Vector3D(0,-90,0));
-    shieldPowerUpUI->SetPosition(this->GetPosition() + Vector3D(0.5, 2.1,18.9));
+    shieldPowerUpUI->SetOrientation(Vector3D<float>(0,-90,0));
+    shieldPowerUpUI->SetPosition(this->GetPosition() + Vector3D<float>(0.5, 2.1,18.9));
 
 
     loader.SetScale(0.07);
     loader.LoadModel("Speedfactor.obj");
     *speedPowerUpUI = loader.GetModel();
     loader.Clear();
-    speedPowerUpUI->SetPosition(this->GetPosition() + Vector3D(0.4, 2.2, 18.9));
+    speedPowerUpUI->SetPosition(this->GetPosition() + Vector3D<float>(0.4, 2.2, 18.9));
     speedPowerUpUI->PaintColor(Color(0, 0, 1, 1));
-    speedPowerUpUI->SetOrientation(Vector3D(0,-90,0));
+    speedPowerUpUI->SetOrientation(Vector3D<float>(0,-90,0));
 
 
 
@@ -95,14 +95,14 @@ void UICanva::InitUI() {
    loader.SetScale(0.25);
    *coinUI = loader.GetModel();
    coinUI->PaintColor(Color(1, 0.88, 0, 1));
-   coinUI->SetPosition(this->GetPosition() + Vector3D(4, 10, 0));
-   coinUI->SetOrientation(Vector3D(0, 90, 0));
+   coinUI->SetPosition(this->GetPosition() + Vector3D<float>(4, 10, 0));
+   coinUI->SetOrientation(Vector3D<float>(0, 90, 0));
     
     
     
-    heart1->SetOrientationSpeed(Vector3D(0, 3, 0));
-    heart2->SetOrientationSpeed(Vector3D(0, 3, 0));
-    heart3->SetOrientationSpeed(Vector3D(0, 3, 0));
+    heart1->SetOrientationSpeed(Vector3D<float>(0, 3, 0));
+    heart2->SetOrientationSpeed(Vector3D<float>(0, 3, 0));
+    heart3->SetOrientationSpeed(Vector3D<float>(0, 3, 0));
     
 }
 

@@ -3,36 +3,36 @@
 
 using namespace std;
 
-class Vector3D
+template<class S> class Vector3D
 {
 private:
 
-	float x;
-	float y;
-	float z;
+	S x;
+	S y;
+	S z;
 
 public:
 
 	Vector3D() : x(0.0), y(0.0), z(0.0) {}
 
-	Vector3D(float xArgument, float yArgument, float zArgument)
+	Vector3D(S xArgument, S yArgument, S zArgument)
 	{
 		this->x = xArgument;
 		this->y = yArgument;
 		this->z = zArgument;
 	}
 
-	inline float GetX() const { return this->x; }
-	inline float GetY() const { return this->y; }
-	inline float GetZ() const { return this->z; }
+	inline S GetX() const { return this->x; }
+	inline S GetY() const { return this->y; }
+	inline S GetZ() const { return this->z; }
 
-	inline void SetX(const float& xToSet) { this->x = xToSet; }
-	inline void SetY(const float& yToSet) { this->y = yToSet; }
-	inline void SetZ(const float& zToSet) { this->z = zToSet; }
+	inline void SetX(const S& xToSet) { this->x = xToSet; }
+	inline void SetY(const S& yToSet) { this->y = yToSet; }
+	inline void SetZ(const S& zToSet) { this->z = zToSet; }
 
 	Vector3D Add(Vector3D& other);
-	Vector3D Product(const float& a);
-	Vector3D Division(const float& value);
+	Vector3D Product(const S& a);
+	Vector3D Division(const S& value);
 	float DotProduct(const Vector3D& other);
 	Vector3D CrossProduct(const Vector3D& other);
 	float Magnitude();
@@ -41,11 +41,11 @@ public:
 
 	Vector3D operator+(const Vector3D& vector);
 	Vector3D operator-(const Vector3D& vector);
-	Vector3D operator*(const float value);
-	Vector3D operator/(const float value);
-	float operator*(const Vector3D& vector);
+	Vector3D operator*(const S value);
+	Vector3D operator/(const S value);
+	S operator*(const Vector3D& vector);
 	Vector3D operator^(const Vector3D& vector);
-	float& operator[](const int& axis);
+	S& operator[](const int& axis);
 
 
 };

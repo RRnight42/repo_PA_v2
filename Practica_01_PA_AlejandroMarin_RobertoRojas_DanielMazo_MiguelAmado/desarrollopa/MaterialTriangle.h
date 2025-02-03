@@ -9,12 +9,12 @@ private:
 	void useMaterial();
 public:
 	MaterialTriangle(
-		Vector3D vertex0Argument = Vector3D(),
-		Vector3D vertex1Argument = Vector3D(),
-		Vector3D vertex2Argument = Vector3D(),
-		Vector3D normal0Argument = Vector3D(),
-		Vector3D normal1Argument = Vector3D(),
-		Vector3D normal2Argument = Vector3D(),
+		Vector3D<float> vertex0Argument = Vector3D<float>(),
+		Vector3D<float> vertex1Argument = Vector3D<float>(),
+		Vector3D<float> vertex2Argument = Vector3D<float>(),
+		Vector3D<float> normal0Argument = Vector3D<float>(),
+		Vector3D<float> normal1Argument = Vector3D<float>(),
+		Vector3D<float> normal2Argument = Vector3D<float>(),
 		Color color0Argument = Color(1, 0, 0),
 		Color color1Argument = Color(0, 1, 0),
 		Color color2Argument = Color(0, 0, 1)) : Triangle(vertex0Argument,

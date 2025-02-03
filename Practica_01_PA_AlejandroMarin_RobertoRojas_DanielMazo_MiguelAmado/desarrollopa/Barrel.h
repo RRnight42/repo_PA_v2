@@ -25,7 +25,7 @@ private:
 
 public:
 
-    Barrel(string modelFileSet , float scale , CollisionEffect effectSet, Vector3D speedSet, Color colorSet , bool iWB = false){
+    Barrel(string modelFileSet , float scale , CollisionEffect effectSet, Vector3D<float> speedSet, Color colorSet , bool iWB = false){
     
         this->loader.SetScale(scale);
         this->loader.LoadModel(modelFileSet);
@@ -35,8 +35,8 @@ public:
         this->PaintBarrel(colorSet);
         this->Wide = iWB;
 
-        this->SetOrientation(Vector3D(0,0,90));
-        this->SetOrientationSpeed(Vector3D(3,0,0));
+        this->SetOrientation(Vector3D<float>(0,0,90));
+        this->SetOrientationSpeed(Vector3D<float>(3,0,0));
     }
 
 

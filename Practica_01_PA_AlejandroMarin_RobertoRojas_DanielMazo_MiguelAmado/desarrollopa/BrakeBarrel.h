@@ -17,7 +17,7 @@ class BrakeBarrel : public Barrel
 
 public:
 
-	BrakeBarrel(string modelFileSet, float scale, CollisionEffect effectSet, Vector3D speedSet, Color colorSet, float tf = 1.5f , float del = 5 , bool iWB = false) : Barrel(modelFileSet, scale, effectSet, speedSet, colorSet, iWB) {
+	BrakeBarrel(string modelFileSet, float scale, CollisionEffect effectSet, Vector3D<float> speedSet, Color colorSet, float tf = 1.5f , float del = 5 , bool iWB = false) : Barrel(modelFileSet, scale, effectSet, speedSet, colorSet, iWB) {
 
 
 		this->tiempoFreno = tf;
@@ -33,14 +33,14 @@ public:
 
 		velZ = this->GetSpeed().GetZ();
 
-		this->SetSpeed(Vector3D(0,0,0));
+		this->SetSpeed(Vector3D<float>(0,0,0));
 
 	}
 
 
 	void ReturnVelocity(float vel) {
 	
-		this->SetSpeed(Vector3D(0, 0, vel));
+		this->SetSpeed(Vector3D<float>(0, 0, vel));
 	
 	}
 

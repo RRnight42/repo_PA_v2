@@ -7,10 +7,10 @@ void LoseScene::Init() {
 	menu = new Text("Menu", Text::Helvetica12, Color(0, 0, 0, 1));
 	salir = new Text("Salir del juego", Text::Helvetica12, Color(0, 0, 0, 1));
 
-	textoPerder->SetPosition(Vector3D(-3, 6, 0));
-	reinicio->SetPosition(Vector3D(-1.5, 0, 0));
-	menu->SetPosition(Vector3D(-1, -3, 0));
-	salir->SetPosition(Vector3D(-1, -6, 0));
+	textoPerder->SetPosition(Vector3D<float>(-3, 6, 0));
+	reinicio->SetPosition(Vector3D<float>(-1.5, 0, 0));
+	menu->SetPosition(Vector3D<float>(-1, -3, 0));
+	salir->SetPosition(Vector3D<float>(-1, -6, 0));
 
 	AddGameObject(textoPerder);
 	AddGameObject(reinicio);

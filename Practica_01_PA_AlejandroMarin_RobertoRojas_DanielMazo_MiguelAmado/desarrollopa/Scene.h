@@ -16,7 +16,7 @@ public:
 
 	Scene()
 	{
-		this->camera.SetPosition(Vector3D(0, 2, 20));
+		this->camera.SetPosition(Vector3D<float>(0, 2, 20));
 	}
 
 	virtual void AddGameObject(Solid* gameObject);

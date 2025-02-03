@@ -135,8 +135,8 @@ void Emitter::Update(const float& timeUpdate)
 			newParticle->SetPosition(this->GetPosition());
 
 			// Generar un desplazamiento solo en el eje Z
-			Vector3D basePosition = this->GetPosition();
-			Vector3D offset = this->randomPositionOffsetZ(particleID);
+			Vector3D<float> basePosition = this->GetPosition();
+			Vector3D<float> offset = this->randomPositionOffsetZ(particleID);
 			newParticle->SetPosition(basePosition + offset);
 
 			particlesVector.push_back(newParticle);
@@ -152,13 +152,13 @@ void Emitter::Update(const float& timeUpdate)
 
 
 
-Vector3D Emitter::randomPositionOffsetZ(int particleId) {
+Vector3D<float> Emitter::randomPositionOffsetZ(int particleId) {
 	mt19937 generator(static_cast<unsigned int>(time(nullptr)) + particleId);
 	uniform_real_distribution<float> distribution(-10.0f, 10.0f); 
 
 	float offsetZ = distribution(generator); 
 
-	return Vector3D(0, 0, offsetZ);
+	return Vector3D<float>(0, 0, offsetZ);
 }
 
 

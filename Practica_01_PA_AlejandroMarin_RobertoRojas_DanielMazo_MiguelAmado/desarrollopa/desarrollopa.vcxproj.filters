@@ -267,7 +267,7 @@
       <Filter>Archivos de encabezado\Barrels</Filter>
     </ClInclude>
     <ClInclude Include="InputNameScene.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Scenes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

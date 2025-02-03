@@ -22,7 +22,7 @@ public:
 	//void Reset();
 
 	inline bool getEsRanking() const { return this->esRanking; }
-	inline bool setEsRanking(bool r) { esRanking = r; }
+	inline void setEsRanking(const bool& r) { this->esRanking = r; }
 
 	void UpdateSelection();
 
