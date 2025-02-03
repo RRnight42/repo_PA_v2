@@ -24,6 +24,9 @@ public:
 	inline bool getEsRanking() const { return this->esRanking; }
 	inline bool setEsRanking(bool r) { esRanking = r; }
 
+	void UpdateSelection();
+
+
 	void ProcessKeyPressed(unsigned char key, int px, int py);
 	void ProcessSpecialKeyPressed(int key, int px, int py);
     //void ProcessMouseMovement(int x, int y);

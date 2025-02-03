@@ -141,6 +141,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="GhostBarrel.cpp" />
+    <ClCompile Include="InputNameScene.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="LoseScene.cpp" />
     <ClCompile Include="Material.cpp" />
@@ -177,6 +178,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GhostBarrel.h" />
+    <ClInclude Include="InputNameScene.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="LoseScene.h" />
     <ClInclude Include="Material.h" />

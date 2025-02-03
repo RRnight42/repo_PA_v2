@@ -10,14 +10,7 @@ class RankingScene : public Scene
 {
 private:
 
-	int monedas;
-	int nivel;
-
-	string inputBuffer;
-	int inputLength;
-
-	Text* titulo = new Text("Introduce tu nombre para guardar tu progreso:", Text::TimesNewRoman24, Color(0.5, 0, 0.5, 1));
-	Text* inputText = new Text("[_____________]", Text::TimesNewRoman24, Color(0.5,0,0.5,1));
+	Text* ranking;
 
 public:
 	RankingScene() :Scene() {}
@@ -25,16 +18,7 @@ public:
 	void Init();
 	void Reset();
 
-	void RecibirDatos(int monedasDevolverNivel, int nivelDevolver) {
-	
-		this->monedas = monedasDevolverNivel;
-		this->nivel = nivelDevolver;
-
-	}
-
-	string GetRawNamePlayer();
-
-	void GuardarDatos(string nombrePlayer , string namefile);
+	string MostrarResultados(string filePath);
 
 	void ProcessKeyPressed(unsigned char key, int px, int py);
 

@@ -156,6 +156,9 @@
     <ClCompile Include="BrakeBarrel.cpp">
       <Filter>Archivos de origen\Barrels</Filter>
     </ClCompile>
+    <ClCompile Include="InputNameScene.cpp">
+      <Filter>Archivos de origen\Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -262,6 +265,9 @@
     </ClInclude>
     <ClInclude Include="BrakeBarrel.h">
       <Filter>Archivos de encabezado\Barrels</Filter>
+    </ClInclude>
+    <ClInclude Include="InputNameScene.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

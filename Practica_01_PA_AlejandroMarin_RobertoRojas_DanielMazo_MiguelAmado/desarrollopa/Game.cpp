@@ -26,7 +26,7 @@ void Game::Init()
 
 
 	// solo para debug
-	this->activeScene = lvl1;
+	this->activeScene = menu;
 
 
 
@@ -70,11 +70,22 @@ void Game::Update()
 
 	if (this->activeScene->hasEndedScene()) {
 		if (this->activeScene == this->menu) {
+			if (this->menu->getEsRanking()) {
+
+				this->ranking->endScene(true);
+				this->ranking->Reset();
+				this->activeScene = ranking;
+
+			}
+			else {
+
 			this->lvl1->endScene(false);
 			this->lvl1->Reset();
 			this->lvl1->Init();
 			nivelActual = 1;
 			this->activeScene = lvl1;
+			}
+		
 		}
 		else if (this->activeScene == this->win) {
 			this->menu->endScene(false);
