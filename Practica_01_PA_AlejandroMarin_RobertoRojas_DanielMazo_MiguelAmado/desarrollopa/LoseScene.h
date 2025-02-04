@@ -20,7 +20,7 @@ public:
 
 	
 	void Init();
-	//void Reset();
+	void Reset();
 
 	void ProcessKeyPressed(unsigned char key, int px, int py);
 	void ProcessSpecialKeyPressed(int key, int px, int py);

@@ -8,8 +8,8 @@ private:
 
 	Text* message;
 	Text* restart;
-	Text* nextLvl;
 	Text* menu;
+	Text* nextLvl;
 	Text* salir;
 	
 
@@ -23,7 +23,7 @@ public:
 
 	void Init();
 
-	//void Reset();
+	void Reset();
 	
 
 	void ProcessKeyPressed(unsigned char key, int px, int py);

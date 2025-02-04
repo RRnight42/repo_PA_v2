@@ -4,7 +4,8 @@
 
 void InputNameScene::Init() {
 
-
+    titulo = new Text("Introduce tu nombre para guardar tu progreso:", Text::TimesNewRoman24, Color(0.5, 0, 0.5, 1));
+    inputText = new Text("[_____________]", Text::TimesNewRoman24, Color(0.5, 0, 0.5, 1));
 
     titulo->SetPosition(Vector3D<float>(-10, 6, 0));
     inputText->SetPosition(Vector3D<float>(-7, 0, 0));
@@ -66,6 +67,9 @@ void InputNameScene::Reset() {
 
     delete titulo;
     delete inputText;
+
+    titulo = nullptr;
+    inputText = nullptr;
 }
 
 void InputNameScene::ProcessKeyPressed(unsigned char key, int px, int py) {

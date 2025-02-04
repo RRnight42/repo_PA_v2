@@ -19,7 +19,7 @@ public:
 	MenuScene() :Scene() {}
 
 	void Init();
-	//void Reset();
+	void Reset();
 
 	inline bool getEsRanking() const { return this->esRanking; }
 	inline void setEsRanking(const bool& r) { this->esRanking = r; }

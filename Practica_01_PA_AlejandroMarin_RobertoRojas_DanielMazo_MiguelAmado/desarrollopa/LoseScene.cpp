@@ -16,7 +16,7 @@ void LoseScene::Init() {
 	AddGameObject(reinicio);
 	AddGameObject(menu);
 	AddGameObject(salir);
-	
+
 }
 
 void LoseScene::ProcessKeyPressed(unsigned char key, int px, int py) {
@@ -109,7 +109,20 @@ void LoseScene::ProcessKeyPressed(unsigned char key, int px, int py) {
 	}
 }
 
+void LoseScene::Reset() {
+	this->ClearGameObject();
+	delete textoPerder;
+	delete reinicio;
+	delete menu;
+	delete salir;
 
+	textoPerder = nullptr;
+	reinicio = nullptr;
+	menu = nullptr;
+	salir = nullptr;
+
+	selected = 0;
+}
 
 void LoseScene::ProcessSpecialKeyPressed(int key, int px, int py) {
 

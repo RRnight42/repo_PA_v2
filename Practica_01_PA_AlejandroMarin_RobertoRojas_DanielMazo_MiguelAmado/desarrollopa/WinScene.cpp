@@ -178,6 +178,22 @@ void WinScene::ProcessKeyPressed(unsigned char key, int px, int py) {
 	}
 }
 
+void WinScene::Reset() {
+	this->ClearGameObject();
+	delete message;
+	delete restart;
+	delete menu;
+	delete nextLvl;
+	delete salir;
+
+	message = nullptr;
+	restart = nullptr;
+	menu = nullptr;
+	nextLvl = nullptr;
+	salir = nullptr;
+
+	selected = 0;
+}
 
 
 void WinScene::ProcessSpecialKeyPressed(int key, int px, int py) {

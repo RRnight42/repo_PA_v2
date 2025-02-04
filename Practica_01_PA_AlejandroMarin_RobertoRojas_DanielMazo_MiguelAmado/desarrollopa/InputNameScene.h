@@ -18,8 +18,8 @@ private:
 	string inputBuffer;
 	int inputLength;
 
-	Text* titulo = new Text("Introduce tu nombre para guardar tu progreso:", Text::TimesNewRoman24, Color(0.5, 0, 0.5, 1));
-	Text* inputText = new Text("[_____________]", Text::TimesNewRoman24, Color(0.5, 0, 0.5, 1));
+	Text* titulo;
+	Text* inputText;
 
 public:
 	InputNameScene() :Scene() {}
