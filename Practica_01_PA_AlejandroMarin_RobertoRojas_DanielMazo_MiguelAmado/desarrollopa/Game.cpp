@@ -8,15 +8,15 @@ void Game::Init()
 	menu = new	MenuScene();
 
 	lvl1 = new GameScene(GameScene::Level1, 15);
-	lvl2 = new GameScene(GameScene::Level1, 15);
-	lvl3 = new GameScene(GameScene::Level2, 30);
-	lvl4 = new GameScene(GameScene::Level2, 30);
-	lvl5 = new GameScene(GameScene::Level3, 45);
-	lvl6 = new GameScene(GameScene::Level3, 45);
-	lvl7 = new GameScene(GameScene::Level4, 75);
-	lvl8 = new GameScene(GameScene::Level4, 75);
-	lvl9 = new GameScene(GameScene::Level5, 100);
-	lvl10 = new GameScene(GameScene::Level5, 100);
+	lvl2 = new GameScene(GameScene::Level2, 15);
+	lvl3 = new GameScene(GameScene::Level3, 30);
+	lvl4 = new GameScene(GameScene::Level4, 30);
+	lvl5 = new GameScene(GameScene::Level5, 45);
+	lvl6 = new GameScene(GameScene::Level6, 45);
+	lvl7 = new GameScene(GameScene::Level7, 75);
+	lvl8 = new GameScene(GameScene::Level8, 75);
+	lvl9 = new GameScene(GameScene::Level9, 100);
+	lvl10 = new GameScene(GameScene::FinalLevel, 100);
 
 	win = new WinScene();
 	lose = new LoseScene();

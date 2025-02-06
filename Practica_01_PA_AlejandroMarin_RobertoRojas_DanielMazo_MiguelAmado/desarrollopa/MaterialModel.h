@@ -14,6 +14,12 @@ private:
 
 public:
 	MaterialModel() {}
+
+	void SetModel(const MaterialModel& other) {
+
+		this->triangles = other.triangles;
+	}
+
 	void AddMaterialTriangle(MaterialTriangle triangle);
 	void Clear();
 	void Render();

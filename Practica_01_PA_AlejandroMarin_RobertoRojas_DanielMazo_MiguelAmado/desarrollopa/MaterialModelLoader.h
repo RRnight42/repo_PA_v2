@@ -24,6 +24,8 @@ public:
 
 	void LoadModel(const string& filePath);
 
+	inline MaterialModel GetModel() { return this->materialModel; }
+
 	inline string GetModelsFolder() const { return this->modelsFolder; }
 	inline void SetModelsFolder(const string& modelsFolderToSet) { this->modelsFolder = modelsFolderToSet; }
 

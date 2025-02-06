@@ -159,6 +159,9 @@
     <ClCompile Include="InputNameScene.cpp">
       <Filter>Archivos de origen\Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="Tree.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -268,6 +271,9 @@
     </ClInclude>
     <ClInclude Include="InputNameScene.h">
       <Filter>Archivos de encabezado\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

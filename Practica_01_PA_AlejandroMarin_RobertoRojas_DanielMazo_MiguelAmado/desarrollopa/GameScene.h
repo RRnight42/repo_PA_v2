@@ -19,6 +19,7 @@
 #include "SwitchBarrel.h"
 #include "GhostBarrel.h"
 #include "BrakeBarrel.h"
+#include "Tree.h"
 
 using namespace std;
 
@@ -44,6 +45,8 @@ private:
 	GhostBarrel* ghostBarrel;
 	BrakeBarrel* brakeBarrel;
 
+	Tree* tree;
+
 	PowerUp* normalHeart;
 	PowerUp* superHeart;
 	PowerUp* poisonHeart;
@@ -51,11 +54,17 @@ private:
 	PowerUp* shieldP;
 	PowerUp* speedReduceP;
 
+	Cuboid* grass;
 	Cuboid* carretera;
 	Cuboid* sep1;
 	Cuboid* sep2;
 	Cuboid* sep3;
 	Cuboid* sep4;
+
+
+	Emitter* emitterTreeDeco1;
+	Emitter* emitterTreeDeco2;
+
 
 	Emitter* emitterBarrelC1;
 	Emitter* emitterBarrelC2;
@@ -138,7 +147,44 @@ public:
 	}
 
 	int getInformationLevel() {
-	
+		
+		switch (this->level) {
+
+		case Level1:
+			this->levelInfo = 1;
+			break;
+		case Level2:
+			this->levelInfo = 2;
+			break;
+		case Level3:
+			this->levelInfo = 3;
+			break;
+		case Level4:
+			this->levelInfo = 4;
+			break;
+		case Level5:
+			this->levelInfo = 5;
+			break;
+		case Level6:
+			this->levelInfo = 6;
+			break;
+		case Level7:
+			this->levelInfo = 7;
+			break;
+		case Level8:
+			this->levelInfo = 8;
+			break;
+		case Level9:
+			this->levelInfo = 9;
+			break;
+		case FinalLevel:
+			this->levelInfo = 10;
+			break;
+		
+		
+		
+		}
+
 		return this->levelInfo;
 	
 	}

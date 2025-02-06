@@ -160,6 +160,7 @@
     <ClCompile Include="SwitchBarrel.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="Time.cpp" />
+    <ClCompile Include="Tree.cpp" />
     <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="UICanva.cpp" />
     <ClCompile Include="Vector3D.cpp" />
@@ -197,6 +198,7 @@
     <ClInclude Include="SwitchBarrel.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="Time.h" />
+    <ClInclude Include="Tree.h" />
     <ClInclude Include="Triangle.h" />
     <ClInclude Include="UICanva.h" />
     <ClInclude Include="Util.h" />
