@@ -133,7 +133,7 @@ void GameScene::Init() {
 	barrelEmitters.push_back(emitterWideBarrelC1);
 	barrelEmitters.push_back(emitterWideBarrelC2);
 
-	vector <pair<Item*, float>> treeDis = { { tree , 1 } };
+	vector <pair<Item*, float>> treeDis = { { tree , 1.0f } };
 	EmitterConfiguration emConfTree(treeDis,12,1,1,7000,7000,7000,true);
 	emitterTreeDeco1->setConfiguration(emConfTree);
 	emitterTreeDeco2->setConfiguration(emConfTree);

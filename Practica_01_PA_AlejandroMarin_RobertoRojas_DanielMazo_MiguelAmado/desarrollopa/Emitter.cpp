@@ -132,15 +132,19 @@ void Emitter::Update(const float& timeUpdate)
 
 		
 			Item* newParticle = generateSolidByProbability(conf.getVectorAndProbabilites());
-			newParticle->SetPosition(this->GetPosition());
 
-			// Generar un desplazamiento solo en el eje Z
-			Vector3D<float> basePosition = this->GetPosition();
-			Vector3D<float> offset = this->randomPositionOffsetZ(particleID);
-			newParticle->SetPosition(basePosition + offset);
+			if (newParticle != nullptr) {
+				newParticle->SetPosition(Vector3D<float>(this->GetPosition().GetX(), this->GetPosition().GetY(), this->GetPosition().GetZ()));
 
-			particlesVector.push_back(newParticle);
-			particleCreationTimes.push_back(currentMs);
+				// Generar un desplazamiento solo en el eje Z
+				Vector3D<float> basePosition = this->GetPosition();
+				Vector3D<float> offset = this->randomPositionOffsetZ(particleID);
+				newParticle->SetPosition(basePosition + offset);
+
+				particlesVector.push_back(newParticle);
+				particleCreationTimes.push_back(currentMs);
+
+			}
 		}
 
 		this->lastUpdateTime = currentTime.count() - this->initialMilliseconds.count();
